@@ -56,6 +56,7 @@ input[type="radio"].visually-hidden{
     margin: 0;
     padding: 0;
     font-size: 0;
+    color: #626262;
     margin-bottom: 60px;
 }  
 .section-list-item {
@@ -84,10 +85,7 @@ input[type="radio"].visually-hidden{
 .section-list-item:nth-of-type(2n+1) {
     margin-right: 60px;
 }
-.section-list-item:nth-of-type(5n) {
-    margin-bottom: 0;
-}
-.section-list-item:nth-of-type(6n) {
+.section-list-item:nth-last-child(-n+2) {
     margin-bottom: 0;
 }
 img {
