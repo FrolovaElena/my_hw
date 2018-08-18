@@ -1,4 +1,12 @@
-.body {
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
     font-family: "Playfair Display", sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -31,7 +39,6 @@
     display: block;
     text-decoration: none;
     text-transform: uppercase;
-    color: #626262;
     font-size: 14px;
 }
 .menu-list-item a:hover {
