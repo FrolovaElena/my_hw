@@ -21,7 +21,7 @@ body {
     padding-top: 44px;
     padding-bottom: 83px;
 }
-.main-navigation {
+.header-page {
     margin-bottom: 110px;
 }
 .logo {
@@ -49,9 +49,14 @@ body {
 .menu-list-item {
     float: left;
     margin: 0;
-    margin-left: 40px; 
+    margin-left: 40px;
 }
+.menu-list-item:first-child {
+    margin-left: 0;
+} 
+
 .menu-link { 
+    display: block;
     text-decoration: none;
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
@@ -73,7 +78,10 @@ body {
     font-weight: 700;
     line-height: 32px;
     text-align: center;
+    text-transform: capitalize;
+    margin: 0;
     margin-bottom: 90px;
+
 }
 .section-title::after {
     display: block;
@@ -162,19 +170,20 @@ body {
     margin-bottom: 26px;
 }
 .btn {
-    display: block;
+    display: inline-block;
     width: 160px;
     height: 55px;
-    text-align: center;
     font-size: 16px;
-    line-height: 26px;
+    line-height: 55px;
     font-weight: 300;
     color: #ffffff;
+    text-align: center;
     background: #1abc9c;
+    text-decoration: none;
+    text-transform: capitalize;
     margin: 0;
     padding: 0;
 }
-
 .clearfix::after {
     display: table; 
     clear: both;
@@ -184,9 +193,9 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0;
 }
 .content {
+    margin: 0;
     margin-bottom: 13px;
 }
 .section-list-item {
