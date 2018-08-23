@@ -135,10 +135,10 @@ body {
     font-family: "Roboto", Arial, sans-serif;
     font-weight: 700;
 }
-.img-title:hover .section-list-name {
+.section-list-item:hover .section-list-name {
     background: #1abc9c;
 }
-.img-title:hover .section-list-price {
+.section-list-item:hover .section-list-price {
     background: #7fd9c7;
 }
 .section-two-list {
