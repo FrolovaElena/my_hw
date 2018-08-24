@@ -9,7 +9,7 @@ html {
 body {
     font-family: "Open Sans", Arial, sans-serif; 
     font-size: 14px;
-    font-weight: 400px;
+    font-weight: 400;
     line-height: 26px;
     color: #626262;
 
@@ -104,6 +104,7 @@ body {
     margin: 0;
     margin-right: 30px;
     margin-bottom: 30px;
+    position: relative;
 }
 .section-list-item:nth-child(4n) {
     margin-right: 0;
@@ -134,6 +135,8 @@ body {
 .img-title {
     font-family: "Roboto", Arial, sans-serif;
     font-weight: 700;
+    position: absolute;
+    bottom: 0;
 }
 .section-list-item:hover .section-list-name {
     background: #1abc9c;
@@ -183,6 +186,10 @@ body {
     text-transform: capitalize;
     margin: 0;
     padding: 0;
+}
+.btn:hover {
+        border: 1px solid navy;
+        color: navy;
 }
 .clearfix::after {
     display: table; 
