@@ -25,10 +25,11 @@ body {
     margin-bottom: 110px;
 }
 .logo {
+    display: inline-block;
     font-family: "Roboto", Arial, sans-serif;
     font-size: 30px;
     font-weight: 300;
-    line-height: 32px;
+    line-height: 36px;
     color: #626262;
     text-transform: uppercase;
     float: left;
