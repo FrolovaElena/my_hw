@@ -8,9 +8,9 @@ html {
 }
 body {
     font-family: "Open Sans", Arial, sans-serif; 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 28px;
     color: #626262;
 }
 .wrapper {
@@ -59,6 +59,12 @@ img {
     text-decoration: none;
     margin: 0;
 }
+.logo:hover {
+    color: darkblue;
+}
+.logo:focus {
+    color: darkblue;
+}
 .logo::first-letter {
     color: #1abc9c;
     font-weight: 700;
@@ -77,7 +83,6 @@ img {
 .menu-list-item:first-child {
     margin-left: 0;
 } 
-
 .menu-link { 
     display: block;
     text-decoration: none;
@@ -163,6 +168,12 @@ img {
     right: 245px;
     background-image: url(../images/next.png);
 }
+.btn:hover {
+    background-color: darkblue;
+}
+.btn:focus {
+    background-color: darkblue;
+}
 .product-list {
     margin: 0;
     padding: 0 245px 100px 245px;
@@ -202,44 +213,11 @@ img {
 .section-list-item:last-child {
     margin-right: 0;
 }
-.icon-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.icon-list-item {
-    display: inline-block;
-}
-.section-list-item a {
-    display: inline-block;
-    margin: 0;
-    width: 50px;
-    height: 50px;
-    border: 1px solid rgb(255, 255, 255); 
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;    
-}
-.icon1 {
-    background-image: url(../images/icon-1.png);
-}
-.icon2 {
-    background-image: url(../images/icon-2.png);
-}
-.icon3 {
-    background-image: url(../images/icon-3.png);
-}
-.section-list-item .icon4 {
-    background-image: url(../images/icon-4.png);
-    background-color: #323232;
-    background-position: left;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #ffffff;
-    text-align: right;
-    vertical-align: middle;
-    width: 165px;
-    padding: 10px;
+.product-descr {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0;
 }
 .product-name,
 .product-price {
@@ -261,12 +239,6 @@ img {
     background: #8c8c8c;
     text-align: center;
 }
-.product-descr {
-    font-family: "Roboto", Arial, sans-serif;
-    font-weight: 700;
-    position: absolute;
-    bottom: 0;
-}
 .section-list-item:hover .product-name {
     background-color: #1abc9c;
 }
@@ -274,16 +246,91 @@ img {
     background-color: #7fd9c7;
 }
 .section-list-item:hover .img-overlay {
-    opacity: 0.5;
+    opacity: 1;
+}
+.section-list-item:focus .product-name {
+    background-color: #1abc9c;
+}
+.section-list-item:focus .product-price {
+    background-color: #7fd9c7;
+}
+.section-list-item:focus .img-overlay {
+    opacity: 1;
+}
+.icon-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.icon-list-item {
+    margin: 0;
+    margin-right: 10px;
+    margin-bottom: 10px; 
+    float: left;
+}
+.icon-list-item:last-child(-n+2) {
+    margin-right: 0;
+}
+.icon-iist-item:last-child {
+    margin-bottom: 0;
+}
+.icon-list-item a {
+    display: inline-block;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(255, 255, 255); 
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;    
+}
+.icon1 {
+    background-image: url(../images/icon-1.png);
+}
+.icon2 {
+    background-image: url(../images/icon-2.png);
+}
+.icon3 {
+    background-image: url(../images/icon-3.png);
+}
+.icon-list-item .icon4 {
+    background-color: #323232;
+    background-position: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    width: 170px;
+    padding-bottom: 20px;
+}
+.icon4 span::before {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/icon-4.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+.icon-list-item a:hover {
+    background-color: #1abc9c;
+}
+.icon-list-item a:focus {
+    background-color: #1abc9c;
 }
 .img-overlay {
-    width: 235px;
-    height: 262px;
+    width: 100%;
+    height: 282px;
     background-color: rgba(0, 0, 0, 0.5);
+    border: 10px solid rgba(255, 255, 255, 0.7);
     opacity: 0;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: 0;
 }
 .footer-page {
     margin: 0;
