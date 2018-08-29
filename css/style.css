@@ -14,9 +14,10 @@ body {
     color: #626262;
 }
 .wrapper {
-    width: 1600px;
+    width: 1110px;
     margin: 0 auto;
-    padding: 38px 0 0 0;
+    padding: 0;
+    position: relative;
 }
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -45,7 +46,7 @@ img {
 .header-page {
     margin: 0;
     margin-bottom: 32px;
-    padding: 0 245px;
+    padding-top: 38px;
 }
 .logo {
     display: inline-block;
@@ -100,22 +101,19 @@ img {
 .menu-link:focus {
     color: #1abc9c;
 }
-.main-content {
-    background-color: #e9f0fd;
-}
 .slider {
-    width: 1600px;
     height: 600px;
     margin: 0;
     margin-bottom: 102px;
+    background-image: url(../images/slide.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .slider-list {
     padding: 0;
     margin: 0;
     list-style: none;
-}
-.slider-list-item {
-    position: relative;
 }
 .slider-descr {
     margin: 0;
@@ -136,14 +134,9 @@ img {
     color: #ffffff;
 }
 .slider-overlay {      
-    width: 1600px;
+    width: 1100px;
     height: 600px;
     margin: 0;
-    display:inline-block;
-    position: absolute;
-    top: 0;
-    padding: 208px 450px 280px 450px;
-    background-color: rgba(0, 0, 2, 0.5);
 }
 .btn {
     display: block;
@@ -154,18 +147,19 @@ img {
     height: 105px;
     background: #4f9c8b;
     position: absolute;
-    top: 225px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1;
     background-repeat: no-repeat;
     background-position: center; 
     cursor: pointer;
 }
 .prev {
-    left: 245px;
+    left: 0;
     background-image: url(../images/prev.png);
 }
 .next {
-    right: 245px;
+    right: 0;
     background-image: url(../images/next.png);
 }
 .btn:hover {
@@ -174,9 +168,17 @@ img {
 .btn:focus {
     background-color: darkblue;
 }
+.slider-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .product-list {
     margin: 0;
-    padding: 0 245px 100px 245px;
+    padding: 0;
+    padding-bottom: 100px;
+    background-color: #e9f0fd;
 }
 .section-title {
     font-family: "Roboto", Arial, sans-serif;
@@ -335,11 +337,11 @@ img {
 .footer-page {
     margin: 0;
     height: 90px;
-    padding: 34px 595px 34px 595px;
     background-color: #323232;
 }
 .footer-page-text {
     margin: 0;
+    line-height: 90px;
     color: #ffffff;
     text-transform: capitalize;
 }

@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 </head>
 <body>
-	<div class="wrapper">
-		<header class="header-page">
+	<header class="header-page">
+        <div class="wrapper">
 			<nav class="main-navigation clearfix">
 				<a class="logo" href="#">Mart</a>
 				<ul class="menu-list clearfix">
@@ -33,17 +33,20 @@
 						<a class="menu-link" href="#">Contact us</a>
 					</li>
 				</ul>
-			</nav>
-        </header>
-        <main class="main-content">
-            <div class="slider">
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="slider">
+            <div class="wrapper"> 
                 <h2 class="visually-hidden">Slider-title</h2>
                 <ul class="slider-list">
-                    <li class="slider-list-item"> 
-                        <img src="images/slide.png" alt="slide1" width="1600" height="600">              
+                    <li class="slider-list-item">               
                         <div class="slider-overlay">
-                            <p class="slider-descr">Affordable Paris tours</p>
-                            <p class="text">City tours/ tour tickets/ tour guides</p>
+                                <div class="slider-content">
+                                    <p class="slider-descr">Affordable Paris tours</p>
+                                    <p class="text">City tours/ tour tickets/ tour guides</p>
+                                </div> 
                             <button class="btn prev">
                                 <span class="visually-hidden">Previus</span>
                             </button>
@@ -54,124 +57,126 @@
                     </li>
                 </ul>
             </div>
-            <section class="product-list">
-                <h2 class="section-title">New collection</h2>
-                <ul class="section-list clearfix">
-                    <li class="section-list-item">
-                        <img src="images/category-1.png" alt="product" width="255" height="322" >
-                        <div class="product-descr">
-                            <p class="product-name">Blue tshirt</p>
-                            <p class="product-price">26$</p>
-                        </div>
-                        <div class="img-overlay">
-                            <ul class="icon-list clearfix">
-                                <li class="icon-list-item">
-                                    <a class="icon1" href="#">
-                                        <span class="visually-hidden">Like</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon2" href="#">
-                                        <span class="visually-hidden">Load</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon3" href="#">
-                                        <span class="visually-hidden">Time</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon4" href="#">
-                                        <span>Add to card</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="section-list-item">
-                        <img src="images/category-2.png" alt="product" width="255" height="322">
-                        <div class="product-descr">
-                            <p class="product-name">Woman tshirt</p>
-                            <p class="product-price">31$</p>
-                        </div>
-                        <div class="img-overlay">
-                            <ul class="icon-list clearfix">
-                                <li class="icon-list-item">
-                                    <a class="icon1" href="#">
-                                        <span class="visually-hidden">Like</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon2" href="#">
-                                        <span class="visually-hidden">Load</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon3" href="#">
-                                        <span class="visually-hidden">Time</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon4" href="#">
-                                        <span>Add to card</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="section-list-item">
-                        <img src="images/category-3.png" alt="product" width="255" height="322">
-                        <div class="product-descr">
-                            <p class="product-name">Yelloy tshirt</p>
-                            <p class="product-price">21$</p>
-                        </div>
-                        <div class="img-overlay">
-                            <ul class="icon-list clearfix">
-                                <li class="icon-list-item">
-                                    <a class="icon1" href="#">
-                                        <span class="visually-hidden">Like</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon2" href="#">
-                                        <span class="visually-hidden">Load</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon3" href="#">
-                                        <span class="visually-hidden">Time</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon4" href="#">
-                                        <span>Add to card</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="section-list-item">
-                        <img src="images/category-4.png" alt="product" width="255" height="322">
-                        <div class="product-descr">
-                            <p class="product-name">Cool lingerie</p>
-                            <p class="product-price">56$</p>
-                        </div>
-                        <div class="img-overlay">
-                            <ul class="icon-list clearfix">
-                                <li class="icon-list-item">
-                                    <a class="icon1" href="#">
-                                        <span class="visually-hidden">Like</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon2" href="#">
-                                        <span class="visually-hidden">Load</span>
-                                    </a>
-                                </li>
-                                <li class="icon-list-item">
-                                    <a class="icon3" href="#">
-                                        <span class="visually-hidden">Time</span>
-                                    </a>
+        </div>
+        <section class="product-list">
+                <div class="wrapper">
+                    <h2 class="section-title">New collection</h2>
+                    <ul class="section-list clearfix">
+                        <li class="section-list-item">
+                            <img src="images/category-1.png" alt="product" width="255" height="322" >
+                            <div class="product-descr">
+                                <p class="product-name">Blue tshirt</p>
+                                <p class="product-price">26$</p>
+                            </div>
+                            <div class="img-overlay">
+                                <ul class="icon-list clearfix">
+                                    <li class="icon-list-item">
+                                        <a class="icon1" href="#">
+                                            <span class="visually-hidden">Like</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon2" href="#">
+                                            <span class="visually-hidden">Load</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon3" href="#">
+                                            <span class="visually-hidden">Time</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon4" href="#">
+                                            <span>Add to card</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="section-list-item">
+                            <img src="images/category-2.png" alt="product" width="255" height="322">
+                            <div class="product-descr">
+                                <p class="product-name">Woman tshirt</p>
+                                <p class="product-price">31$</p>
+                            </div>
+                            <div class="img-overlay">
+                                <ul class="icon-list clearfix">
+                                    <li class="icon-list-item">
+                                        <a class="icon1" href="#">
+                                            <span class="visually-hidden">Like</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon2" href="#">
+                                            <span class="visually-hidden">Load</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon3" href="#">
+                                            <span class="visually-hidden">Time</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon4" href="#">
+                                            <span>Add to card</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="section-list-item">
+                            <img src="images/category-3.png" alt="product" width="255" height="322">
+                            <div class="product-descr">
+                                <p class="product-name">Yelloy tshirt</p>
+                                <p class="product-price">21$</p>
+                            </div>
+                            <div class="img-overlay">
+                                <ul class="icon-list clearfix">
+                                    <li class="icon-list-item">
+                                        <a class="icon1" href="#">
+                                            <span class="visually-hidden">Like</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon2" href="#">
+                                            <span class="visually-hidden">Load</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon3" href="#">
+                                            <span class="visually-hidden">Time</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon4" href="#">
+                                            <span>Add to card</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="section-list-item">
+                            <img src="images/category-4.png" alt="product" width="255" height="322">
+                            <div class="product-descr">
+                                <p class="product-name">Cool lingerie</p>
+                                <p class="product-price">56$</p>
+                            </div>
+                            <div class="img-overlay">
+                                <ul class="icon-list clearfix">
+                                    <li class="icon-list-item">
+                                        <a class="icon1" href="#">
+                                            <span class="visually-hidden">Like</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon2" href="#">
+                                            <span class="visually-hidden">Load</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-list-item">
+                                        <a class="icon3" href="#">
+                                            <span class="visually-hidden">Time</span>
+                                        </a>
                                 </li>
                                 <li class="icon-list-item">
                                     <a class="icon4" href="#">
@@ -182,10 +187,12 @@
                         </div>
                     </li>
                 </ul>
-            </section>
-        </main>
-        <footer class="footer-page">
-            <p class="footer-page-text">All rights reserved © Docan | Designed <span class="footer-page-text-select">ThemenGrafh</span></p>
-        </footer>
-    </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-page">
+        <div class="wrapper">
+                <p class="footer-page-text">All rights reserved © Docan | Designed <span class="footer-page-text-select">ThemenGrafh</span></p>     
+        </div>
+    </footer>
 </body>            
