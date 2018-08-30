@@ -14,10 +14,9 @@ body {
     color: #626262;
 }
 .wrapper {
-    width: 1110px;
+    width: 1140px;
     margin: 0 auto;
-    padding: 0;
-    position: relative;
+    padding: 0 15px;
 }
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -104,10 +103,11 @@ img {
     height: 600px;
     width: auto;
     margin: 0;
-    background: url(../images/slide.png), rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../images/slide.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 .slider-list {
     padding: 0;
@@ -133,10 +133,6 @@ img {
     font-weight: 300;
     color: #ffffff;
 }
-.slider-overlay {      
-    height: 600px;
-    margin: 0;
-}
 .btn {
     display: block;
     margin: 0;
@@ -154,11 +150,11 @@ img {
     cursor: pointer;
 }
 .prev {
-    left: 0;
+    left: 15px;
     background-image: url(../images/prev.png);
 }
 .next {
-    right: 0;
+    right: 15px;
     background-image: url(../images/next.png);
 }
 .btn:hover {
@@ -211,7 +207,7 @@ img {
     cursor: pointer;
 }
 .section-list-item:last-child {
-    margin-right: 0;
+    margin-bottom: 0;
 }
 .product-descr {
     font-family: "Roboto", Arial, sans-serif;
@@ -297,24 +293,13 @@ img {
 .icon3 {
     background-image: url(../images/icon-3.png);
 }
-.icon-list-item .icon4 {
+.icon-iist-item .icon4 {
     background-color: #323232;
-    background-position: left;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #ffffff;
+    background-image: url(../images/icon-4.png), url(../images/icon-5.png);
+    padding: 0 10px;
+    background-position-x: left, right;
+    background-clip: padding-box;
     width: 170px;
-    padding-bottom: 20px;
-}
-.icon4 span::before {
-    content: "";
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-image: url(../images/icon-4.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
 }
 .icon-list-item a:hover {
     background-color: #1abc9c;
@@ -346,4 +331,8 @@ img {
 }
 .footer-page-text-select {
     color: #1abc9c;
+    text-decoration: none;
+}
+.footer-page-text-select:hover {
+    color: navy;
 }
