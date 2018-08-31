@@ -210,7 +210,7 @@ img {
     cursor: pointer;
 }
 .section-list-item:last-child {
-    margin-bottom: 0;
+    margin-right: 0;
 }
 .product-descr {
     font-family: "Roboto", Arial, sans-serif;
@@ -257,6 +257,7 @@ img {
     opacity: 1;
 }
 .icon-list {
+    width: 170px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -271,7 +272,7 @@ img {
     margin-bottom: 10px; 
     float: left;
 }
-.icon-list-item:last-child(-n+2) {
+.icon-list-item:nth-last-child(-n+2) {
     margin-right: 0;
 }
 .icon-iist-item:last-child {
@@ -296,15 +297,15 @@ img {
 .icon3 {
     background-image: url(../images/icon-3.png);
 }
-.icon-iist-item .last {
+.icon-iist-item.last {
     width: 170px;
 }
-.icon-iist-item .icon4 {
+.icon-iist-item.last.icon4 a{
     background-color: #323232;
     background-image: url(../images/icon-4.png), url(../images/icon-5.png);
     padding: 0 10px;
-    background-position-x: left, right;
     background-origin: padding-box;
+    background-position-x: left, right;
     width: 170px;
 }
 .icon-list-item a:hover {
