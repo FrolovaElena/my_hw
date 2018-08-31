@@ -107,7 +107,10 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+.slider-title {
     position: relative;
+    height: 600px;
 }
 .slider-list {
     padding: 0;
@@ -293,12 +296,15 @@ img {
 .icon3 {
     background-image: url(../images/icon-3.png);
 }
+.icon-iist-item .last {
+    width: 170px;
+}
 .icon-iist-item .icon4 {
     background-color: #323232;
     background-image: url(../images/icon-4.png), url(../images/icon-5.png);
     padding: 0 10px;
     background-position-x: left, right;
-    background-clip: padding-box;
+    background-origin: padding-box;
     width: 170px;
 }
 .icon-list-item a:hover {
