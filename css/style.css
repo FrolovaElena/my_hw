@@ -275,7 +275,7 @@ img {
 .icon-list-item:nth-last-child(-n+2) {
     margin-right: 0;
 }
-.icon-iist-item:last-child {
+.icon-list-item:last-child {
     margin-bottom: 0;
 }
 .icon-list-item a {
@@ -300,12 +300,12 @@ img {
 .icon-list-item .last {
     width: 170px;
 }
-.icon-list-item .last .icon4 a{
+.icon-list-item .last .icon4 a {
     background-color: #323232;
     background-image: url(../images/icon-4.png), url(../images/icon-5.png);
-    padding: 0 10px;
-    background-origin: padding-box;
-    background-position-x: left, right;
+    padding: 0 20px;
+    background-origin: content-box;
+    background-position: left center, right center;
     width: 170px;
 }
 .icon-list-item a:hover {
