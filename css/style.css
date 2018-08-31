@@ -43,7 +43,6 @@ img {
     height: auto;
 }
 .header-page {
-    margin: 0;
     margin-bottom: 32px;
     padding-top: 38px;
 }
@@ -166,7 +165,7 @@ img {
 .btn:focus {
     background-color: darkblue;
 }
-.slider-content {
+.slider-list-item {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -203,6 +202,8 @@ img {
     list-style: none; 
 }
 .section-list-item {
+    width: 255px;
+    height: 322px;
     margin: 0;
     margin-right: 30px;
     float: left;
@@ -300,12 +301,10 @@ img {
 .icon-list-item .last {
     width: 170px;
 }
-.icon-list-item .last .icon4 a {
+.icon-list-item .icon4  {
     background-color: #323232;
-    background-image: url(../images/icon-4.png), url(../images/icon-5.png);
-    padding: 0 20px;
-    background-origin: content-box;
-    background-position: left center, right center;
+    background-image: url(../images/icon-4.png), url(../images/icon-5.png); 
+    background-position: 10% 50%, 80% 50%;
     width: 170px;
 }
 .icon-list-item a:hover {
