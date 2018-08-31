@@ -297,10 +297,10 @@ img {
 .icon3 {
     background-image: url(../images/icon-3.png);
 }
-.icon-iist-item .last {
+.icon-list-item .last {
     width: 170px;
 }
-.icon-iist-item .last .icon4 a{
+.icon-list-item .last .icon4 a{
     background-color: #323232;
     background-image: url(../images/icon-4.png), url(../images/icon-5.png);
     padding: 0 10px;
