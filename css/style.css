@@ -31,6 +31,7 @@ body {
     font-weight: 400;
     line-height: 24px;
     color: #626262;
+    margin: 0;
 }
 .wrapper {
     width: 1200px;
@@ -150,7 +151,7 @@ body {
     background-position: center;
     position: absolute;
     top: 0;
-    left: 20px;
+    left: 0;
 }
 .icon1::before {
     background-image: url(../images/icon-1.png);
@@ -182,8 +183,8 @@ body {
     justify-content: space-between;
 }
 .services-list-item {
-    flex: 0 0 260px;
-    padding: 0 40px 0 80px;
+    flex: 0 0 320px;
+    padding-left: 60px;
     position: relative;
     margin-bottom: 100px;
 }
@@ -205,7 +206,7 @@ body {
     position: relative;
 }
 .team-list-item:hover .img-overlay,
-.team-list-item:focus {
+.team-list-item:focus .img-overlay {
     opacity: 1;
     box-shadow: 3px 2px 5px;
 }
@@ -215,8 +216,12 @@ body {
     margin-bottom: 90px;
     text-align: center;
 }
-.team-list-item img {
+.team-list-image {
     margin-bottom: 30px;
+    transition: transform 0.2s linear;
+}
+.team-list-item:hover .img-overlay {
+    transform: translate(-10px, -10px);
 }
 .member-name {
     margin: 0;
@@ -235,7 +240,6 @@ body {
 .img-overlay {
     display: flex;
     justify-content: center;
-    align-items: center;
     opacity: 0;
     width: 380px;
     height: 470px;
@@ -243,6 +247,7 @@ body {
     position: absolute;
     top: 0;
     cursor: pointer;
+    transition: transform 0.2s linear, opasity 0.2s linear; 
 }
 .social-list {
     margin: 0;
