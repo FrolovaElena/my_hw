@@ -2,7 +2,7 @@ html {
     box-sizing: border-box;
 }
 *,
-*::befote,
+*::before,
 *::after {
     box-sizing: inherit;
 }
@@ -56,7 +56,8 @@ body {
     cursor: pointer;
     transition: transform 0.5s linear;
 }
-.logo:hover {
+.logo:hover, 
+.logo:focus {
     transition: transform 0.5s linear;
     transform: scale(1.2);
 }
@@ -92,10 +93,7 @@ body {
     opacity: 0;
     transition: opacity 0.5s linear;
 }
-.menu-link:hover::after {
-    transition: opacity 0.5s linear;
-    opacity: 1;
-}
+.menu-link:hover::after,
 .menu-link:focus::after {
     transition: opacity 0.5s linear;
     opacity: 1;
@@ -116,6 +114,7 @@ body {
     font-weight: 700;
     color: #000000;
     line-height: 36px;
+    text-transform: uppercase;
     display: block;
     text-align: center;
 }
@@ -136,6 +135,7 @@ body {
     line-height: 28px;
     display: block;
     margin-bottom: 20px;
+    text-transform: none;
 }
 .services-title {
     font-family: Monserrat, sans-serif;
@@ -188,7 +188,7 @@ body {
     justify-content: space-between;
 }
 .services-list-item {
-    flex: 0 0 320px;
+    flex: 0 0 380px;
     padding-left: 60px;
     position: relative;
     margin-bottom: 100px;
@@ -212,7 +212,8 @@ body {
 }
 .team-list-item:hover .img-overlay,
 .team-list-item:focus .img-overlay {
-    opacity: 1;    box-shadow: 3px 2px 5px;
+    opacity: 1;  
+    box-shadow: 3px 2px 5px;
 }
 .section-descr {
     width: 940px;
@@ -232,7 +233,7 @@ body {
 .team-list-item:focus .team-list-image {
     transform: translate(-10px, -10px);
 }
-.team-list-item:after {
+.team-list-item::after {
     content: "";
     display: block;
     position: absolute;
@@ -289,7 +290,6 @@ body {
     background-position: center;
 }
 .facebook {
-    background-color: #95e1d3;
     background-image: url(../images/facebook.png);
 }
 .twitter {
@@ -301,6 +301,10 @@ body {
 .instagram {
     background-image: url(../images/instagram.png);
 }
+.social-list-item:hover,
+.social-list-item:focus {
+    background-color: #95e1d3;
+} 
 .footer-page {
     display: flex;
 }
@@ -323,11 +327,12 @@ body {
 .footer-text a:hover,
 .footer-text a:focus {
     color: #f38181;
+    font-weight: 600;
 }
 .email {
     margin-left: auto;
     flex-basis: 230px;
-    height: 36px;
+    height: 40px;
     font-family: Monserrat, sans-serif;
     font-size: 14px;
     font-weight: 300;
