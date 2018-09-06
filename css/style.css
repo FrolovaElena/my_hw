@@ -106,7 +106,7 @@ body {
 .section-services {
     margin-bottom: 100px;
 }
-.section-title {
+.section-title-added {
     margin: 0;
     margin-bottom: 60px;
     font-family: Monserrat, sans-serif;
@@ -118,7 +118,7 @@ body {
     display: block;
     text-align: center;
 }
-.section-title::after {
+.section-title-added::after {
     width: 60px;
     height: 5px;
     display: block;
@@ -128,7 +128,7 @@ body {
     margin-top: 40px;
 
 }
-.selected {
+.section-title {
     font-family: "Kaushan Script";
     font-size: 24px;
     color: #000000;
@@ -136,6 +136,7 @@ body {
     display: block;
     margin-bottom: 20px;
     text-transform: none;
+    text-align: center;
 }
 .services-title {
     font-family: Monserrat, sans-serif;
