@@ -30,7 +30,7 @@ body {
     font-size: 15px;
     font-weight: 400;
     line-height: 24px;
-    color: #626262;
+    color: #999999;
     margin: 0;
 }
 .wrapper {
@@ -96,6 +96,10 @@ body {
     transition: opacity 0.5s linear;
     opacity: 1;
 }
+.menu-link:focus::after {
+    transition: opacity 0.5s linear;
+    opacity: 1;
+}
 .menu-link:hover,
 .menu-link:focus {
     transition: color 0.5s linear;
@@ -134,8 +138,9 @@ body {
     margin-bottom: 20px;
 }
 .services-title {
-    font-family: Monserrat;
+    font-family: Monserrat, sans-serif;
     font-size: 14px;
+    font-weight: 200;
     line-height: 16px;
     color: #000000;
     text-transform: uppercase;
@@ -207,8 +212,7 @@ body {
 }
 .team-list-item:hover .img-overlay,
 .team-list-item:focus .img-overlay {
-    opacity: 1;
-    box-shadow: 3px 2px 5px;
+    opacity: 1;    box-shadow: 3px 2px 5px;
 }
 .section-descr {
     width: 940px;
@@ -220,8 +224,24 @@ body {
     margin-bottom: 30px;
     transition: transform 0.2s linear;
 }
-.team-list-item:hover .img-overlay {
+.team-list-item:hover .img-overlay,
+.team-list-item:hover .team-list-image {
     transform: translate(-10px, -10px);
+}
+.team-list-item:focus .img-overlay,
+.team-list-item:focus .team-list-image {
+    transform: translate(-10px, -10px);
+}
+.team-list-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 380px;
+    height: 470px;
+    background-color: #95e1d3;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 .member-name {
     margin: 0;
@@ -246,6 +266,7 @@ body {
     background: linear-gradient(rgba(243, 129, 129, 0.9), rgba(253, 227, 138, 0.9));
     position: absolute;
     top: 0;
+    z-index: 1;
     cursor: pointer;
     transition: transform 0.2s linear, opasity 0.2s linear; 
 }
