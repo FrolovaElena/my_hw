@@ -84,7 +84,6 @@ body {
 }
 .menu-link::after {
     display: block;
-    width: 50px;
     height: 3px;
     background-color: #f38181;
     margin: auto;
@@ -106,9 +105,11 @@ body {
 .section-services {
     margin-bottom: 100px;
 }
+.section-header {
+    margin-bottom: 90px;
+}
 .section-title-added {
     margin: 0;
-    margin-bottom: 60px;
     font-family: Monserrat, sans-serif;
     font-size: 30px;
     font-weight: 700;
@@ -134,6 +135,7 @@ body {
     color: #000000;
     line-height: 28px;
     display: block;
+    margin: 0;
     margin-bottom: 20px;
     text-transform: none;
     text-align: center;
@@ -208,6 +210,7 @@ body {
     justify-content: space-between; 
 }
 .team-list-item {
+    flex: 0, 0, 380px;
     text-align: center;
     position: relative;
 }
@@ -219,7 +222,7 @@ body {
 .section-descr {
     width: 940px;
     margin: 0 auto;
-    margin-bottom: 90px;
+    margin-top: 60px;
     text-align: center;
 }
 .team-list-image {
@@ -276,15 +279,15 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    width: 240px;
+    width: 224px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .social-list-item {
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     background-color: #fce38a;
     border: 1px solid #f38181;
     background-repeat: no-repeat;
