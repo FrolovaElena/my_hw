@@ -210,7 +210,7 @@ body {
     justify-content: space-between; 
 }
 .team-list-item {
-    flex: 0, 0, 380px;
+    flex: 0 0 380px;
     text-align: center;
     position: relative;
 }
@@ -284,7 +284,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.social-list-item {
+.social-list-item a {
     display: block;
     width: 55px;
     height: 55px;
@@ -293,20 +293,20 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-.facebook {
+.facebook a {
     background-image: url(../images/facebook.png);
 }
-.twitter {
+.twitter a {
     background-image: url(../images/twitter.png);
 }
-.pinterest {
+.pinterest a {
     background-image: url(../images/pinterest.png);
 }
-.instagram {
+.instagram a {
     background-image: url(../images/instagram.png);
 }
-.social-list-item:hover,
-.social-list-item:focus {
+.social-list-item a:hover,
+.social-list-item a:focus {
     background-color: #95e1d3;
 } 
 .footer-page {
