@@ -1,0 +1,109 @@
+@media (max-width: 699px) {
+    .header-page {
+        margin-bottom: 3.6rem;
+        padding-top: 2rem;
+        text-align: center;
+    }
+    .form-list {
+        margin-bottom: 11.8rem;
+    }
+    .promo-title {
+        margin-bottom: 2.2rem;
+    }
+    .section-header {
+        margin-bottom: 1.8rem;
+    }
+    .partners {
+        padding-top: 7.2rem;
+        padding-bottom: 5.7rem;
+    }
+    .partners-list {
+        margin-bottom: 3rem;
+    }
+    .partners-list-item:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
+@media (min-width: 700px) {
+    .header-page {
+        padding-top: 3.8rem;
+        margin-bottom: 15rem;
+    }
+    .main-nav {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .section-header {
+        margin: 0 auto;
+        margin-bottom: 3.6rem;
+        width: 49rem;
+    }
+    .banner {
+        height: 70rem;
+    }
+    .promo-title {
+        font-size: 5.2rem;
+        line-height: 6.2rem;
+        margin-bottom: 4rem;
+    }
+    .promo-subtitle {
+        font-size: 2.4rem;
+        line-height: 2.8rem;
+    }
+    .partners {
+        padding-top: 7.6rem;
+        text-align: center;
+    }
+    .partners-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-bottom: 3.8rem; 
+    }
+    .partners-list-item {
+        width: 32.2rem;
+    }
+}
+@media (min-width: 700px) and (max-width: 979px) {
+    .wrapper {
+        width: 68rem;
+    }
+    .banner {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), 
+        url(../images/image-medium.jpg);
+        width: 76.8rem;
+    }
+    .partners {
+        padding-bottom: 4rem;
+    }
+    .partners-list {
+        width: 49.2rem; 
+    }
+    .partners-list-item {
+        width: 23.6rem;     
+    }
+    .partners-list-item:not(:nth-last-child(-n+2)) {
+        margin-bottom: 6rem;
+    }
+}
+@media (min-width: 980px) {
+    .wrapper {
+        width: 960px;
+    }
+    .banner {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), 
+        url(../images/image.jpg);
+        width: auto;
+    }
+    .partners {
+        padding-bottom: 7.2rem
+    }
+    .partners-list-item {
+        width: 22.2rem;
+    }
+    .partners-list-item:not(:nth-last-child(-n+4)) {
+        margin-bottom: 6rem;
+    }
+}

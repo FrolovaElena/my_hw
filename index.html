@@ -7,70 +7,61 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 <body>
-    <header class="header-page wrapper">
+    <div class="banner">
+        <header class="header-page wrapper">
             <nav class="main-nav">
-                <a href="#" class="logo">
-                    <span class="visually-hidden">Golden</span>
-                </a>
-                <ul class="menu-list">
-                    <li class="menu-list-item">
-                        <a class="menu-link" href="#">home</a>
+                <ul class="form-list">
+                    <li class="form-list-item">
+                        <a href="#" class="btn btn-form">Log in</a>
                     </li>
-                    <li class="menu-list-item">
-                        <a class="menu-link" href="#">service</a>
-                    </li>
-                    <li class="menu-list-item">
-                        <a class="menu-link" href="#">portpholio</a>
-                    </li>
-                    <li class="menu-list-item">
-                        <a class="menu-link" href="#">about</a>
-                    </li>
-                    <li class="menu-list-item">
-                        <a class="menu-link" href="#">contact</a>
+                    <li class="form-list-item">
+                        <a href="#" class="btn btn-form">Sign up</a>
                     </li>
                 </ul>
-            </nav>
-    </header>
-    <main class="main-content">
-        <section class="section-services wrapper">
-                <header class="section-header">
-                    <h2 class="section-title">Services</h2>
-                    <p class="section-sub-title">Lorem ipsum dolor sit amet consectetur.</p>
-                </header>
-                <ul class="section-list">
-                    <li class="section-list-item icon-1">
-                        <h3 class="service-title">E-Commerse</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores temporibus aut ad necessitatibus sunt amet impedit ab et off.</p>
-                    </li>
-                    <li class="section-list-item icon-2">
-                        <h3 class="service-title">Responsive web</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores temporibus aut ad necessitatibus sunt amet impedit ab etotr.</p>
-                    </li>
-                    <li class="section-list-item icon-3">
-                        <h3 class="service-title">Web security</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores temporibus aut ad necessitatibus sunt amet impedit ab et offic!</p>
-                    </li>
-                </ul>
+                <a href="#" class="site-logo">Urlaubsgluck</a>
+            </nav>    
+        </header>
+        <section class="promo wrapper">
+            <header class="section-header">
+                <h2 class="promo-title">Share your holiday dream</h2>
+                <p class="promo-subtitle">And find perfect the partner to fullfill it</p>
+            </header>
+            <a href="#" class="btn btn-promo">Find your holiday partner</a>
         </section>
-        <section class="section-form">
-            <div class="wrapper">
-                <header class="section-header">
-                        <h2 class="section-title">Contact us</h2>
-                        <p class="section-sub-title">Lorem ipsum dolor sit amet consectetur.</p>
-                </header>
-                <form action="#">
-                    <div class="massage-form">
-                        <input class="massage-form-point" type="text" name="user_name" placeholder="Your name *" required autofocus>
-                        <input class="massage-form-point" type="email" placeholder="Your email *" name="user_email" required>
-                        <input class="massage-form-point" type="text" placeholder="Subject" name="subject"> 
-                        <textarea class="massage-form-point massage" name="user_massage" placeholder="Your massage *" required></textarea>
-                        <button class="submit">Send massage</button>
-                    </div>
-                </form>
-            </div>
+    </div>
+    <main class="main-content">
+        <section class="partners wrapper">
+            <header class="section-header">
+                <h2 class="section-title">Meet a partner for your best holliday</h2>
+            </header>
+            <ul class="partners-list">
+                <li class="partners-list-item first">
+                    <img src="images/photo-1.jpg" alt="photo">
+                    <p class="partner-name">Bradley Hunter</p>
+                    <p class="partner-descr">Based in Chicago. I love playing tennis and loud music</p>
+                </li>
+                <li class="partners-list-item second">
+                    <img src="images/photo-2.jpg" alt="photo">
+                    <p class="partner-name">Heather Walker</p>
+                    <p class="partner-descr">I'm a happy parson that loves cats and climbing on mountains</p>
+                </li>
+                <li class="partners-list-item third">
+                    <img src="images/photo-3.jpg" alt="photo">
+                    <p class="partner-name">Lucas Marsha</p>
+                    <p class="partner-descr">I get my inspiration from nature and objects around me. I have a passion to colours, typography and skateboards.</p>
+                </li>
+                <li class="partners-list-item fourth">
+                    <img src="images/photo-4.jpg" alt="phoho">
+                    <p class="partner-name">Breadly Hunter</p>
+                    <p class="partner-descr">Based in Chicago. I love playing tennis and loud music</p>
+                </li>
+            </ul>
+            <a href="#" class="btn btn-partners">See other partners</a>
         </section>
     </main>
 </body>
