@@ -27,20 +27,18 @@
 @media (min-width: 700px) {
     .header-page {
         padding-top: 3.8rem;
-        margin-bottom: 15rem;
+        height: 70rem;
     }
     .main-nav {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
+        margin-bottom: 15rem;
     }
     .section-header {
         margin: 0 auto;
         margin-bottom: 3.6rem;
         width: 49rem;
-    }
-    .banner {
-        height: 70rem;
     }
     .promo-title {
         font-size: 5.2rem;
@@ -70,11 +68,6 @@
     .wrapper {
         width: 68rem;
     }
-    .banner {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), 
-        url(../images/image-medium.jpg);
-        width: 76.8rem;
-    }
     .partners {
         padding-bottom: 4rem;
     }
@@ -91,11 +84,6 @@
 @media (min-width: 980px) {
     .wrapper {
         width: 960px;
-    }
-    .banner {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), 
-        url(../images/image.jpg);
-        width: auto;
     }
     .partners {
         padding-bottom: 7.2rem

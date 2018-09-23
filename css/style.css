@@ -48,15 +48,13 @@ body {
 .site-logo:focus {
     color: #ff4e50;
 }
-.banner {
+.header-page {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), 
-                      url(../images/image-small.jpg);
+                      url(../images/image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 32rem;
     height: 54rem;
-    margin: 0 auto;
 }
 .promo {
     text-align: center;
@@ -187,5 +185,3 @@ body {
     margin: 0;
     text-align: center;
 }
-
-
