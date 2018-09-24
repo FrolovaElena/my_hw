@@ -20,7 +20,6 @@ body {
     color: #666666;
 }
 .wrapper {
-    width: 32rem;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -55,6 +54,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 54rem;
+    min-width: 32rem;
 }
 .promo {
     text-align: center;
@@ -152,8 +152,8 @@ body {
     border: 0.4rem solid #ffffff;
     border-radius: 50%;
     position: absolute;
-    top: 8.5rem;
-    right: 4rem;
+    top: 8rem;
+    right: 4.5rem;
     background-repeat: no-repeat;
     background-position: center;
 }

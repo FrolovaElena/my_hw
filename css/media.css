@@ -4,6 +4,9 @@
         padding-top: 2rem;
         text-align: center;
     }
+    .wrapper {
+        width: 32rem;
+    }
     .form-list {
         margin-bottom: 11.8rem;
     }
@@ -75,7 +78,7 @@
         width: 49.2rem; 
     }
     .partners-list-item {
-        width: 23.6rem;     
+        flex: 0 0 23.6rem;     
     }
     .partners-list-item:not(:nth-last-child(-n+2)) {
         margin-bottom: 6rem;
@@ -83,13 +86,13 @@
 }
 @media (min-width: 980px) {
     .wrapper {
-        width: 960px;
+        width: 96rem;
     }
     .partners {
         padding-bottom: 7.2rem
     }
     .partners-list-item {
-        width: 22.2rem;
+        flex: 0 0 22.2rem;
     }
     .partners-list-item:not(:nth-last-child(-n+4)) {
         margin-bottom: 6rem;
