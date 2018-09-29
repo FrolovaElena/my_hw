@@ -3,8 +3,8 @@ html {
     font-size: 62.5%;
 }
 *,
-::before,
-::after {
+*::before,
+*::after {
     box-sizing: inherit;
 }
 img {
@@ -53,8 +53,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 54rem;
     min-width: 32rem;
+    padding-bottom: 14rem;
 }
 .hero {
     text-align: center;
