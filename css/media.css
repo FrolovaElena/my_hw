@@ -64,7 +64,7 @@
         margin-bottom: 3.8rem; 
     }
     .partners-list-item {
-        width: 32.2rem;
+        flex: 0 0 220px;
     }
 }
 @media (min-width: 768px) and (max-width: 959px) {
@@ -90,9 +90,6 @@
     }
     .partners {
         padding-bottom: 7.2rem
-    }
-    .partners-list-item {
-        flex: 0 0 22rem;
     }
     .partners-list-item:not(:nth-last-child(-n+4)) {
         margin-bottom: 6rem;
