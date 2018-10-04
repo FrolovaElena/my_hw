@@ -94,7 +94,7 @@ body {
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-weight: 400;
-    line-height: 16px;
+    line-height: 32px;
     cursor: pointer;
 }
 .hover-color {
@@ -106,7 +106,6 @@ body {
     height: 3px;
     background-color: #fce38a;
     margin: auto;
-    margin-top: 5px;
     content: "";
     opacity: 0;
 }
