@@ -86,6 +86,9 @@ body {
 .menu-list-item::nth-last-child(-n+2) {
     width: 32px;
 }
+.menu-list-item::not(::nth-last-child(-n+2)) {
+    padding-top: 8px;
+}
 .menu-link {
     display: block;
     margin: 0;
@@ -94,7 +97,7 @@ body {
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 16px;
     cursor: pointer;
 }
 .hover-color {
@@ -106,6 +109,7 @@ body {
     height: 3px;
     background-color: #fce38a;
     margin: auto;
+    margin-top: 5px;
     content: "";
     opacity: 0;
 }
@@ -388,6 +392,7 @@ body {
 } 
 .icon-hover {
     fill: #f38181;
+    padding-top: 10px;
 }
 .icon-hover:hover,
 .icon-hover:focus {
