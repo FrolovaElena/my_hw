@@ -70,7 +70,6 @@ body {
 }
 .header-page {
     margin: 0;
-    margin-bottom: 65px;
     background-image: linear-gradient(rgba(243, 129, 129, 0.9), rgba(253, 227, 138, 0.9)),
                     url(../images/banner-min.jpg);
     background-position: center;
@@ -98,7 +97,7 @@ body {
     margin-left: auto;
     margin-right: 50px;
 }
-.page-nav__menu-list--svg {
+.page-nav__user-nav {
     width: 80px;
 }
 .page-nav__menu-link {
@@ -108,13 +107,13 @@ body {
 .page-nav__menu-link:focus {
     color: #fce38a;
 }
-.page-nav__menu-icon {
+.user-nav__icon {
     width: 18px;
     height: 18px;
     fill: #ffffff;
 }
-.page-nav__menu-icon:hover,
-.page-nav__menu-icon:focus {
+.user-nav__icon:hover,
+.user-nav__icon:focus {
     fill: #fce38a;
 }
 .page-nav__menu-link::after {
@@ -155,7 +154,7 @@ body {
     display: block;
     text-align: center;
 }
-.main-section__subtitle::after {
+.section__subtitle::after {
     width: 60px;
     height: 5px;
     display: block;
@@ -164,13 +163,13 @@ body {
     margin: auto;
     margin-top: 40px;
 }
-.main-section__title {
+.section__title {
     font-size: 24px;
     color: #000000;
     line-height: 28px;
     margin-bottom: 20px;
 }
-.main-section__subtitle {
+.section__subtitle {
     font-size: 30px;
     color: #000000;
     line-height: 36px;
@@ -200,7 +199,7 @@ body {
 .services__item:nth-last-child(-n+3) {
     margin-bottom: 0;
 } 
-.services__item--title {
+.services__item-title {
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-weight: 200;
@@ -210,14 +209,18 @@ body {
     margin: 0;
     margin-bottom: 20px;
 }
-.hero__btn {
+.hero__link {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    width: 160px;
+    height: 40px;
     border: 2px solid #ffffff;
     line-height: 36px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
-.hero__btn:hover,
-.hero__btn:focus {
+.hero__link:hover,
+.hero__link:focus {
     color: #fce38a;
     border-color: #fce38a;
 }
@@ -232,25 +235,25 @@ body {
     top: 0;
     left: 0;
 }
-.alarm::before {
+.services__icon--alarm::before {
     background-image: url(../images/alarm.svg);
 }
-.graph::before {
+.services__icon--graph::before {
     background-image: url(../images/graph.svg);
 }
-.computer::before {
+.services__icon--computer::before {
     background-image: url(../images/сomputer.svg);
 }
-.book::before {
+.services__icon--book::before {
     background-image: url(../images/book.svg);
 }
-.home::before {
+.services__icon--home::before {
     background-image: url(../images/home.svg);
 }
-.image::before {
+.services__icon--image::before {
     background-image: url(../images/image.svg);
 }
-.services__item--content {
+.services__item-content {
     margin: 0;
 }
 .team {
@@ -298,7 +301,7 @@ body {
     left: 0;
     z-index: -1;
 }
-.team-card__descr--name {
+.team-card__descr-name {
     margin: 0;
     margin-bottom: 20px;
     font-family: Monserrat, sans-serif;
@@ -307,7 +310,7 @@ body {
     line-height: 16px;
     text-transform: uppercase;
 }
-.team-card__descr--pos {
+.team-card__descr-pos {
     margin:  0;
     font-weight: 300;
     font-style: italic;
