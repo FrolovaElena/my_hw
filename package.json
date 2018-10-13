@@ -1,0 +1,44 @@
+{
+  "name": "my_hw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "browser-sync src -w",
+    "dev": "npm run server",
+    "lint": "stylelint src/css/*.css",
+    "prefix": "postcss src/css/*.css --use autoprefixer -d build/css",
+    "minify": "postcss src/css/*.css --use cssnano -d build/css",
+    "css:build": "postcss src/css/*.css --use autoprefixer --use cssnano -d build/css",
+    "clean:build": "rimraf build && mkdir build",
+    "html:build": "cpx src/*.html build",
+    "imghelp": "imagemin --help",
+    "images:build": "imagemin src/images/* --out-dir=build/images",
+    "htmlmin": "html-minifier --input-dir src --output-dir build --collapse-whitespace --file-ext html",
+    "prebuild": "npm run lint",
+    "build": "npm run clean:build && npm run images:build && npm run css:build && npm run htmlmin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrolovaElena/my_hw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrolovaElena/my_hw/issues"
+  },
+  "homepage": "https://github.com/FrolovaElena/my_hw#readme",
+  "dependencies": {
+    "autoprefixer": "^9.1.5",
+    "browser-sync": "^2.26.0",
+    "cpx": "^1.5.0",
+    "cssnano": "^4.1.4",
+    "html-minifier": "^3.5.20",
+    "imagemin-cli": "^3.0.0",
+    "postcss-cli": "^6.0.0",
+    "rimraf": "^2.6.2",
+    "stylelint": "^9.6.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
