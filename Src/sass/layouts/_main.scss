@@ -1,0 +1,37 @@
+.services {
+  margin-bottom: 100px;
+}
+
+.section--title {
+  font-size: 24px;
+  color: map-get($colors, title);
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+.section--subtitle {
+  font-size: 30px;
+  color: map-get($colors, title);
+  line-height: 36px;
+
+  &::after {
+    @extend %psevdoelement;
+
+    @include size(60px, 5px);
+
+    background: map-get($colors, secondary-dark);
+    margin: auto;
+    margin-top: 40px;
+  }
+}
+
+.section-descr {
+  width: 940px;
+  margin: 0 auto;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.team {
+  margin-bottom: 90px;
+}

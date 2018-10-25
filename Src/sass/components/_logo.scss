@@ -1,0 +1,9 @@
+.page-nav-logo {
+  @extend %link;
+
+  @include size(86px, 24px);
+
+  background-image: url('../images/logo-min.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}

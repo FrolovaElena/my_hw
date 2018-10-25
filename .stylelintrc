@@ -1,3 +1,9 @@
 {
-    "extends": "stylelint-config-standard"
+    "extends": ["stylelint-config-standard", "stylelint-config-sass-guidelines"],
+    "plagins": [
+        "stylelint-scss"
+    ],
+    "rules": {
+        "order/properties-alphabetical-order": null
+    }
 }

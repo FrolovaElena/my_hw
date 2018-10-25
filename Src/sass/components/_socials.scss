@@ -1,0 +1,30 @@
+.img-overlay-social {
+  @extend %list;
+
+  flex: 0 0 224px;
+  align-items: center;
+}
+
+.social-link {
+  @extend %link;
+
+  @include size(55px, 55px);
+
+  padding-top: 10px;
+  background-color: map-get($colors, accent);
+  border: 1px solid map-get($colors, secondary-dark);
+
+  &:hover,
+  &:focus {
+    background-color: map-get($colors, secondary-light);
+  }
+}
+
+.social-icon {
+  fill: map-get($colors, secondary-dark);
+
+  &:hover,
+  &:focus {
+    fill: map-get($colors, primery-light);
+  }
+}

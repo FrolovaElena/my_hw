@@ -1,0 +1,7 @@
+body {
+  @include text(15px, 400, 24px);
+
+  font-family: map-get($fonts, main);
+  color: map-get($colors, primery-dark);
+  margin: 0;
+}

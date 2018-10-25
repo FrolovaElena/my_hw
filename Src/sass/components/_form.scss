@@ -1,0 +1,31 @@
+.email {
+  @include text(14px, 300, 36px);
+
+  margin-left: auto;
+  flex-basis: 230px;
+  height: 40px;
+  font-family: map-get($fonts, secondary);
+  font-style: italic;
+  padding: 0 0 0 10px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border: 2px solid  map-get($colors, secondary-light);
+  }
+}
+
+.footer-page-btn {
+  @extend %link;
+  @extend %button;
+
+  background-color: map-get($colors, secondary-light);
+  line-height: 40px;
+  transition: background-color 0.5s linear;
+
+  &:hover,
+  &:focus {
+    transition: background-color 0.5s linear;
+    background-color: map-get($colors, secondary-dark);
+  }
+}

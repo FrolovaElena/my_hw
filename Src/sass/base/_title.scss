@@ -1,0 +1,20 @@
+.section-header {
+  margin-bottom: 90px;
+}
+
+.section-title {
+  font-family: map-get($fonts, title);
+  display: block;
+  margin: 0 auto;
+  text-transform: none;
+  text-align: center;
+}
+
+.section-subtitle {
+  margin: 0 auto;
+  font-family: map-get($fonts, secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+}

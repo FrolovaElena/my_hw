@@ -1,0 +1,28 @@
+.footer-page {
+  @extend %list;
+
+  display: flex;
+}
+
+.footer-page-text {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-family: map-get($fonts, secondary);
+  color: map-get($colors, title);
+}
+
+.footer-page-link {
+  @extend %link;
+
+  font-weight: 300;
+  line-height: 16px;
+  color: map-get($colors, secondary-light);
+  text-transform: capitalize;
+
+  &:hover,
+  &:focus {
+    color: map-get($colors, secondary-dark);
+    font-weight: 600;
+  }
+}

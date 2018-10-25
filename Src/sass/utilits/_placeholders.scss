@@ -1,0 +1,32 @@
+%list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+%link {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: map-get($colors, primery-light);
+  font-family: map-get($fonts, secondary);
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+%button {
+  @include size(160px, 40px);
+
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+%psevdoelement {
+  content: '';
+  display: block;
+}

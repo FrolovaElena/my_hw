@@ -1,0 +1,71 @@
+.team-list {
+  @extend %list;
+}
+
+.team-card-image {
+  margin-bottom: 30px;
+  transition: transform 0.2s linear;
+}
+
+.img-overlay {
+  background:
+    linear-gradient(
+      rgba(map-get($colors, secondary-dark), 0.9),
+      rgba(map-get($colors, accent), 0.9));
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  width: 380px;
+  height: 470px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  transition: transform 0.2s linear, opasity 0.2s linear;
+}
+
+.team-card {
+  flex: 0 0 380px;
+  text-align: center;
+  position: relative;
+
+  &:hover .img-overlay,
+  &:hover .team-card-image {
+    transform: translate(-10px, -10px);
+    opacity: 1;
+  }
+
+  &:focus .img-overlay,
+  &:focus .team-card-image {
+    transform: translate(-10px, -10px);
+    opacity: 1;
+  }
+
+  &::after {
+    @extend %psevdoelement;
+
+    @include size(380px, 470px);
+
+    position: absolute;
+    background-color: map-get($colors, secondary-light);
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.team-card-descr-name {
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: map-get($fonts, secondary);
+  font-size: 14px;
+  color: map-get($colors, title);
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.team-card-descr-pos {
+  margin: 0;
+  font-weight: 300;
+  font-style: italic;
+}
