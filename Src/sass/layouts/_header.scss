@@ -5,7 +5,7 @@
     linear-gradient(
       rgba(map-get($colors, secondary-dark), 0.9),
       rgba(map-get($colors, accent), 0.9)),
-    url(../images/banner-min.jpg);
+    url('../images/banner-min.jpg');
   background-position: center;
   background-size: cover;
   padding-bottom: 230px;
@@ -16,7 +16,7 @@
       linear-gradient(
         rgba(map-get($colors, secondary-dark), 0.9),
         rgba(map-get($colors, secondary-light), 0.9)),
-      url(../images/banner@2x-min.jpg);
+      url('../images/banner@2x-min.jpg');
   }
 }
 
