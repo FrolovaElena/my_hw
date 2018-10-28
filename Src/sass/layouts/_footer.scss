@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   margin: 0;
-  font-family: map-get($fonts, secondary);
+  font-family: $fonts-secondary;
   color: map-get($colors, title);
 }
 

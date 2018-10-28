@@ -1,6 +1,8 @@
 .page-nav {
   @extend %list;
-
+  
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 182px;
 }
 
@@ -55,6 +57,3 @@
   }
 }
 
-.icon {
-  @include size(32px, 32px);
-}

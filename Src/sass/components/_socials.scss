@@ -10,7 +10,9 @@
 
   @include size(55px, 55px);
 
-  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: map-get($colors, accent);
   border: 1px solid map-get($colors, secondary-dark);
 
@@ -27,4 +29,20 @@
   &:focus {
     fill: map-get($colors, primery-light);
   }
+}
+
+.icon-facebook {
+  @include size(12px, 26px);
+}
+
+.icon-twitter {
+  @include size(26px, 21px);
+}
+
+.icon-pinterest {
+  @include size(20px, 26px);
+}
+
+.icon-instagram {
+  @include size(26px, 26px);
 }

@@ -1,7 +1,10 @@
 .hero-link {
   @extend %link;
-  @extend %button;
 
+  @include size(160px, 40px);
+
+  text-align: center;
+  font-weight: 700;
   border: 2px solid map-get($colors, primary-light);
   line-height: 36px;
   margin: 0 auto;

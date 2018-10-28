@@ -29,7 +29,7 @@
 .services-item-title {
   @include text(14px, 200, 16px);
 
-  font-family: map-get($fonts, secondary);
+  font-family: $fonts-secondary;
   color: map-get($colors, title);
   text-transform: uppercase;
   margin: 0;

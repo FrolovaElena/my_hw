@@ -4,7 +4,7 @@
   margin-left: auto;
   flex-basis: 230px;
   height: 40px;
-  font-family: map-get($fonts, secondary);
+  font-family: $fonts-secondary;
   font-style: italic;
   padding: 0 0 0 10px;
   cursor: pointer;

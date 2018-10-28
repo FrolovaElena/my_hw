@@ -8,8 +8,7 @@
 }
 
 .img-overlay {
-  background:
-    linear-gradient(
+  background: linear-gradient(
       rgba(map-get($colors, secondary-dark), 0.9),
       rgba(map-get($colors, accent), 0.9));
   display: flex;
@@ -57,7 +56,7 @@
 .team-card-descr-name {
   margin: 0;
   margin-bottom: 20px;
-  font-family: map-get($fonts, secondary);
+  font-family: $fonts-secondary;
   font-size: 14px;
   color: map-get($colors, title);
   line-height: 16px;
