@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.social-item:hover .social-icon {
+  fill: map-get($colors, primery-light);
+}
+
 .social-link {
   @extend %link;
 
