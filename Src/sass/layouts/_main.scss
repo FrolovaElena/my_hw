@@ -1,37 +1,362 @@
-.services {
-  margin-bottom: 100px;
-}
-
-.section--title {
-  font-size: 24px;
-  color: map-get($colors, title);
-  line-height: 28px;
-  margin-bottom: 20px;
-}
-
-.section--subtitle {
-  font-size: 30px;
-  color: map-get($colors, title);
-  line-height: 36px;
-
-  &::after {
-    @extend %psevdoelement;
-
-    @include size(60px, 5px);
-
-    background: map-get($colors, secondary-dark);
-    margin: auto;
-    margin-top: 40px;
-  }
-}
-
-.section-descr {
-  width: 940px;
-  margin: 0 auto;
-  margin-top: 60px;
+.section-header {
   text-align: center;
 }
 
-.team {
-  margin-bottom: 90px;
+.section-discography {
+  @extend %background-pos;
+
+  background-image: url('../images/discography_background.png');
+  padding-bottom: 450px;
+  margin-bottom: 105px;
+}
+
+.section-tour {
+  @extend %background-pos;
+
+  background-image: url('../images/concert_tours_background.png');
+  padding-bottom: 50px;
+  margin-bottom: 115px
+}
+
+.section-composition {
+  margin-bottom: 110px;
+}
+
+.section-title {
+  @include font($title-size, 400, 59.27px);
+
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-family: $title-font;
+  color: $color-title;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  
+  &::after {
+    @extend %psevdo;
+
+    width: 502px;
+    background-color: $color-title;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}
+
+.section-title-discography {
+  color: rgb(137, 104, 80);
+}
+
+.section-title-tour {
+  background: linear-gradient(rgb(119, 157, 166), rgb(154, 185, 178));
+  background-clip: text;
+  color: transparent;
+}
+
+.section-title-composition::after {
+  width: 614px;
+}
+
+.section-title-events {
+  color: rgb(66, 113, 126);
+
+  &::after {
+    left: 53%;
+  }
+}
+
+.section-title-history {
+  color: rgb(91, 92 ,90);
+  
+  &::after {
+    width: 400px;
+  }
+}
+
+.section-title-contact {
+  color: rgb(69, 69, 69);
+
+  &::after {
+    left: 65%;
+  }
+}
+
+.section-title-descr {
+  @include font($main-size, 400, 24.27px);
+
+  margin: 0;
+}
+
+.section-descr-discography {
+  margin-bottom: 110px;
+}
+
+.section-descr-tour {
+  margin-bottom: 310px;
+}
+
+.section-descr-composition {
+  margin-bottom: 60px;
+}
+
+.section-list {
+  @extend %list;
+}
+  
+.section-tour-list-item {
+  width: 390px;
+}
+
+.section-list-item-title {
+  @include font($h3-size, 400, 24.27px);
+
+  margin: 0;
+  margin-bottom: 25px;
+  font-family: $main-font;
+  color: $color-title;
+}
+
+.section-list-item-info {
+  margin-bottom: 40px;
+}
+
+.section-list-item-date {
+  @include font($main-size, 700, 24.27px);
+
+  margin: 0;
+  margin-bottom: 6px;
+  font-family: $main-font;
+  font-size: $main-size;
+  font-weight: 700;
+  line-height: 24.27px;
+  color: $color-title;
+  text-transform: uppercase;
+
+  &::after {
+    @extend %psevdo;
+
+    margin-top: 10px;
+  }
+}
+
+.tour-date::after {
+  width: 390px;
+}
+
+.section-list-item-name {
+  margin: 0;
+  family: $main-font;
+  font-size: $main-size;
+  font-weight: 700;
+  line-height: 24.27px;
+  color: $color-title;
+}
+  
+.section-list-item-text {
+  margin: 0;
+}
+
+.discography-text {
+  margin-bottom: 42px;
+  color: $color-text;
+}
+
+.tour-text {
+  margin-bottom: 106px;
+}
+
+.composition-text {
+  margin-bottom: 60px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-list-item-btn {
+  @extend %link;
+  @extend %button;
+
+  text-align: center;
+  line-height: 52px;
+}
+
+.section-discography-list-item {
+  margin-bottom: 100px;
+  
+  &:nth-last-child(-n+1) {
+    margin-bottom: 0;
+  }
+}
+
+.play {
+  border: none;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.play-1 {
+  color: $color-primary-light;
+  background-image: url('../images/button1.jpg');
+}
+
+.play-2 {
+  background-image: url('../images/button2.jpg');
+}
+
+.play-3 {
+  background-image: url('../images/button3.jpg');
+}
+
+.icon-next {
+  @include size(5px, 10px);
+
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.section-composition-list-item {
+  margin-bottom: 50px;
+
+  &:nth-last-child(-n+1) {
+    margin-bottom: 0;
+  }
+}
+
+.section-card {
+  @include size(600px, 422px);
+
+  background-color: $bg-color;
+  padding: 30px 35px 40px;
+  margin: 0 auto;
+}
+
+.counter-list {
+  @extend %list;
+
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: rgb(151, 152, 152);
+}
+
+.counter-list-icon {
+  @include size(12px, 12px);
+
+  fill: rgb(151, 152, 152);
+}
+
+.video {
+  @include size(600px, 422px);
+  @extend %icon-pos;
+
+  position: relative;
+  margin: 0 auto;
+
+  &::before {
+    @extend %psevdo;
+    @include size(20px, 20px);
+
+    transform: rotate(45deg);
+    background-color: $bg-color;
+    position: absolute;
+    bottom: 412px;
+    left: 290px;
+  }
+}
+
+.video-1 {
+  background-image: url('../images/maxresdefault(1)@2x.jpg');
+}
+
+.video-2 {
+  background-image: url('../images/maxresdefault(2)@2x.jpg');
+}
+
+.video-3 {
+  background-image: url('../images/maxresdefault(3)@2x.jpg');
+}
+
+.slider {
+  @include size(750px, 642px);
+
+  padding-top: 157px;
+  padding-bottom: 86px;
+  background-image: url('../images/ocean.png');
+  text-align: center;
+  margin: 0 auto;
+}
+
+.label {
+  @include size(130px, 29px);
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 auto;
+  margin-bottom: 34px;
+}
+
+.note {
+  @include size(25px, 29px);
+}
+
+.arrow {
+  @include size(29px, 8px);
+}
+
+.slider-descr {
+  @include font($link-size, 400, 26.27px);
+
+  font-family: $secondary-font;
+  color: $color-primary-light;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 15px;
+  margin-bottom: 34px;
+}
+
+.slider-text {
+  @include font($main-size, 400, 24.27px);
+
+  font-family: $main-font;
+  color: $color-primary-dark;
+  margin: 0;
+  margin-bottom: 60px;
+  padding: 0 60px;
+}
+
+.slider-date {
+  @include font($desktop-size, 400, 24.27px);
+
+  font-family: $main-font;
+  color: rgb(86, 94, 97);
+  margin: 0;
+  margin-bottom: 70px;
+}
+
+.slider-pagination {
+  display: flex;
+  width: 110px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.slider-pagination-item {
+  @include size(12px, 12px);
+
+  background-color: $color-primary-light;
+  border: 1px solid $color-primary-light;
+  border-radius: 50%;
+}
+
+.slider-pagination-item-active {
+  @include size(12px, 12px);
+
+  background-color: transparent;
 }

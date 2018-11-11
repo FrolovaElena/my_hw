@@ -1,12 +1,29 @@
-$colors: (
-  primery-dark: #999,
-  primery-light: #fff,
-  title: #000,
-  accent: #fce38a,
-  secondary-dark: #f38181,
-  secondary-light: #95e1d3
-);
+$main-font: "OpenSans", "Arial", sans-serif;
+$title-font: "Dosis", "Arial", sans-serif;
+$secondary-font: "Myriad Pro", sans-serif;
 
-$fonts-main: "Roboto", sans-serif;
-$fonts-secondary: "Montserrat", sans-serif;
-$fonts-title: "Kaushan Script", cursive;
+$main-size: 15px;
+$desktop-size: 14px;
+$tablet-size: 21px;
+$title-size: 50.49px;
+$tablet-title-size: 74,44px;
+$h3-size: 23px;
+$h3-tablet-size: 34px;
+$counter-size: 12px;
+$tablet-counter-size: 18.44px;
+$link-size: 17px;
+
+$color-primary-dark: rgb(121, 130, 133);
+$color-primary-light: rgb(255, 255, 255);
+$color-text: rgb(170, 170, 170);
+$color-title: rgb(0, 0, 0);
+$bg-color: rgb(245, 246, 246);
+$bg-header-color: rgb(229, 230, 230);
+$border-btn-color: rgb(99, 99, 99);
+  
+$mobile: (max-width: 767px);
+$tablet: (min-width: 768px) and (max-width: 1199px);
+$desktop: (min-width: 1200px);
+$tablet-desktop: (min-width: 768px);
+
+  

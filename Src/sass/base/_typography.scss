@@ -1,7 +1,7 @@
 body {
-  @include text(15px, 400, 24px);
+  @include font($main-size, 400, 24.27px);
 
-  font-family: $fonts-main;
-  color: map-get($colors, primery-dark);
   margin: 0;
+  font-family: $main-font;
+  color: $color-primary-dark;
 }
