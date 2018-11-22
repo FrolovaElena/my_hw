@@ -12,7 +12,7 @@
 }
 
 %button {
-  @include size(194px, 54px);
+  @include size(190px, 54px);
 
   display: block;
   margin: 0;
@@ -32,7 +32,7 @@
 
 %background-pos {
   background-position: bottom;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;  
 }
 

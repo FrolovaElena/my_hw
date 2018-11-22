@@ -1,0 +1,1103 @@
+/*
+   Import partials below
+*/
+
+.site-navigation-link,
+.section-list-item-btn {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.site-navigation-list,
+.section-list,
+.counter-list,
+.section-new-tracks-list,
+.calendar-list,
+.social-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-list-item-btn,
+.footer-btn {
+  width: 190px;
+  height: 54px;
+  display: block;
+  margin: 0;
+  border: 1px solid #636363;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: black;
+  cursor: pointer;
+}
+
+.hidden-menu,
+.site-logo,
+.video,
+.new-track-card,
+.social-icon {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.site-header,
+.section-discography,
+.section-tour,
+.section-events,
+.section-history,
+.section-contact {
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.site-navigation-link::after,
+.section-title::after,
+.section-list-item-date::after,
+.video::before,
+.tour-name::after,
+.next-tour-date::before,
+.next-tour-date-first::after,
+.social-list::before {
+  display: block;
+  content: "";
+  height: 1px;
+  background-color: black;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input [type=checkbox].visually-hidden,
+input [type=radio].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24.27px;
+  margin: 0;
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: #798285;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.site-header {
+  background-image: url("../images/header-tablet.png");
+  margin: 0 auto;
+  height: 1335px;
+  position: relative;
+}
+
+.site-navigation-list {
+  position: absolute;
+  width: 200px;
+  background-color: transparent;
+  top: 90px;
+  right: -55px;
+  opacity: 0;
+}
+
+.hidden-menu {
+  width: 82px;
+  height: 68px;
+  background-image: url("../images/menu-tablet.png");
+  position: absolute;
+  top: 50px;
+  right: 60px;
+}
+
+.hidden-menu:hover .site-navigation-list,
+.hidden-menu:focus .site-navigation-list {
+  opacity: 1;
+}
+
+.site-navigation-item {
+  margin-bottom: 8px;
+}
+
+.site-navigation-item:last-child {
+  margin-bottom: 0;
+}
+
+.site-navigation-link {
+  font-family: "Dosis", "Arial", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #606060;
+  text-align: center;
+}
+
+.site-navigation-link::after {
+  height: 2px;
+  background-color: #606060;
+  margin-top: 6px;
+  opacity: 0;
+}
+
+.site-navigation-link:hover,
+.site-navigation-link:focus {
+  color: black;
+}
+
+.site-navigation-link:hover::after,
+.site-navigation-link:focus::after {
+  opacity: 1;
+  background-color: black;
+}
+
+.site-logo {
+  width: 300px;
+  height: 300px;
+  background-image: url("../images/logo-desktop.png");
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.section-header {
+  text-align: center;
+}
+
+.section-header-discography {
+  margin-bottom: 110px;
+}
+
+.section-header-tour {
+  margin-bottom: 310px;
+}
+
+.section-header-composition {
+  margin-bottom: 60px;
+}
+
+.section-discography {
+  background-image: url("../images/discography-tablet.png");
+  padding-bottom: 450px;
+  margin-bottom: 105px;
+}
+
+.section-tour {
+  background-image: url("../images/concert-tour-mobile.jpg");
+  padding-bottom: 50px;
+  margin-bottom: 115px;
+}
+
+.section-composition {
+  margin-bottom: 110px;
+}
+
+.section-events {
+  background-image: url("../images/upcoming-events-tablet.png");
+  margin-bottom: 160px;
+  padding-top: 130px;
+  padding-left: 70px;
+  padding-bottom: 295px;
+}
+
+.section-history {
+  background-image: url("../images/history-tablet.png");
+  margin-bottom: 85px;
+}
+
+.footer {
+  background-image: url("../images/contact-tablet.png");
+}
+
+.section-title {
+  font-size: 50.49px;
+  font-weight: 400;
+  line-height: 59.27px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-family: "Dosis", "Arial", sans-serif;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.section-title-discography {
+  color: #896850;
+}
+
+.section-title-tour {
+  background: linear-gradient(#779da6, #9ab9b2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-title-events {
+  color: #42717e;
+  margin-bottom: 80px;
+}
+
+.section-title-events::after {
+  left: 53%;
+}
+
+.section-title-history {
+  color: #5b5c5a;
+}
+
+.section-title-contact {
+  text-align: left;
+  color: #454545;
+  margin-bottom: 30px;
+}
+
+.section-title-contact::after {
+  left: 52%;
+}
+
+.section-descr {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24.27px;
+  margin: 0 auto;
+}
+
+.section-list-item-title {
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 24.27px;
+  margin: 0;
+  margin-bottom: 25px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: black;
+}
+
+.section-list-item-info {
+  margin-bottom: 40px;
+}
+
+.section-list-item-date {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24.27px;
+  margin: 0;
+  margin-bottom: 6px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24.27px;
+  color: black;
+  text-transform: uppercase;
+}
+
+.section-list-item-date::after {
+  margin-top: 6px;
+}
+
+.section-list-item-name {
+  margin: 0;
+  family: "Open Sans", "Arial", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24.27px;
+  color: black;
+  text-transform: uppercase;
+}
+
+.section-list-item-text {
+  margin: 0;
+}
+
+.discography-text {
+  margin-bottom: 42px;
+  color: #aaaaaa;
+}
+
+.tour-text {
+  margin-bottom: 106px;
+}
+
+.composition-text {
+  margin-bottom: 60px;
+}
+
+.composition-text-3 {
+  margin-bottom: 84px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-list-item-btn {
+  text-align: center;
+  line-height: 52px;
+}
+
+.section-discography-list-item {
+  margin-bottom: 100px;
+}
+
+.section-discography-list-item:nth-last-child(-n+1) {
+  margin-bottom: 0;
+}
+
+.play {
+  border: none;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.play-1 {
+  color: white;
+  background-image: url("../images/button1.jpg");
+}
+
+.play-2 {
+  background-image: url("../images/button2.jpg");
+}
+
+.play-3 {
+  background-image: url("../images/button3.jpg");
+}
+
+.icon-next {
+  width: 5px;
+  height: 10px;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.section-composition-list-item {
+  margin-bottom: 50px;
+}
+
+.section-composition-list-item:nth-last-child(-n+1) {
+  margin-bottom: 0;
+}
+
+.section-card {
+  min-height: 422px;
+  background-color: #f5f6f6;
+  padding: 20px 15px 20px;
+  margin: 0 auto;
+}
+
+.counter-list {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #979898;
+}
+
+.counter-list-item-number {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.counter-list-icon {
+  width: 12px;
+  height: 12px;
+  fill: #979898;
+}
+
+.video {
+  position: relative;
+  margin: 0 auto;
+  height: 422px;
+}
+
+.video::before {
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: #f5f6f6;
+  position: absolute;
+  top: -10px;
+  left: 49%;
+}
+
+.video-1 {
+  background-image: url("../images/maxresdefault(1)@2x.jpg");
+}
+
+.video-2 {
+  background-image: url("../images/maxresdefault(2)@2x.jpg");
+}
+
+.video-3 {
+  background-image: url("../images/maxresdefault(3)@2x.jpg");
+}
+
+.slider {
+  height: 642px;
+  padding-top: 157px;
+  padding-bottom: 86px;
+  background-image: url("../images/ocean.png");
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.label {
+  width: 130px;
+  height: 29px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 auto;
+  margin-bottom: 34px;
+}
+
+.note {
+  width: 25px;
+  height: 29px;
+}
+
+.arrow {
+  width: 29px;
+  height: 8px;
+}
+
+.slider-descr {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26.27px;
+  font-family: "Myriad Pro", sans-serif;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 15px;
+  margin-bottom: 34px;
+}
+
+.slider-text {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24.27px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: #798285;
+  margin: 0;
+  margin-bottom: 60px;
+  padding: 0 60px;
+}
+
+.slider-date {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24.27px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: #565e61;
+  margin: 0;
+  margin-bottom: 70px;
+}
+
+.slider-pagination {
+  display: flex;
+  width: 110px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.slider-pagination-item {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.slider-pagination-item-active {
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+}
+
+.slider-button {
+  width: 0px;
+  height: 0px;
+  border: 50px solid transparent;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.slider-button-icon {
+  width: 10px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: none;
+}
+
+.prev {
+  right: 38px;
+}
+
+.next {
+  left: 38px;
+}
+
+.new-track-card {
+  min-height: 422px;
+  max-width: 380px;
+  padding: 20px 18px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-new-tracks-list-item {
+  margin-bottom: 56px;
+}
+
+.section-new-tracks-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.first-card {
+  background-image: url("../images/card1.jpg");
+}
+
+.second-card {
+  background-image: url("../images/card2.jpg");
+}
+
+.third-card {
+  background-image: url("../images/card3.jpg");
+}
+
+.fourth-card {
+  background-image: url("../images/card4.jpg");
+}
+
+.fifth-card {
+  background-image: url("../images/card5.jpg");
+}
+
+.sixth-card {
+  background-image: url("../images/card6.jpg");
+}
+
+.new-track-card-name {
+  color: white;
+  margin-bottom: 44px;
+}
+
+.new-track-card-title {
+  margin-bottom: 50px;
+}
+
+.count {
+  color: rgba(179, 180, 180, 0.5);
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 3px 5px;
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+}
+
+.tour-name {
+  margin-bottom: 8px;
+}
+
+.tour-name::after {
+  width: 132px;
+  margin-top: 6px;
+}
+
+.events-text {
+  margin-bottom: 75px;
+}
+
+.events-text-first {
+  width: 230px;
+}
+
+.next-tour-date {
+  position: relative;
+}
+
+.next-tour-date::before {
+  width: 1px;
+  height: 51px;
+  position: absolute;
+  left: 30px;
+  top: -60px;
+}
+
+.next-tour-date-first {
+  margin-bottom: 205px;
+}
+
+.next-tour-date-first::after {
+  width: 1px;
+  height: 165px;
+  position: absolute;
+  left: 30px;
+  bottom: -180px;
+}
+
+.slider-calendar {
+  position: relative;
+  height: 630px;
+}
+
+.calendar-list-item-text {
+  margin: 0 auto;
+  padding-top: 140px;
+  line-height: 19.27px;
+  color: #5a5a58;
+  width: 190px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 65%;
+}
+
+.section-footer-text {
+  margin: 0;
+}
+
+.section-footer-tel {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 50px;
+  margin: 0;
+  margin-bottom: 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-form-item {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24.27px;
+  margin: 0;
+  display: block;
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: #798285;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 35px;
+}
+
+.footer-form-item:nth-last-child(-n+2) {
+  margin-bottom: 10px;
+}
+
+.footer-form-item:last-child {
+  margin-bottom: 0;
+}
+
+.footer-form-item:last-child {
+  margin-bottom: 0;
+}
+
+.footer-btn {
+  border: none;
+  padding: 0;
+  background: transparent;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.social-list {
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.social-list::before {
+  width: 1px;
+  height: 190px;
+  display: inline-block;
+}
+
+.social-list-item {
+  padding-left: 26px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 768px) {
+  .site-navigation-list {
+    right: -60px;
+  }
+
+  .hidden-menu {
+    right: 120px;
+  }
+
+  .site-logo {
+    width: 540px;
+    height: 510px;
+    background-image: url("../images/logo-tablet.png");
+  }
+
+  .section-events {
+    padding-left: 170px;
+  }
+
+  .section-contact {
+    padding: 0 50px 450px 120px;
+  }
+
+  .section-descr {
+    width: 600px;
+  }
+
+  .section-tour-list-item {
+    width: 390px;
+  }
+
+  .tour-date::after {
+    width: 390px;
+  }
+
+  .section-card {
+    width: 600px;
+    height: 422px;
+    height: 422px;
+    padding: 30px 35px 40px;
+  }
+
+  .video {
+    width: 600px;
+    height: 422px;
+  }
+
+  .new-track-card {
+    width: 380px;
+    padding: 30px 38px;
+  }
+
+  .new-track-card-date::after {
+    width: 312px;
+  }
+
+  .events-text-second {
+    width: 540px;
+  }
+
+  .calendar-list-item-text {
+    bottom: 70%;
+  }
+
+  .footer-content {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1220px) {
+  body {
+    font-size: 14px;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+  }
+
+  .site-header {
+    background-image: url("../images/header-desktop.png");
+  }
+
+  .site-navigation-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+    opacity: 1;
+  }
+
+  .hidden-menu {
+    width: 100%;
+    height: 63px;
+    background-image: none;
+    background-color: rgba(229, 230, 230, 0.6);
+    padding-top: 18px;
+    position: static;
+  }
+
+  .site-navigation-item:last-child {
+    margin-bottom: 8px;
+  }
+
+  .site-logo {
+    background-image: url("../images/logo-desktop.png");
+  }
+
+  .section-header-discography {
+    margin-bottom: 150px;
+  }
+
+  .section-header-tour {
+    margin-bottom: 470px;
+  }
+
+  .section-header-composition {
+    margin-bottom: 165px;
+  }
+
+  .section-discography {
+    margin-bottom: 160px;
+    background-image: url("../images/discography-desktop.png");
+  }
+
+  .section-tour {
+    background-image: url("../images/concert-tour-desktop.jpg");
+    padding-bottom: 250px;
+  }
+
+  .section-tour {
+    margin-bottom: 156px;
+  }
+
+  .section-composition {
+    margin-bottom: 160px;
+  }
+
+  .section-events {
+    margin-bottom: 85px;
+    padding-left: 480px;
+    padding-top: 335px;
+    padding-bottom: 180px;
+    background-image: url("../images/upcoming-events-desktop.png");
+  }
+
+  .section-history {
+    background-image: url("../images/history.png");
+    margin-bottom: 265px;
+  }
+
+  .footer {
+    background-image: url("../images/contact-desktop.jpg");
+  }
+
+  .section-contact {
+    padding: 0 10px 287px 580px;
+  }
+
+  .section-title::after {
+    width: 502px;
+  }
+
+  .section-title-composition::after {
+    width: 614px;
+  }
+
+  .section-title-events {
+    text-align: left;
+  }
+
+  .section-title-events::after {
+    left: 25%;
+  }
+
+  .section-title-history::after {
+    width: 400px;
+  }
+
+  .section-title-contact::after {
+    left: 42%;
+  }
+
+  .section-descr {
+    width: 750px;
+  }
+
+  .section-descr-tour {
+    width: 880px;
+  }
+
+  .section-descr-history {
+    width: 810px;
+  }
+
+  .section-discography-list-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-tour-list-item {
+    width: 670px;
+  }
+
+  .section-composition-list-item-info {
+    margin-bottom: 80px;
+  }
+
+  .discography-text {
+    margin-bottom: 20px;
+  }
+
+  .discography-text-3 {
+    margin-bottom: 90px;
+  }
+
+  .tour-text {
+    margin-bottom: 40px;
+  }
+
+  .section-discography-list-item {
+    margin-bottom: 90px;
+  }
+
+  .discography-info {
+    width: 500px;
+  }
+
+  .section-list-item-content {
+    width: 650px;
+  }
+
+  .play {
+    margin-left: 0;
+  }
+
+  .section-composition-list-item {
+    margin-bottom: 56px;
+  }
+
+  .section-composition-list-item {
+    display: flex;
+  }
+
+  .item-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .video::before {
+    top: 200px;
+    left: -10px;
+  }
+
+  .video-2::before {
+    left: 590px;
+  }
+
+  .slider {
+    margin-bottom: 165px;
+  }
+
+  .slider-descr {
+    font-size: 18.44px;
+  }
+
+  .slider-descr {
+    padding: 0 160px;
+  }
+
+  .slider-text {
+    padding: 0 350px;
+  }
+
+  .slider-button-prev {
+    border-left-color: white;
+    left: 0;
+  }
+
+  .slider-button-next {
+    border-right-color: white;
+    right: 0;
+  }
+
+  .slider-button-icon {
+    display: block;
+  }
+
+  .section-new-tracks-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .section-new-tracks-list-item {
+    margin-bottom: 20px;
+  }
+
+  .section-new-tracks-list-item:nth-last-child(-n+3) {
+    margin-bottom: 0;
+  }
+
+  .slider-calendar {
+    height: 730px;
+  }
+
+  .calendar-list-item-text {
+    padding-top: 240px;
+  }
+
+  .footer-form-item {
+    font-size: 14px;
+    width: 380px;
+  }
+}

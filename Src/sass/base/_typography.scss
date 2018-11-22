@@ -1,6 +1,8 @@
 body {
   @include font($main-size, 400, 24.27px);
-
+  @include desktop {
+    font-size: $desktop-size;
+  }
   margin: 0;
   font-family: $main-font;
   color: $color-primary-dark;

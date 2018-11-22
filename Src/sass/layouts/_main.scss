@@ -1,25 +1,239 @@
+.site-header {
+  @extend %background-pos;
+
+  background-image: url('../images/header-tablet.png');
+  margin: 0 auto;
+  height: 1335px;
+  position: relative;
+
+  @include desktop {
+    background-image: url('../images/header-desktop.png');
+  }
+}
+
+.site-navigation-list {
+  @extend %list;
+  
+  position: absolute;
+  width: 200px;
+  background-color: transparent;
+  top: 90px;
+  right: -55px;
+  opacity: 0;
+
+  @include tablet {
+    right: -60px;
+  }
+
+  @include desktop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+    opacity: 1;
+  }
+}
+
+.hidden-menu {
+  @include size(82px, 68px);
+  @extend %icon-pos;
+  background-image: url('../images/menu-tablet.png');
+  position: absolute;
+  top: 50px;
+  right: 60px;
+
+  @include tablet {
+    right: 120px;
+  }
+  @include desktop {
+    @include size(100%, 63px);
+    background-image: none;
+    background-color: $bg-header-color;
+    padding-top: 18px;
+    position: static;
+  }
+}
+
+.hidden-menu:hover .site-navigation-list,
+.hidden-menu:focus .site-navigation-list {
+  opacity: 1;
+}
+
+.site-navigation-item {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+
+    @include desktop {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.site-navigation-link {
+  @extend %link;
+
+  font-family: $title-font;
+  font-size: $link-size;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgb(96, 96, 96);
+  text-align: center;
+
+  &::after {
+    @extend %psevdo;
+
+    height: 2px;
+    background-color: rgb(96, 96, 96);
+    margin-top: 6px;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-title;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    background-color: $color-title;
+  }
+}
+
+.site-logo {
+  @include size(300px, 300px);
+  @extend %icon-pos;
+
+  background-image: url('../images/logo-desktop.png');
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include tablet {
+    @include size(540px, 510px);
+
+    background-image: url('../images/logo-tablet.png');
+  }
+
+  @include desktop {
+    background-image: url('../images/logo-desktop.png');
+  }
+
+}
+
 .section-header {
   text-align: center;
+}
+
+.section-header-discography {
+  margin-bottom: 110px;
+  @include desktop {
+    margin-bottom: 150px;
+  }
+}
+
+.section-header-tour {
+  margin-bottom: 310px;
+  @include desktop {
+    margin-bottom: 470px;
+  }
+}
+
+.section-header-composition {
+  margin-bottom: 60px;
+  @include desktop {
+    margin-bottom: 165px;
+  }
 }
 
 .section-discography {
   @extend %background-pos;
 
-  background-image: url('../images/discography_background.png');
+  background-image: url('../images/discography-tablet.png');
   padding-bottom: 450px;
   margin-bottom: 105px;
+  @include desktop {
+    margin-bottom: 160px;
+    background-image: url('../images/discography-desktop.png');
+  }
 }
 
 .section-tour {
   @extend %background-pos;
 
-  background-image: url('../images/concert_tours_background.png');
+  background-image: url('../images/concert-tour-mobile.jpg');
   padding-bottom: 50px;
-  margin-bottom: 115px
+  @include desktop {
+    background-image: url('../images/concert-tour-desktop.jpg');
+    padding-bottom: 250px;
+  }
+  margin-bottom: 115px;
+  @include desktop {
+    margin-bottom: 156px;
+  }
 }
 
 .section-composition {
   margin-bottom: 110px;
+  @include desktop {
+    margin-bottom: 160px;
+  }
+}
+
+.section-events {
+  @extend %background-pos;
+
+  background-image: url("../images/upcoming-events-tablet.png");
+  margin-bottom: 160px;
+  padding-top: 130px;
+  padding-left: 70px;
+  padding-bottom: 295px;
+
+  @include tablet {
+    padding-left: 170px;
+  }
+  @include desktop {
+    margin-bottom: 85px;
+    padding-left: 480px;
+    padding-top: 335px;
+    padding-bottom: 180px;
+    background-image: url('../images/upcoming-events-desktop.png');
+  }
+}
+
+.section-history {
+  @extend %background-pos;
+
+  background-image: url('../images/history-tablet.png');
+  margin-bottom: 85px;
+  @include desktop {
+    background-image: url('../images/history.png');
+    margin-bottom: 265px;
+  }
+}
+
+.footer {
+  background-image: url('../images/contact-tablet.png');
+
+  @include desktop {
+    background-image: url('../images/contact-desktop.jpg');
+  }
+}
+
+.section-contact {
+  @extend %background-pos;
+
+  @include tablet {
+    padding: 0 50px 450px 120px;
+  }
+  @include desktop {
+    padding: 0 10px 287px 580px;
+  }
 }
 
 .section-title {
@@ -36,13 +250,15 @@
   &::after {
     @extend %psevdo;
 
-    width: 502px;
     background-color: $color-title;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1;
+
+    @include desktop {
+      width: 502px;
+    }
   }
 }
 
@@ -57,14 +273,25 @@
 }
 
 .section-title-composition::after {
-  width: 614px;
+  @include desktop {
+    width: 614px;
+  }
 }
 
 .section-title-events {
   color: rgb(66, 113, 126);
+  margin-bottom: 80px;
+
+  @include desktop {
+    text-align: left;
+  }
 
   &::after {
     left: 53%;
+
+    @include desktop {
+      left: 25%;
+    }
   }
 }
 
@@ -72,42 +299,68 @@
   color: rgb(91, 92 ,90);
   
   &::after {
-    width: 400px;
+    @include desktop {
+      width: 400px;
+    }
   }
 }
 
 .section-title-contact {
+  text-align: left;
   color: rgb(69, 69, 69);
+  margin-bottom: 30px;
 
   &::after {
-    left: 65%;
+    left: 52%;
+
+    @include desktop {
+      left: 42%;
+    }
   }
 }
 
-.section-title-descr {
+.section-descr {
   @include font($main-size, 400, 24.27px);
 
-  margin: 0;
-}
-
-.section-descr-discography {
-  margin-bottom: 110px;
+  margin: 0 auto;
+  @include tablet {
+    width: 600px;
+  }
+  @include desktop {
+    width: 750px;
+  }
 }
 
 .section-descr-tour {
-  margin-bottom: 310px;
+  @include desktop { 
+    width: 880px;
+  }
 }
 
-.section-descr-composition {
-  margin-bottom: 60px;
+.section-descr-history {
+  @include desktop {
+    width: 810px;
+  }
 }
 
 .section-list {
   @extend %list;
 }
-  
+
+@include desktop {
+  .section-discography-list-item {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .section-tour-list-item {
-  width: 390px;
+  @include tablet {
+    width: 390px;
+  }
+  @include desktop {
+    width: 670px;
+  }
 }
 
 .section-list-item-title {
@@ -121,6 +374,12 @@
 
 .section-list-item-info {
   margin-bottom: 40px;
+}
+
+@include desktop {
+  .section-composition-list-item-info {
+    margin-bottom: 80px;
+  }
 }
 
 .section-list-item-date {
@@ -138,12 +397,14 @@
   &::after {
     @extend %psevdo;
 
-    margin-top: 10px;
+    margin-top: 6px;
   }
 }
 
 .tour-date::after {
-  width: 390px;
+  @include tablet {
+    width: 390px;
+  }
 }
 
 .section-list-item-name {
@@ -153,6 +414,7 @@
   font-weight: 700;
   line-height: 24.27px;
   color: $color-title;
+  text-transform: uppercase;
 }
   
 .section-list-item-text {
@@ -161,15 +423,31 @@
 
 .discography-text {
   margin-bottom: 42px;
+  @include desktop {
+    margin-bottom: 20px;
+  }
   color: $color-text;
+}
+
+.discography-text-3 {
+  @include desktop {
+    margin-bottom: 90px;
+  }
 }
 
 .tour-text {
   margin-bottom: 106px;
+  @include desktop {
+    margin-bottom: 40px;
+  }
 }
 
 .composition-text {
   margin-bottom: 60px;
+}
+
+.composition-text-3 {
+  margin-bottom: 84px
 }
 
 .options {
@@ -187,9 +465,24 @@
 
 .section-discography-list-item {
   margin-bottom: 100px;
+  @include desktop {
+    margin-bottom: 90px;
+  }
   
   &:nth-last-child(-n+1) {
     margin-bottom: 0;
+  }
+}
+
+.discography-info {
+  @include desktop {
+    width: 500px;
+  }
+}
+
+.section-list-item-content {
+  @include desktop {
+    width: 650px;
   }
 }
 
@@ -197,6 +490,9 @@
   border: none;
   text-transform: uppercase;
   margin: 0 auto;
+  @include desktop {
+    margin-left: 0;
+  }
 }
 
 .play-1 {
@@ -216,23 +512,42 @@
   @include size(5px, 10px);
 
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .section-composition-list-item {
   margin-bottom: 50px;
+  @include desktop {
+    margin-bottom: 56px;
+  }
+  @include desktop {
+    display: flex;
+  }
 
   &:nth-last-child(-n+1) {
     margin-bottom: 0;
   }
 }
 
-.section-card {
-  @include size(600px, 422px);
+@include desktop {
+  .item-row-reverse {
+    flex-direction: row-reverse;
+  }
+}
 
+.section-card {
+  min-height: 422px;
   background-color: $bg-color;
-  padding: 30px 35px 40px;
+  padding: 20px 15px 20px;
   margin: 0 auto;
+
+  @include tablet {
+    @include size(600px, 422px);
+
+    height: 422px;
+    padding: 30px 35px 40px;
+  }
+
 }
 
 .counter-list {
@@ -245,6 +560,12 @@
   color: rgb(151, 152, 152);
 }
 
+.counter-list-item-number {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+}
+
 .counter-list-icon {
   @include size(12px, 12px);
 
@@ -252,11 +573,15 @@
 }
 
 .video {
-  @include size(600px, 422px);
   @extend %icon-pos;
 
   position: relative;
   margin: 0 auto;
+  height: 422px;
+
+  @include tablet {
+    @include size(600px, 422px);
+  }
 
   &::before {
     @extend %psevdo;
@@ -265,8 +590,12 @@
     transform: rotate(45deg);
     background-color: $bg-color;
     position: absolute;
-    bottom: 412px;
-    left: 290px;
+    top: -10px;
+    left: 49%;
+    @include desktop {
+      top: 200px;
+      left: -10px;
+    }
   }
 }
 
@@ -276,6 +605,12 @@
 
 .video-2 {
   background-image: url('../images/maxresdefault(2)@2x.jpg');
+
+  &::before {
+    @include desktop {
+      left: 590px;
+    }
+  }
 }
 
 .video-3 {
@@ -283,13 +618,18 @@
 }
 
 .slider {
-  @include size(750px, 642px);
-
+  height: 642px;
   padding-top: 157px;
   padding-bottom: 86px;
   background-image: url('../images/ocean.png');
   text-align: center;
   margin: 0 auto;
+  margin-bottom: 60px;
+  position: relative;
+
+  @include desktop {
+    margin-bottom: 165px;
+  }
 }
 
 .label {
@@ -312,12 +652,17 @@
 
 .slider-descr {
   @include font($link-size, 400, 26.27px);
-
+  @include desktop {
+    font-size: $desktop-slider-size;
+  }
   font-family: $secondary-font;
   color: $color-primary-light;
   text-transform: uppercase;
   margin: 0;
   padding: 0 15px;
+  @include desktop {
+    padding: 0 160px;
+  }
   margin-bottom: 34px;
 }
 
@@ -329,6 +674,9 @@
   margin: 0;
   margin-bottom: 60px;
   padding: 0 60px;
+  @include desktop {
+    padding: 0 350px;
+  }
 }
 
 .slider-date {
@@ -359,4 +707,303 @@
   @include size(12px, 12px);
 
   background-color: transparent;
+}
+
+.slider-button {
+  @include size(0px, 0px);
+
+  border: 50px solid transparent;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  
+  @include desktop {
+    &-prev {
+      border-left-color: $color-primary-light;
+      left: 0;
+    }
+
+    &-next {
+      border-right-color: $color-primary-light;
+      right: 0;
+    }
+  }
+}
+  
+.slider-button-icon {
+  @include size(10px, 20px);
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+} 
+
+.prev {
+  right: 38px;
+}
+
+.next {
+  left: 38px;
+}
+
+.section-new-tracks-list {
+  @extend %list;
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.new-track-card {
+  min-height: 422px;
+  max-width: 380px;
+  padding: 20px 18px;
+  @extend %icon-pos;
+  margin: 0 auto;
+  position: relative;
+  @include tablet {
+    width: 380px;
+    padding: 30px 38px;
+  }
+}
+
+.section-new-tracks-list-item {
+  margin-bottom: 56px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    margin-bottom: 20px;
+
+    &:nth-last-child(-n+3) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.first-card {
+  background-image: url("../images/card1.jpg");
+}
+
+.second-card {
+  background-image: url("../images/card2.jpg");
+}
+
+.third-card {
+  background-image: url("../images/card3.jpg");
+}
+
+.fourth-card {
+  background-image: url("../images/card4.jpg");
+}
+
+.fifth-card {
+  background-image: url("../images/card5.jpg");
+}
+
+.sixth-card {
+  background-image: url("../images/card6.jpg");
+}
+
+.new-track-card-date::after {
+  @include tablet {
+    width: 312px;
+  }
+}
+
+.new-track-card-name {
+  color: $color-primary-light;
+  margin-bottom: 44px;
+}
+
+.new-track-card-title {
+  margin-bottom: 50px;
+}
+
+.count {
+  color: rgba(179, 180, 180, 0.5);
+  @include font(82px, 700, 24px);
+  padding: 3px 5px;
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+}
+
+
+.tour-name {
+  margin-bottom: 8px;
+
+  &::after {
+    @extend %psevdo;
+    
+    width: 132px;
+    margin-top: 6px;
+  }
+}
+ 
+.events-text {
+  margin-bottom: 75px;
+}
+
+.events-text-first {
+  width: 230px;
+}
+
+.events-text-second {
+  @include tablet {
+    width: 540px;
+  }
+}
+
+.next-tour-date {
+  position: relative;
+
+  &::before {
+    @extend %psevdo;
+    @include size(1px, 51px);
+    position: absolute;
+    left: 30px;
+    top: -60px;
+  }
+}
+
+.next-tour-date-first {
+  margin-bottom: 205px;
+
+  &::after {
+    @extend %psevdo;
+    @include size(1px, 165px);
+    position: absolute;
+    left: 30px;
+    bottom: -180px;
+  }
+}
+
+
+.slider-calendar {
+  position: relative;
+  height: 630px;
+  @include desktop {
+    height: 730px;
+  }
+}
+
+.calendar-list {
+  @extend %list;
+}
+
+.calendar-list-item-text {
+  margin: 0 auto;
+  padding-top: 140px;
+  @include desktop {
+    padding-top: 240px;
+  }
+  line-height: 19.27px;
+  color: rgb(90, 90, 88);
+  width: 190px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 65%;
+
+  @include tablet {
+    bottom: 70%;
+  }
+}
+
+.section-footer-text {
+  margin: 0;
+}
+
+.section-footer-tel {
+  @include font($desktop-size, 400, 50px);
+  
+  margin: 0;
+  margin-bottom: 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    width: 500px;
+  }
+}
+
+.footer-form-item {
+  @include font($main-size, 400, 24.27px);
+
+  margin: 0;
+  display: block;
+  font-family: $main-font;
+  color: $color-primary-dark;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-title;
+  margin-bottom: 35px;
+  @include desktop {
+    font-size: $desktop-size;
+    width: 380px;
+  }
+
+  &:nth-last-child(-n+2) {
+    margin-bottom: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer-btn {
+  @extend %button;
+
+  border: none;
+  padding: 0;
+  background: transparent;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.social-list {
+  @extend %list;
+  
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &::before {
+    @extend %psevdo;
+    @include size(1px, 190px);
+    display: inline-block;
+  }
+}
+
+.social-list-item {
+  padding-left: 26px
+}
+
+.social-icon {
+  @include size(20px, 20px);
+  @extend %icon-pos;
 }
