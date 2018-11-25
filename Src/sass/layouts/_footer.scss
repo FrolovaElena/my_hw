@@ -1,0 +1,51 @@
+.footer {
+  background-image: url("../images/contact-tablet.png");
+
+  @include desktop {
+    background-image: url("../images/contact-desktop.jpg");
+  }
+}
+
+.section-contact {
+  @extend %background-pos;
+
+  @include tablet {
+    padding: 0 50px 450px 120px;
+  }
+  @include desktop {
+    padding: 0 10px 287px 580px;
+  }
+}
+
+.section-title-contact {
+  text-align: left;
+  color: rgb(69, 69, 69);
+  margin-bottom: 30px;
+
+  &::after {
+    left: 52%;
+
+    @include desktop {
+      left: 42%;
+    }
+  }
+}
+
+.section-footer-text {
+  margin: 0;
+}
+
+.section-footer-tel {
+  line-height: 50px;
+  margin: 0;
+  margin-bottom: 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    width: 500px;
+  }
+}

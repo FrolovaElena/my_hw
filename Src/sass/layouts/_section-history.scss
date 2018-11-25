@@ -1,0 +1,26 @@
+.section-history {
+  @extend %background-pos;
+
+  background-image: url("../images/history-tablet.png");
+  margin-bottom: 85px;
+  @include desktop {
+    background-image: url("../images/history.png");
+    margin-bottom: 265px;
+  }
+}
+
+.section-title-history {
+  color: rgb(91, 92, 90);
+
+  &::after {
+    @include desktop {
+      width: 400px;
+    }
+  }
+}
+
+.section-descr-history {
+  @include desktop {
+    width: 810px;
+  }
+}

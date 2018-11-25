@@ -1,0 +1,55 @@
+.section-tour {
+  @extend %background-pos;
+
+  background-image: url("../images/concert-tour-mobile.jpg");
+  padding-bottom: 50px;
+  @include desktop {
+    background-image: url("../images/concert-tour-desktop.jpg");
+    padding-bottom: 250px;
+  }
+  margin-bottom: 115px;
+  @include desktop {
+    margin-bottom: 156px;
+  }
+}
+
+.section-header-tour {
+  margin-bottom: 310px;
+  @include desktop {
+    margin-bottom: 470px;
+  }
+}
+
+.section-title-tour {
+  background: linear-gradient(rgb(119, 157, 166), rgb(154, 185, 178));
+  background-clip: text;
+  color: transparent;
+}
+
+.section-descr-tour {
+  @include desktop {
+    width: 880px;
+  }
+}
+
+.tour-date::after {
+  @include tablet {
+    width: 390px;
+  }
+}
+
+.section-tour-list-item {
+  @include tablet {
+    width: 390px;
+  }
+  @include desktop {
+    width: 670px;
+  }
+}
+
+.tour-text {
+  margin-bottom: 106px;
+  @include desktop {
+    margin-bottom: 40px;
+  }
+}

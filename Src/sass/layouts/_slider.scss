@@ -1,0 +1,78 @@
+.slider {
+  @extend %background-pos;
+
+  padding-top: 157px;
+  padding-bottom: 86px;
+  background-image: url("../images/ocean.png");
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  position: relative;
+
+  @include mobile {
+    height: 820px;
+  }
+
+  @include large-mobile {
+    height: 720px;
+  }
+
+  @include tablet {
+    height: 642px;
+  }
+
+  @include desktop {
+    margin-bottom: 165px;
+  }
+}
+
+.label {
+  @include size(130px, 29px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 auto;
+  margin-bottom: 34px;
+}
+
+.note {
+  @include size(25px, 29px);
+}
+
+.arrow {
+  @include size(29px, 8px);
+}
+
+.slider-descr {
+  @include font($link-size, 400, 26.27px);
+  @include desktop {
+    font-size: $desktop-slider-size;
+  }
+
+  font-family: $secondary-font;
+  color: $color-primary-light;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 15px;
+  @include desktop {
+    padding: 0 160px;
+  }
+  margin-bottom: 34px;
+}
+
+.slider-text {
+  margin: 0;
+  margin-bottom: 60px;
+  padding: 0 60px;
+  @include desktop {
+    padding: 0 350px;
+  }
+}
+
+.slider-date {
+  color: rgb(86, 94, 97);
+  margin: 0;
+  margin-bottom: 70px;
+}
+

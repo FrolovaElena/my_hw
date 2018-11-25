@@ -1,0 +1,43 @@
+.slider-button {
+  @include size(0px, 0px);
+
+  border: 50px solid transparent;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  @include desktop {
+    &-prev {
+      border-left-color: $color-primary-light;
+      left: 0;
+    }
+
+    &-next {
+      border-right-color: $color-primary-light;
+      right: 0;
+    }
+  }
+}
+
+.slider-button-icon {
+  @include size(10px, 20px);
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.prev {
+  right: 38px;
+}
+
+.next {
+  left: 38px;
+}

@@ -1,0 +1,12 @@
+.site-header {
+  @extend %background-pos;
+
+  background-image: url("../images/header-tablet.png");
+  margin: 0 auto;
+  height: 1335px;
+  position: relative;
+
+  @include desktop {
+    background-image: url("../images/header-desktop.png");
+  }
+}

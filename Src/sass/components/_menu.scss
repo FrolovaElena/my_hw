@@ -1,0 +1,91 @@
+.hidden-menu {
+  @include size(82px, 68px);
+  @extend %icon-pos;
+  background-image: url("../images/menu-tablet.png");
+  position: absolute;
+  top: 50px;
+  right: 60px;
+
+  @include tablet {
+    right: 120px;
+  }
+  @include desktop {
+    @include size(100%, 63px);
+    background-image: none;
+    background-color: $bg-header-color;
+    padding-top: 18px;
+    position: static;
+  }
+}
+
+.site-navigation-list {
+  @extend %list;
+
+  position: absolute;
+  width: 200px;
+  background-color: transparent;
+  top: 90px;
+  right: -55px;
+  opacity: 0;
+
+  @include tablet {
+    right: -60px;
+  }
+
+  @include desktop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+    opacity: 1;
+  }
+}
+
+.site-navigation-item {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+
+    @include desktop {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.site-navigation-link {
+  @extend %link;
+
+  font-family: $title-font;
+  font-size: $link-size;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgb(96, 96, 96);
+  text-align: center;
+
+  &::after {
+    @extend %psevdo;
+
+    height: 2px;
+    background-color: rgb(96, 96, 96);
+    margin-top: 6px;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-title;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    background-color: $color-title;
+  }
+}
+
+.hidden-menu:hover .site-navigation-list,
+.hidden-menu:focus .site-navigation-list {
+  opacity: 1;
+}

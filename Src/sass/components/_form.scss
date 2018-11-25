@@ -1,0 +1,35 @@
+.footer-form-item {
+  margin: 0;
+  display: block;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-title;
+  margin-bottom: 35px;
+  @include desktop {
+    font-size: $desktop-size;
+    width: 380px;
+  }
+
+  &:nth-last-child(-n + 2) {
+    margin-bottom: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer-btn {
+  @extend %button;
+
+  border: none;
+  padding: 0;
+  background: transparent;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: left;
+}

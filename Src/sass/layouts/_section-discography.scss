@@ -1,0 +1,87 @@
+.section-discography {
+  @extend %background-pos;
+
+  background-image: url("../images/discography-tablet.png");
+  padding-bottom: 450px;
+  margin-bottom: 105px;
+  @include desktop {
+    margin-bottom: 160px;
+    background-image: url("../images/discography-desktop.png");
+  }
+}
+
+.section-header-discography {
+  margin-bottom: 110px;
+  @include desktop {
+    margin-bottom: 150px;
+  }
+}
+
+.section-title-discography {
+  color: rgb(137, 104, 80);
+}
+@include desktop {
+  .section-discography-list-item {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.discography-text {
+  margin-bottom: 42px;
+  @include desktop {
+    margin-bottom: 20px;
+  }
+  color: $color-text;
+}
+
+.discography-text-3 {
+  @include desktop {
+    margin-bottom: 90px;
+  }
+}
+
+.section-discography-list-item {
+  margin-bottom: 100px;
+  @include desktop {
+    margin-bottom: 90px;
+  }
+
+  &:nth-last-child(-n + 1) {
+    margin-bottom: 0;
+  }
+}
+
+.discography-info {
+  @include desktop {
+    width: 500px;
+  }
+}
+
+.section-list-item-content {
+  @include desktop {
+    width: 650px;
+  }
+}
+
+.play {
+  border: none;
+  text-transform: uppercase;
+  margin: 0 auto;
+  @include desktop {
+    margin-left: 0;
+  }
+}
+
+.play-1 {
+  color: $color-primary-light;
+  background-image: url("../images/button1.jpg");
+}
+
+.play-2 {
+  background-image: url("../images/button2.jpg");
+}
+
+.play-3 {
+  background-image: url("../images/button3.jpg");
+}

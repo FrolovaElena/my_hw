@@ -1,0 +1,26 @@
+.counter-list {
+  @extend %list;
+
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: rgb(151, 152, 152);
+
+  @include mobile {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.counter-list-item-number {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.counter-list-icon {
+  @include size(12px, 12px);
+
+  fill: rgb(151, 152, 152);
+}

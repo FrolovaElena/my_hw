@@ -1,0 +1,61 @@
+.new-track-card {
+  height: 450px;
+  max-width: 380px;
+  padding: 20px 18px;
+  @extend %icon-pos;
+  background-size: cover;
+  margin: 0 auto;
+  position: relative;
+  @include tablet {
+    @include size(380px, 422px);
+    padding: 30px 38px;
+  }
+}
+
+.first-card {
+  background-image: url("../images/card1.jpg");
+}
+
+.second-card {
+  background-image: url("../images/card2.jpg");
+}
+
+.third-card {
+  background-image: url("../images/card3.jpg");
+}
+
+.fourth-card {
+  background-image: url("../images/card4.jpg");
+}
+
+.fifth-card {
+  background-image: url("../images/card5.jpg");
+}
+
+.sixth-card {
+  background-image: url("../images/card6.jpg");
+}
+
+.new-track-card-date::after {
+  @include tablet {
+    width: 312px;
+  }
+}
+
+.new-track-card-name {
+  color: $color-primary-light;
+  margin-bottom: 44px;
+}
+
+.new-track-card-title {
+  margin-bottom: 50px;
+}
+
+.count {
+  color: rgba(179, 180, 180, 0.5);
+  @include font(82px, 700, 24px);
+  padding: 3px 5px;
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+}

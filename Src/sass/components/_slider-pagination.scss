@@ -1,0 +1,20 @@
+.slider-pagination {
+  display: flex;
+  width: 110px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.slider-pagination-item {
+  @include size(12px, 12px);
+
+  background-color: $color-primary-light;
+  border: 1px solid $color-primary-light;
+  border-radius: 50%;
+}
+
+.slider-pagination-item-active {
+  @include size(12px, 12px);
+
+  background-color: transparent;
+}

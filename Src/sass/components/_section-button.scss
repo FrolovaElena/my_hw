@@ -1,0 +1,14 @@
+.section-list-item-btn {
+  @extend %link;
+  @extend %button;
+
+  text-align: center;
+  line-height: 52px;
+}
+
+.icon-next {
+  @include size(5px, 10px);
+
+  display: inline-block;
+  margin-left: 20px;
+}

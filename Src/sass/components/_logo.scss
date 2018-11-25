@@ -1,0 +1,21 @@
+.site-logo {
+  @include size(300px, 300px);
+  @extend %icon-pos;
+
+  background-image: url("../images/logo-desktop.png");
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include tablet {
+    @include size(540px, 510px);
+
+    background-image: url("../images/logo-tablet.png");
+  }
+
+  @include desktop {
+    background-image: url("../images/logo-desktop.png");
+  }
+}

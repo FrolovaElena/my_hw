@@ -1,0 +1,24 @@
+.social-list {
+  @extend %list;
+
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &::before {
+    @extend %psevdo;
+    @include size(1px, 190px);
+    display: inline-block;
+  }
+}
+
+.social-list-item {
+  padding-left: 26px;
+}
+
+.social-icon {
+  @include size(20px, 20px);
+  @extend %icon-pos;
+}
