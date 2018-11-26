@@ -1,15 +1,12 @@
 .section-tour {
   @extend %background-pos;
 
-  background-image: url("../images/concert-tour-mobile.jpg");
+  background-image: url("../images/concert-tour-desktop.jpg");
+  padding-top: 105px;
   padding-bottom: 50px;
   @include desktop {
-    background-image: url("../images/concert-tour-desktop.jpg");
+    padding-top: 160px;
     padding-bottom: 250px;
-  }
-  margin-bottom: 115px;
-  @include desktop {
-    margin-bottom: 156px;
   }
 }
 

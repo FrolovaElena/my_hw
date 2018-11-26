@@ -11,6 +11,10 @@
     @extend %psevdo;
     @include size(1px, 190px);
     display: inline-block;
+
+    @include tablet {
+      height: 220px;
+    } 
   }
 }
 

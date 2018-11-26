@@ -1,19 +1,18 @@
 .footer {
-  background-image: url("../images/contact-tablet.png");
+  @extend %background-pos;
 
-  @include desktop {
-    background-image: url("../images/contact-desktop.jpg");
-  }
+  background-image: url("../images/contact-desktop.jpg");
 }
 
 .section-contact {
-  @extend %background-pos;
+  padding: 70px 10px 400px 20px;
+  padding-bottom: 440px;
 
   @include tablet {
-    padding: 0 50px 450px 120px;
+    padding: 85px 50px 450px 120px;
   }
   @include desktop {
-    padding: 0 10px 287px 580px;
+    padding: 265px 10px 287px 580px;
   }
 }
 
@@ -47,5 +46,9 @@
 
   @include tablet {
     width: 500px;
+  }
+
+  @include desktop {
+    width: 600px;
   }
 }

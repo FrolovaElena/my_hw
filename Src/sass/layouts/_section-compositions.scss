@@ -1,7 +1,10 @@
 .section-composition {
-  margin-bottom: 110px;
+  padding-top: 115px;
+  padding-bottom: 110px;
+
   @include desktop {
-    margin-bottom: 160px;
+    padding-top: 156px;
+    padding-bottom: 160px;
   }
 }
 

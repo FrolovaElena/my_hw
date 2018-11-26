@@ -1,3 +1,11 @@
+.section-new-tracks {
+  padding-top: 60px;
+
+  @include desktop {
+    padding-top: 165px;
+  }
+}
+
 .section-new-tracks-list {
   @extend %list;
 

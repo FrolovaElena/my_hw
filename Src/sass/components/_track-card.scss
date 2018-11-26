@@ -2,12 +2,15 @@
   min-height: 422px;
   max-width: 380px;
   padding: 20px 18px;
+
+
   @extend %icon-pos;
   background-size: cover;
   margin: 0 auto;
   position: relative;
+
   @include tablet {
-    @include size(380px, 422px);
+    width: 380px;
     padding: 30px 38px;
   }
 }
@@ -38,7 +41,7 @@
 
 .new-track-card-date::after {
   @include tablet {
-    width: 312px;
+    width: 100%;
   }
 }
 

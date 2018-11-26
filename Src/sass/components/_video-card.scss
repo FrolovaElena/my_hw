@@ -1,5 +1,4 @@
 .section-card {
-  min-height: 422px;
   background-color: $bg-color;
   padding: 20px 15px 20px;
   margin: 0 auto;
@@ -7,7 +6,7 @@
   @include tablet {
     @include size(600px, 422px);
 
-    padding: 30px 35px 40px;
+    padding: 30px 35px 30px;
   }
 }
 
@@ -36,8 +35,9 @@
 }
 
 .video {
-  @extend %background-pos;
-
+  @extend %icon-pos;
+ 
+  background-size: cover; 
   position: relative;
   margin: 0 auto;
   height: 422px;

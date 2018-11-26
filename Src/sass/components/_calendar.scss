@@ -1,10 +1,8 @@
 .slider-calendar {
   position: relative;
-  height: 630px;
-  @include desktop {
-    height: 730px;
-  }
+  height: 800px;
 }
+
 
 .calendar-list {
   @extend %list;
@@ -24,12 +22,4 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 75%;
-
-  @include tablet {
-    bottom: 65%;
-  }
-
-  @include desktop {
-    bottom: 70%;
-  }
 }

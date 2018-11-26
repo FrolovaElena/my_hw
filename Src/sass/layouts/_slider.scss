@@ -1,22 +1,13 @@
 .slider {
   @extend %background-pos;
 
-  min-height: 642px;
+  background-size: cover; 
   padding-top: 157px;
   padding-bottom: 86px;
   background-image: url("../images/ocean.png");
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 60px;
   position: relative;
-   
-  @include tablet {
-    height: 642px;
-  }
-  
-  @include desktop {
-    margin-bottom: 165px;
-  }
 }
 
 .label {

@@ -1,13 +1,8 @@
 .section-discography {
   @extend %background-pos;
 
-  background-image: url("../images/discography-tablet.png");
+  background-image: url("../images/discography-desktop.png");
   padding-bottom: 450px;
-  margin-bottom: 105px;
-  @include desktop {
-    margin-bottom: 160px;
-    background-image: url("../images/discography-desktop.png");
-  }
 }
 
 .section-header-discography {
