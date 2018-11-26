@@ -1,12 +1,8 @@
 .section-card {
-  height: 620px;
+  min-height: 422px;
   background-color: $bg-color;
   padding: 20px 15px 20px;
   margin: 0 auto;
-
-  @include large-mobile {
-    height: 520px;
-  }
 
   @include tablet {
     @include size(600px, 422px);

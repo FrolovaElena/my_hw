@@ -1,6 +1,7 @@
 .slider {
   @extend %background-pos;
 
+  min-height: 642px;
   padding-top: 157px;
   padding-bottom: 86px;
   background-image: url("../images/ocean.png");
@@ -8,19 +9,11 @@
   margin: 0 auto;
   margin-bottom: 60px;
   position: relative;
-
-  @include mobile {
-    height: 820px;
-  }
-
-  @include large-mobile {
-    height: 720px;
-  }
-
+   
   @include tablet {
     height: 642px;
   }
-
+  
   @include desktop {
     margin-bottom: 165px;
   }
