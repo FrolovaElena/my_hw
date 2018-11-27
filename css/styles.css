@@ -228,6 +228,12 @@ body {
   margin: 0 auto;
 }
 
+.play:hover,
+.play:focus {
+  color: #0db1b1;
+  transition: color 0.3s ease;
+}
+
 .play-1 {
   color: white;
   background-image: url("../images/button1.jpg");
@@ -524,11 +530,25 @@ body {
   line-height: 52px;
 }
 
+.section-list-item-btn:hover,
+.section-list-item-btn:focus {
+  color: #0db1b1;
+  border-color: #0db1b1;
+  transition: color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+
 .icon-next {
   width: 5px;
   height: 10px;
   display: inline-block;
   margin-left: 20px;
+}
+
+.section-list-item-btn:hover .icon-next,
+.section-list-item-btn:focus .icon-next {
+  fill: #0db1b1;
+  transition: fill 0.3s ease;
 }
 
 .section-card {
@@ -674,6 +694,12 @@ body {
   left: 38px;
 }
 
+.slider-button:hover .slider-button-icon,
+.slider-button:focus .slider-button-icon {
+  fill: #0db1b1;
+  transition: fill 0.3s ease;
+}
+
 .slider-pagination {
   display: flex;
   width: 110px;
@@ -731,6 +757,46 @@ body {
   margin-bottom: 0;
 }
 
+.footer-form-item::-webkit-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item::-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:-ms-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:focus::-webkit-input-placeholder {
+  text-indent: 400px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:focus::-moz-placeholder {
+  text-indent: 400px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:focus:-moz-placeholder {
+  text-indent: 400px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:focus:-ms-input-placeholder {
+  text-indent: 400px;
+  transition: text-indent 0.3s ease;
+}
+
 .footer-btn {
   border: none;
   padding: 0;
@@ -738,6 +804,12 @@ body {
   font-size: 20px;
   text-transform: uppercase;
   text-align: left;
+}
+
+.footer-btn:hover,
+.footer-btn:focus {
+  color: #0db1b1;
+  transition: color 0.3s ease;
 }
 
 .social-list {
@@ -761,6 +833,17 @@ body {
 .social-icon {
   width: 20px;
   height: 20px;
+}
+
+.social-list-item:hover .social-icon,
+.social-list-item:focus .social-icon {
+  fill: #0db1b1;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: fill 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -837,6 +920,10 @@ body {
 
   .new-track-card-date::after {
     width: 100%;
+  }
+
+  .footer-form-item {
+    width: 400px;
   }
 
   .footer-form-item:nth-last-child(-n + 2) {
@@ -1059,7 +1146,6 @@ body {
 
   .footer-form-item {
     font-size: 14px;
-    width: 400px;
   }
 }
 
