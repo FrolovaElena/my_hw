@@ -5,9 +5,12 @@
   border: none;
   border-bottom: 1px solid $color-title;
   margin-bottom: 35px;
+
+  @include tablet {
+    width: 400px;
+  }
   @include desktop {
     font-size: $desktop-size;
-    width: 400px;
   }
 
   &:nth-last-child(-n + 2) {
@@ -23,6 +26,46 @@
   }
 }
 
+.footer-form-item::-webkit-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item::-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:-ms-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:focus::-webkit-input-placeholder {
+  text-indent: 400px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:focus::-moz-placeholder {
+  text-indent: 400px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:focus:-moz-placeholder {
+  text-indent: 400px;
+  transition: text-indent 0.3s ease;
+}
+
+.footer-form-item:focus:-ms-input-placeholder {
+  text-indent: 400px;
+  transition: text-indent 0.3s ease;
+}
+
 .footer-btn {
   @extend %button;
 
@@ -32,4 +75,10 @@
   font-size: 20px;
   text-transform: uppercase;
   text-align: left;
+
+  &:hover,
+  &:focus {
+    color: $color-active;
+    transition: color 0.3s ease;
+  }
 }

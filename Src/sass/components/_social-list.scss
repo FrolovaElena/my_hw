@@ -26,3 +26,11 @@
   @include size(20px, 20px);
   @extend %icon-pos;
 }
+
+.social-list-item:hover .social-icon,
+.social-list-item:focus .social-icon {
+  fill: $color-active;
+  transform: scale(1.1);
+  transition: fill 0.3s ease;
+  transition: transform 0.3s ease;
+}

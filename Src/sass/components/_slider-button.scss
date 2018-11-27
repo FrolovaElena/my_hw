@@ -41,3 +41,9 @@
 .next {
   left: 38px;
 }
+
+.slider-button:hover .slider-button-icon, 
+.slider-button:focus .slider-button-icon {
+  fill: $color-active;
+  transition: fill 0.3s ease;
+}

@@ -4,6 +4,14 @@
 
   text-align: center;
   line-height: 52px;
+
+  &:hover, 
+  &:focus {
+    color: $color-active;
+    border-color: $color-active;
+    transition: color 0.3s ease;
+    transition: border-color 0.3s ease;
+  }
 }
 
 .icon-next {
@@ -11,4 +19,10 @@
 
   display: inline-block;
   margin-left: 20px;
+}
+
+.section-list-item-btn:hover .icon-next,
+.section-list-item-btn:focus .icon-next {
+  fill: $color-active;
+  transition: fill 0.3s ease;
 }
