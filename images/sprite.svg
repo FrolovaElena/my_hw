@@ -1,4 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+    <style>
+      .cls-1 {
+        fill: #979898;
+        fill-opacity: 0.8;
+        fill-rule: evenodd;
+      }
+    </style>
+  
+    <style>
+      .cls-1 {
+        fill: #000002;
+        fill-rule: evenodd;
+      }
+    </style>
+  
+    <style>
+      .cls-1 {
+        fill: #979898;
+        fill-opacity: 0.8;
+        fill-rule: evenodd;
+      }
+    </style>
+  
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  
+    <style>
+      .cls-1 {
+        fill: #979898;
+        fill-rule: evenodd;
+      }
+    </style>
+  
+    <style>
+      .cls-1 {
+        fill: #979898;
+        fill-opacity: 0.8;
+        fill-rule: evenodd;
+      }
+    </style>
   </defs><symbol id="arrow-left" viewBox="0 0 28 8">
   <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
@@ -121,36 +170,41 @@
 <?xpacket end="w"?></metadata>
 
   <path id="Button_icon_&#x43A;&#x43E;&#x43F;&#x438;&#x44F;" data-name="Button icon &#x43A;&#x43E;&#x43F;&#x438;&#x44F;" class="cls-1" d="M268.86,7256L268,7254.97l3.3-3.97-3.3-3.97,0.861-1.03,4.141,5h0Z" transform="translate(-268 -7246)"/>
-</symbol><symbol id="facebook" viewBox="0 0 8 17">
-  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description rdf:about=""/>
-   </rdf:RDF>
-</x:xmpmeta>
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                           
-<?xpacket end="w"?></metadata>
-<image id="&#x421;&#x43B;&#x43E;&#x439;_9" data-name="&#x421;&#x43B;&#x43E;&#x439; 9" width="8" height="17" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAiCAMAAABhn6n1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACJVBMVEUAAAIAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAEAAAIAAAIAAAMAAAMAAAMAAAMAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAEAAAEAAAIAAAEAAAEAAAEAAAIAAAIAAAEAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAEAAABQAAyAAAAAtHRSTlMAAAEGI1WDorO9wsTBp44ZQ3yo1N3h5OHDVJbN6PP6/f7cvC/Y/N+9BEi38cqrEV7L98+1o4dxBSV01eaqRzctJgc1gdZ7LAxAjM5mFQ1Ekd5gElmf42wPapC/7JxbSj/a6vn0yMCcgseh0OLq+/jrwl+JnbbR6aCTSzRWf7Haj1w5HxQim28pBQNFkmILYRMDlMxlzGUZ35jSaBpJl2cQQrtcFwIwZK6wsopEEQlOdouNNg2F5mdLAAAAAWJLR0S2qgcL8QAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+ILARQcGLYAiPoAAAGCSURBVCjPY2BgYGBiZmFlY+fg5OLm4eUD8hmY+QUEhbiFRUTFxCV4QQL8klLSMrJy8lu2KigqgQSU+VRUt4DA1q1q6kC+hqaW3BYI0NbRBRqpp28A4hiKGRmbmJoxMJhbWFqBBKxtzGzt7B0YGBydnFVAAi6ubgxg4O7hqQgS8PL2gQj4+vkHgAR0AoPA/CCW4JBQsIowh/BwX3eG4IjIqGiQgFpMWGxwXDyDknRCYhLIUckBXimpaekMIPdBXAkiMzIZtiADOWNPhqzsHO1cECcvP1StwLmQoai4pFQbJFCmXl7hWlnFIFBdUysDEqirb7BtbGpmCGqpbhUHCRi1teu5d3QCXdrVDXapQQ/Q6YyMDAy9AhCnG/T1gwUm6GlOVAMJTJrMjyKwdcrUaYyM+AQgWoAAq8B0kMcmIWnBEEA1NChuhjVIYOas2VAVc+aCwzRrHlTF/AWmk3Ly8/MXLloMFljSu3TZ3OUrVq5YtXoNRGCtw7r1RRs2bgjbtBkkAAC4pMwapcrAowAAAABJRU5ErkJggg=="/>
+</symbol><symbol id="facebook" viewBox="0 0 512 512">
+<g>
+	<path d="M296.296,512H200.36V256h-64v-88.225l64-0.029l-0.104-51.976C200.256,43.794,219.773,0,304.556,0h70.588v88.242h-44.115
+		c-33.016,0-34.604,12.328-34.604,35.342l-0.131,44.162h79.346l-9.354,88.225L296.36,256L296.296,512z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
 </symbol><symbol id="heart" viewBox="0 0 16 14">
   <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
@@ -244,36 +298,45 @@
 <?xpacket end="w"?></metadata>
 
   <path id="Button_icon_&#x43A;&#x43E;&#x43F;&#x438;&#x44F;_2" data-name="Button icon &#x43A;&#x43E;&#x43F;&#x438;&#x44F; 2" class="cls-1" d="M17.108,6642L19,6639.73,11.736,6631,19,6622.27,17.108,6620,8,6631H8Z" transform="translate(-8 -6620)"/>
-</symbol><symbol id="instagram" viewBox="0 0 19 19">
-  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description rdf:about=""/>
-   </rdf:RDF>
-</x:xmpmeta>
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                           
-<?xpacket end="w"?></metadata>
-<image id="&#x421;&#x43B;&#x43E;&#x439;_10" data-name="&#x421;&#x43B;&#x43E;&#x439; 10" width="19" height="19" xlink:href="data:img/png;base64,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"/>
+</symbol><symbol id="instagram" viewBox="0 0 512 512">
+<g>
+	<path d="M427,0H85C38.25,0,0,38.25,0,85v342c0,46.75,38.25,85,85,85h342c46.75,0,85-38.25,85-85V85C512,38.25,473.75,0,427,0z
+		 M163.9,224h184.2c3.494,10.029,5.4,20.795,5.4,32c0,53.762-43.738,97.5-97.5,97.5c-53.762,0-97.5-43.738-97.5-97.5
+		C158.5,244.795,160.406,234.029,163.9,224z M448,224.025V352v64c0,17.6-14.4,32-32,32H96c-17.6,0-32-14.4-32-32v-64V224.025V224
+		h50.054c-2.321,10.301-3.554,21.008-3.554,32c0,80.229,65.271,145.5,145.5,145.5c80.229,0,145.5-65.271,145.5-145.5
+		c0-10.992-1.232-21.699-3.555-32H448V224.025z M448,112c0,8.8-7.199,16-16,16h-32c-8.801,0-16-7.2-16-16V80c0-8.8,7.199-16,16-16
+		h32c8.801,0,16,7.2,16,16V112z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
 </symbol><symbol id="note" viewBox="0 0 25 29">
   <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
@@ -366,34 +429,45 @@
 <?xpacket end="w"?></metadata>
 
   <path id="Speech_bubble_-_left_tip_-_text" data-name="Speech bubble - left tip - text" class="cls-1" d="M566.191,7271.17h-5.625l-1.875,2.82-1.875-2.82a2.807,2.807,0,0,1-2.813-2.81v-6.55a2.815,2.815,0,0,1,2.813-2.82h9.375a2.814,2.814,0,0,1,2.812,2.82v6.55A2.806,2.806,0,0,1,566.191,7271.17Z" transform="translate(-554 -7259)"/>
-</symbol><symbol id="twitter" viewBox="0 0 16 13">
-  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description rdf:about=""/>
-   </rdf:RDF>
-</x:xmpmeta>
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                           
-<?xpacket end="w"?></metadata>
-<image id="&#x421;&#x43B;&#x43E;&#x439;_8" data-name="&#x421;&#x43B;&#x43E;&#x439; 8" width="16" height="13" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAaCAMAAADhRa4NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACnVBMVEUAAAIAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAEAAAEAAAIAAAEAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAEAAAEAAAIAAAEAAAEAAAEAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAEAAAIAAAIAAAIAAAIAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAEAAAIAAAIAAAIAAAIAAAEAAAIAAAIAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAIAAAEAAAIAAAIAAAEAAAEAAAIAAAIAAAIAAAEAAQMBAgQAAAMAAAB59ZM/AAAA2XRSTlMAAAgQIB4KAQcubqrU6uvcuoBDLjhGOzEUJEE8FQYbTZPL8vnapm9aW11HNFeSigUZVJrW9vzn0MKti1g/UH3Mzj8aBC+N1/vttmlGWYbd25xcJgMDyXFISnbhqEUtHA0CxfjmqzbI/uitimM+IhhhzemzbSwdnuP39NauYpLa3o5Bd7vr+8rZgzUrRL7Yfjmx5WDHE6W0RafV+jIHI1eY8MByMIjS4hIwluT9YhiZgO/pqhcpaqnxumYnI6Z0KyEnaLUKPWl7wdvxKAtCZ4cWcJvsdUzJ35dJhaJvcAAAAAFiS0dE3ulu4psAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfiCwEUGzG784ZRAAACJ0lEQVQoz2NgYmZhZWNgYGBkZAABdg5OLm4eXj5+AUEhYRFRMXEGCUkpaRmEAlk5eQVFpZs3lVVU1dQ1NLVEGLR1dPWk9OEKDAyNjE1u3rx1y9TM3MLSytqGwdbO3kHP0ckZqsDF1c39JkgBkLjp4enlzeDj62fiHxAYFAxWEKLlqXwTDMBKQsPCGSIi3W7ejIoOi4mNi09gYLdNvAlXkJSc4pPKIK6ZdvNmeoZDZlZ2Ti5zXn7BTRi4VVhUXCLDUCpVVl4B5FZWVetxadTU1iEU1Dc0xjMwxGk3NbcA7bvVyutvntbmrwRXcLO9o5ODgaGru6MHrODWTXTQ2yfOxM7QrzlhYsVNrMCcKzeBgUF7UtpNHGBy4BSgz+WkpvJBvIVuifu06fqgwC/NnjGTbxZUwe3bcHlTM6PZoLBjnDN33vwCqNtv37lzGxaKCxYuYgErYGRcvGRpEqaCZbrdyxkgYMXKVauh5iJZMXnNWn2ogpKOAiV0H6RPXCfCDpVnYHZcb7EBIXcXaMfNjZvUNzPAAfuWrdvat69GUrBhx85dsggFDCG7Nffwz0IE94LmvfvmQOUkDPYfKBF3PDgDoUA56tCizsOMMC8c0Tl6zHXP8RMnYVYoL12neeo0I0yB+JmzS1LMk6C6Z22IWnronHwcOwNcwfnd4RcuJl4CS1fwzWxed/lKyRR2BoQCpuWzddbPuHqN14N3VZ39tOthN3JPhyDyCQMARjuZO/NrkzcAAAAASUVORK5CYII="/>
+</symbol><symbol id="twitter" viewBox="0 0 512.002 512.002">
+<g>
+	<path d="M512.002,97.211c-18.84,8.354-39.082,14.001-60.33,16.54c21.686-13,38.342-33.585,46.186-58.115
+		c-20.299,12.039-42.777,20.78-66.705,25.49c-19.16-20.415-46.461-33.17-76.674-33.17c-58.011,0-105.042,47.029-105.042,105.039
+		c0,8.233,0.929,16.25,2.72,23.939c-87.3-4.382-164.701-46.2-216.509-109.753c-9.042,15.514-14.223,33.558-14.223,52.809
+		c0,36.444,18.544,68.596,46.73,87.433c-17.219-0.546-33.416-5.271-47.577-13.139c-0.01,0.438-0.01,0.878-0.01,1.321
+		c0,50.894,36.209,93.348,84.261,103c-8.813,2.399-18.094,3.687-27.674,3.687c-6.769,0-13.349-0.66-19.764-1.888
+		c13.368,41.73,52.16,72.104,98.126,72.949c-35.95,28.176-81.243,44.967-130.458,44.967c-8.479,0-16.84-0.496-25.058-1.471
+		c46.486,29.807,101.701,47.197,161.021,47.197c193.211,0,298.868-160.062,298.868-298.872c0-4.554-0.104-9.084-0.305-13.59
+		C480.111,136.775,497.92,118.275,512.002,97.211z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
 </symbol></svg>
