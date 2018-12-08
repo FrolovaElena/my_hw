@@ -1,27 +1,18 @@
-
 'use strict';
 
-const adminLogin = 'admin';
-const adminPassword = 'm4ng0h4ckz';
-const massageCansel = 'Отменено пользователем!';
-const massageError = 'Неверный ввод!';
-const massageSuccess = 'Добро пожаловать!';
+let userInput;
+const numbers = [];
+let total = 0;
 
-let userLogin = prompt('Введите логин');
-let userPassword;
+do {
+  userInput = prompt('Введите произвольное число');
+  if (Number.isNaN(Number(userInput))) {
+    alert('Вы ввели не число!');
+  }
+  numbers.push(Number(userInput));
+} while (userInput !== null);
 
-if (userLogin === null) {
-    alert(massageCansel);
-} else if (userLogin === adminLogin) {
-    userPassword = prompt('Введите пароль');
-
-    if (userPassword === null) {
-        alert(massageCansel);
-    } else if (userPassword === adminPassword) {
-        alert(massageSuccess);
-    } else {
-        alert(massageError);
-    }
-} else {
-    alert(massageError);
+for (const number of numbers) {
+  total += number;
 }
+console.log('Общая сумма чисел равна: ', total);
