@@ -236,12 +236,24 @@ console.log(
 */
 /*
 const removeFromArray = function(arr,...args) {
-  for (let i = 0; i < args.length; i += 1) {
+  for (let i = 0; i < arr.length; i += 1) {
     if (arr.includes(args[i])) {
-      arr.splice(arr.indexOf(args[i]), 1);//найти индексы нужных чисел в исходном
-                                          //массиве и удалить, начиная с...1 элемент
+    arr.splice(arr.indexOf(args[i]), 1);//найти индексы нужных чисел в исходном
+                                        //массиве и удалить, начиная с...1 элемент
     }
   } return arr;
+};
+*/
+
+
+const removeFromArray = function(arr) {
+  const newArray = arguments[0];
+  console.log(arguments[0]);
+  for (let i = 1; i < arguments.length; i += 1) {
+    if (newArray.includes(arguments[i])) {
+    newArray.splice(newArray.indexOf(arguments[i]), 1);
+    }
+  } return newArray;
 };
 
 // Вызовы функции для проверки
@@ -252,4 +264,3 @@ console.log(
 console.log(
   removeFromArray([12, 4, 3, 8, 17], 3, 29, 18, 4)
 ); // [12, 8, 17]
-*/
