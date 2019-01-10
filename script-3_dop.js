@@ -26,8 +26,7 @@ console.log( checkNumberType(3) ); // 'Odd'
 console.log( checkNumberType(17) ); // 'Odd'
  */
 
-
- /*
+/*
   Напишите функцию formatString(str)
   
   - Функия принимает на вход строку str
@@ -63,8 +62,7 @@ console.log(
   ); // вернется форматированная строка
   */
 
-  
- /*
+/*
   Напишите функцию checkForSpam(str)
   
   Функция принимает 1 параметр str - строку,
@@ -95,7 +93,6 @@ console.log( checkForSpam('Get best sale offers now!') ); // true
 console.log( checkForSpam('[SPAM] How to earn fast money?') ); // true
 */
 
-
 /*  
   Написать функцию, getPx(str) 
 
@@ -122,7 +119,6 @@ console.log( getPx(-1) ); // должно быть:  null
 console.log( getPx(10) ); // должно быть:  null
 */
 
-
 /*  
   Создайте фукнцию findLongestWord(str),
   которая получает аргументом произвольную строку и
@@ -131,7 +127,6 @@ console.log( getPx(10) ); // должно быть:  null
   Важное условие - в строке могут быть только пробелы,
   символы букв и цифр!
 */
-
 
 // Вызовы функции для проверки
 /*
@@ -158,8 +153,7 @@ console.log(
   ); // вернет 'force'
   */
 
-
-  /*  
+/*  
   Создайте функцию findLargestNumber(numbers), 
   которая получает массив чисел numbers, и возвращает 
   самое большое число в массиве.
@@ -189,7 +183,6 @@ console.log(
     findLargestNumber([31, 128, 14, 74])
   ); // вернет 128
 */
-
 
 /*  
   Есть массив уникальных чисел uniqueNumbers.
@@ -223,7 +216,6 @@ console.log(
 ); // [2, 1, 4, 9, 3, 12, 19, 5, 8]
 */
 
-
 /*
   Создайте функцию removeFromArray(arr), 
   которая объявляет 1 параметр, исходный массив arr.
@@ -245,22 +237,18 @@ const removeFromArray = function(arr,...args) {
 };
 */
 
-
 const removeFromArray = function(arr) {
   const newArray = arguments[0];
   console.log(arguments[0]);
   for (let i = 1; i < arguments.length; i += 1) {
     if (newArray.includes(arguments[i])) {
-    newArray.splice(newArray.indexOf(arguments[i]), 1);
+      newArray.splice(newArray.indexOf(arguments[i]), 1);
     }
-  } return newArray;
+  }
+  return newArray;
 };
 
 // Вызовы функции для проверки
-console.log(
-  removeFromArray([1, 2, 3, 4, 5], 2, 4)
-); // [1, 3, 5]
+console.log(removeFromArray([1, 2, 3, 4, 5], 2, 4)); // [1, 3, 5]
 
-console.log(
-  removeFromArray([12, 4, 3, 8, 17], 3, 29, 18, 4)
-); // [12, 8, 17]
+console.log(removeFromArray([12, 4, 3, 8, 17], 3, 29, 18, 4)); // [12, 8, 17]

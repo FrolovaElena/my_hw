@@ -49,7 +49,6 @@ for (const entrie of entries) {
 }
 */
 
-
 /*
   Напиште скрипт который определит и выведет в консоль 
   имя сотрудника который выполнил больше всех задач.
@@ -57,7 +56,7 @@ for (const entrie of entries) {
   Сотрудники и кол-во выполненых задач содержатся 
   как свойства объекта в формате "имя":"кол-во задач"
 */
-
+/*
 const tasksCompleted = {
   ann: 29,
   david: 35,
@@ -75,8 +74,7 @@ for (let i = 1; i < entries.length; i += 1) {
   }
  
 console.log(bestWorker[0]);
-
-
+*/
 
 /*  
   Напишите функцию countProps(obj),
@@ -100,37 +98,24 @@ console.log(
 
 */
 
-
 /*  
   Создайте функцию isObjectEmpty(obj), которая получает 
   один аргумент obj - объект, и проверяет пуст ли он (есть ли в нем свойства).
   
   Возвращает true если объект пустой, false если не пустой.
 */
-/*
-const isObjectEmpty = (obj) => {
+
+const isObjectEmpty = obj => {
   const objectContent = Object.keys(obj);
-  if (objectContent.length === 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return objectContent.length === 0;
 };
 
 // Вызовы функции для проверки
-console.log(
-  isObjectEmpty({})
-); // true
+console.log(isObjectEmpty({})); // true
 
-console.log(
-  isObjectEmpty({a: 1})
-); // false
+console.log(isObjectEmpty({ a: 1 })); // false
 
-console.log(
-  isObjectEmpty({a: 1, b: 2})
-); // false
-*/
-
+console.log(isObjectEmpty({ a: 1, b: 2 })); // false
 
 /*  
   Напишите функцию countTotalSalary(salaries),
@@ -163,7 +148,6 @@ console.log(
 ); // 330
 */
 
-
 /*  
   Напишите функцию getAllPropValues(arr, prop), 
   которая получает массив объектов и имя ключа, 
@@ -173,29 +157,24 @@ console.log(
 /*
 const users = [
   { name: 'Poly', age: 7, mood: 'happy' },
-  { name: 'Mango', age: 4, mood: 'blissful'},
-  { name: 'Ajax', age: 3, mood: 'tired' }
+  { name: 'Mango', age: 4, mood: 'blissful' },
+  { name: 'Ajax', age: 3, mood: 'tired' },
 ];
-console.log(users[1]['name']);
 
 const getAllPropValues = (arr, prop) => {
   let allPropValues = [];
   for (let i = 0; i < users.length; i += 1) {
-    allPropValues.push(users[i][prop]);
-  } return allPropValues;
+    if (users[i].hasOwnProperty(prop)) {
+      allPropValues.push(users[i][prop]);
+    }
+  }
+  return allPropValues;
 };
 
-
 // Вызовы функции для проверки
-console.log(
-  getAllPropValues(users, 'name')
-); // ['Poly', 'Mango', 'Ajax']
+console.log(getAllPropValues(users, 'name')); // ['Poly', 'Mango', 'Ajax']
 
-console.log(
-  getAllPropValues(users, 'mood')
-); // ['happy', 'blissful', 'tired']
+console.log(getAllPropValues(users, 'mood')); // ['happy', 'blissful', 'tired']
 
-console.log(
-  getAllPropValues(users, 'active')
-); // []
+console.log(getAllPropValues(users, 'active')); // []
 */

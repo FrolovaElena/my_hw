@@ -23,22 +23,23 @@ const cashier = {
   error: null,
   greet(name) {
     return console.log(`Добрый день, вас обслуживает ${this.name}`);
-  } ,
+  },
   getCustomerMoney(value) {
-    return this.customerMoney = value;
-  } ,
+    return (this.customerMoney = value);
+  },
   countTotalPrice(products, order) {
     const allProducts = Object.keys(order);
     let totalPrice = 0;
     for (const key of allProducts) {
       totalPrice += order[key] * products[key];
-    } return this.totalPrice = totalPrice;
-  } ,
+    }
+    return (this.totalPrice = totalPrice);
+  },
   countChange() {
     if (this.customerMoney < this.totalPrice) {
-      this.error = 'Вам не хватает денег на покупки'; 
+      this.error = 'Вам не хватает денег на покупки';
     } else {
-      this.change = this.customerMoney - this.totalPrice; 
+      this.change = this.customerMoney - this.totalPrice;
     }
   },
   onSuccess() {
@@ -52,10 +53,10 @@ const cashier = {
     this.totalPrice = totalPrice;
     this.change = change;
     this.error = error;
-  }
+  },
 };
 
-const {customerMoney = 0, totalPrice = 0, change = 0, error = null} = cashier;
+const { customerMoney = 0, totalPrice = 0, change = 0, error = null } = cashier;
 
 // Проверяем исходные значения полей
 console.log(cashier.name); // Mango

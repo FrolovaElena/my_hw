@@ -10,18 +10,18 @@ let userLogin = prompt('Введите логин');
 let userPassword;
 
 if (userLogin === null) {
-    message = messageCansel;
+  message = messageCansel;
 } else if (userLogin === adminLogin) {
-    userPassword = prompt('Введите пароль');
+  userPassword = prompt('Введите пароль');
 
-    if (userPassword === null) {
-        message = messageCansel;
-    } else if (userPassword === adminPassword) {
-        message = messageSuccess;
-    } else {
-        message = messageError;
-    }
-} else {
+  if (userPassword === null) {
+    message = messageCansel;
+  } else if (userPassword === adminPassword) {
+    message = messageSuccess;
+  } else {
     message = messageError;
+  }
+} else {
+  message = messageError;
 }
 alert(message);

@@ -26,7 +26,6 @@ if(!input) {
 }
 */
 
-
 /*
   Напишите скрипт, который выводит через console.log все 
   числа от min до max, с двумя исключениями: 
@@ -51,7 +50,6 @@ for (number = min; number >= min && number <= max; number += 1) {
         console.log(number);
     }
 }*/
-
 
 /*
   Напишите скрипт, который выбирает из массива numbers 
@@ -86,7 +84,6 @@ for (number of numbers) {
   console.log(newArray);  
 */
 
-
 /*
   Напишите скрипт, который проверяет произвольную строку 
   в переменной string и находит в ней самое длинное слово,
@@ -103,7 +100,6 @@ for (let i = 1; i < max; i += 1) {
   }
 } console.log(longestWord); // 'force
 */
-
 
 /*
   Напишите скрипт который:
@@ -136,7 +132,6 @@ for(let i = 0; i < arrNumbers.length; i += 1) {
 }
 console.log(result);
 */
-
 
 /*
   ***ЗАДАНИЕ ПОВЫШЕНОЙ СЛОЖНОСТИ***
@@ -182,7 +177,6 @@ if (!userInput) {
 }
 */
 
-
 /*
 Есть массив паролей зарегистрированных пользователей passwords.
 При посещении страницы, необходимо попросить пользователя ввести свой пароль, после чего проверить содержит ли массив passwords пароль введенный пользователем.
@@ -200,21 +194,19 @@ let attempts = 3;
 let userInput;
 
 do {
-    userInput = prompt('Введите пароль!');
-    if (passwords.includes(userInput)) {
-        alert('Добро пожаловать!');
-        break;
-      } else if (!userInput) {
-        alert('Отменено пользователем!');
-        break;
-      } else {
-        attempts -= 1;
-        console.log(attempts);
-        alert(`Неверный пароль, у вас осталось ${attempts} попыток`); 
-        if (attempts === 0) {
-            alert('У вас закончились попытки, аккаунт заблокирован!');
-          }
-      }
-    } while (attempts > 0); 
-
-    
+  userInput = prompt('Введите пароль!');
+  if (passwords.includes(userInput)) {
+    alert('Добро пожаловать!');
+    break;
+  } else if (!userInput) {
+    alert('Отменено пользователем!');
+    break;
+  } else {
+    attempts -= 1;
+    console.log(attempts);
+    alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
+    if (attempts === 0) {
+      alert('У вас закончились попытки, аккаунт заблокирован!');
+    }
+  }
+} while (attempts > 0);

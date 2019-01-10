@@ -15,48 +15,54 @@ const order = {
   cheese: 1,
 };
 
-const {name, customerMoney = 0, totalPrice = 0, change = 0, error = null} = Cashier;
+const {
+  name,
+  customerMoney = 0,
+  totalPrice = 0,
+  change = 0,
+  error = null,
+} = Cashier;
 
 function Cashier(name) {
-  this.name = name,
-  this.customerMoney = customerMoney,
-  this.totalPrice = totalPrice,
-  this.change = change,
-  this.error = error,
+  this.name = name;
+  this.customerMoney = customerMoney;
+  this.totalPrice = totalPrice;
+  this.change = change;
+  this.error = error;
   this.greet = function(name) {
     return console.log(`Добрый день, вас обслуживает ${this.name}`);
-  },
+  };
   this.getCustomerMoney = function(value) {
-    return this.customerMoney = value;
-  },
+    return (this.customerMoney = value);
+  };
   this.countTotalPrice = function(products, order) {
     const allProducts = Object.keys(order);
     let totalPrice = 0;
     for (const key of allProducts) {
       totalPrice += order[key] * products[key];
     }
-    return this.totalPrice = totalPrice;
-  },
+    return (this.totalPrice = totalPrice);
+  };
   this.countChange = function() {
     if (this.customerMoney < this.totalPrice) {
-      this.error = 'Вам не хватает денег на покупки'; 
+      this.error = 'Вам не хватает денег на покупки';
     } else {
-      this.change = this.customerMoney - this.totalPrice; 
+      this.change = this.customerMoney - this.totalPrice;
     }
-  },
+  };
   this.onSuccess = function() {
     return console.log(`Спасибо за покупку, ваша сдача ${this.change}!`);
-  },
+  };
   this.onError = function() {
     return console.log(this.error);
-  },
+  };
   this.reset = function() {
     this.customerMoney = customerMoney;
     this.totalPrice = totalPrice;
     this.change = change;
     this.error = error;
-  }
-};
+  };
+}
 
 const poly = new Cashier('Poly');
 const mango = new Cashier('Mango');
