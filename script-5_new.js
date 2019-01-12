@@ -59,7 +59,7 @@ const Notepad = function Notepad(notes = []) {
     }
     return filtredNotes;
   };
-  this.filterByPriority = function(priority) {
+  this.filterNotesByPriority = function(priority) {
     const filtredNotes = [];
 
     for (const note of this.notes) {
@@ -178,7 +178,15 @@ console.log(
   'Отфильтровали заметки по ключевому слову "javascript": ',
   notepad.filterNotes('javascript'),
 );
+/*
+ * Хочу посмотреть только заметки с нормальным приоритетом
+ */
+console.log(
+  'Отфильтровали заметки по нормальному приоритету: ',
+  notepad.filterNotesByPriority(PRIORITY_TYPES.NORMAL),
+);
 
+/*
 /*
   Обновим контент заметки с id 3
 */
