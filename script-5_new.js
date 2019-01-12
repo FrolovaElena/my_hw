@@ -29,15 +29,13 @@ const Notepad = function Notepad(notes = []) {
     }
   };
   this.updateNoteContent = function(id, updatedContent) {
-    const updatedNote = {};
-    const note = this.findNoteById(id);
+    const updatedNote = this.findNoteById(id);
     const { title, body } = updatedContent;
 
-    if (!note) return;
+    if (!updatedNote) return;
 
-    note.title = title;
-    note.body = body;
-    updatedContent = note;
+    updatedNote.title = title;
+    updatedNote.body = body;
 
     return updatedNote;
   };
