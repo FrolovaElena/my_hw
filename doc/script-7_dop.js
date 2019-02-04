@@ -200,10 +200,14 @@ const order = {
   cheese: 40,
 };
 
-const allProducts = Object.values(order);
-console.log(sumAllProducts(allProducts));
-/
+//const allProducts = Object.values(order);
+//console.log(sumAllProducts(allProducts));
 
+Улучшенный вариант.
+const sumAllProducts = obj =>
+  Object.values(obj).reduce((acc, value) => acc + value, 0);
+
+console.log(sumAllProducts(order));
 
 /*
 Функция считает общую стоимость заказа. Принимает объекты заказа и базы данных (products, order).
@@ -216,21 +220,29 @@ const products = {
   cheese: 30,
 };
 
-const allProducts = Object.keys(products);
 const orderA = {
   bread: 2,
   apples: 4,
   chicken: 1,
 };
-const
 const orderB = {
   bread: 1,
   milk: 2,
   cheese: 3,
 };
+//const order1 = Object.entries(orderA);
+//const order2 = Object.entries(orderB);
 
-const getTotalPrice = (order, products) =>
-  order.reduce((acc, products, order) => acc + order[key] * products[key], 0);
+//const getTotalPrice = (order, products) =>
+//order.reduce((acc, item) => (acc += item[1] * products[item[0]]), 0);
 
-console.log(getTotalPrice(products, orderA));
-console.log(getTotalPrice(products, orderB));
+const getTotalPrice = (
+  order,
+  products, //улучшенный вариант
+) =>
+  Object.entries(order).reduce(
+    (acc, [key, value]) => acc + value * products[key],
+    0,
+  );
+console.log(getTotalPrice(orderA, products));
+console.log(getTotalPrice(orderB, products));

@@ -87,30 +87,36 @@ const users = [
   },
 ];
 
+//Получить массив имен всех пользователей (поле name).
 const getAllNames = users => users.map(user => user.name);
 
 console.log(getAllNames(users));
 
+//Получить массив объектов пользователей по цвету глаз (поле eyeColor).
 const getUsersByEyeColor = (users, color) =>
   users.filter(user => user.eyeColor === color);
 
 console.log(getUsersByEyeColor(users, 'blue'));
 
+//Получить массив имен пользователей по полу (поле gender).
 const getUsersByGender = (users, gender) =>
   users.filter(user => user.gender === gender);
 
 console.log(getUsersByGender(users, 'male'));
 
+//Получить массив только неактивных пользователей (поле isActive).
 const getInactiveUsers = users => users.filter(user => !user.isActive);
 
 console.log(getInactiveUsers(users));
 
+//Получить пользоваля (не массив) по email (поле email, он уникальный).
 const getUserByEmail = (users, email) =>
   users.find(user => user.email === email);
 
 console.log(getUserByEmail(users, 'shereeanthony@kog.com'));
 console.log(getUserByEmail(users, 'elmahead@omatom.com'));
 
+//Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age).
 const getUsersWithAge = (users, min, max) =>
   users.filter(user => user.age >= min && user.age <= max);
 
@@ -118,13 +124,56 @@ console.log(getUsersWithAge(users, 20, 30));
 
 console.log(getUsersWithAge(users, 30, 40));
 
+//Получить общую сумму баланса (поле balance) всех пользователей.
+
 const getTotalBalance = users =>
   users.reduce((acc, user) => (acc += user.balance), 0);
 
 console.log(getTotalBalance(users));
 
+//Получить массив имен всех пользователей у которых есть друг с указанным именем.
 const getUsersByFriend = (users, name) =>
   users.filter(user => user.friends.includes(name));
 
 console.log(getUsersByFriend(users, 'Briana Decker'));
 console.log(getUsersByFriend(users, 'Goldie Gentry'));
+
+//Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке
+
+const getUniqueSkills = users =>
+  users
+    .reduce((acc, user) => {
+      acc.push(...user.skills);
+      return acc;
+    }, [])
+    .reduce((acc, item) => {
+      if (!acc.includes(item)) {
+        acc.push(item);
+      }
+      return acc;
+    }, [])
+    .sort();
+
+console.log(getUniqueSkills(users));
+
+// Получить массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
+/*
+const getNamesSortedByFriendsCount = users =>
+  users
+    .slice()
+    .sort((userA, userB) => {
+      return userA.friends.length - userB.friends.length;
+    })
+    .map(user => user.name);
+*/
+
+const getNamesSortedByFriendsCount = users =>
+  users
+    .slice()
+    .sort((a, b) => {
+      return a.friends.length - b.friends.length;
+    })
+    .map(user => user.name);
+
+console.log(getNamesSortedByFriendsCount(users));
+console.log(users.map(user => user.name));
