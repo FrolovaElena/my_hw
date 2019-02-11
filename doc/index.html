@@ -8,76 +8,95 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="conteiner"></div>
-    <ul class="categories">
+    <button class="btn" data-action="open-modal">Open Modal</button>
+
+    <div class="modal modal-hidden js-modal-backdrop">
+      <div class="modal-content">
+        <div class="close-btn" data-action="close-modal"></div>
+        <h2 class="modal-title">Newsletter</h2>
+        <p class="modal-text">
+          Subscribe to the Bachas mailing list to receive updates on new
+          arrivals, special offers and other discount information.
+        </p>
+        <form class="sub-form" action="#">
+          <input
+            class="sub-form-input"
+            type="text"
+            placeholder="Your Email Here"
+          />
+          <button class="sub-form-btn">subscribe</button>
+        </form>
+      </div>
+    </div>
+    <ul class="button-list">
       <li>
-        Животные
-        <ul>
-          <li>Кот</li>
-          <li>Хомяк</li>
-          <li>Лошадь</li>
-          <li>Попугай</li>
-        </ul>
+        <button data-action="delete">Delete</button>
+        <span>HTML</span>
       </li>
       <li>
-        Продукты
-        <ul>
-          <li>Хлеб</li>
-          <li>Зелень</li>
-          <li>Творог</li>
-        </ul>
+        <button data-action="delete">Delete</button>
+        <span>CSS</span>
       </li>
       <li>
-        Технологии
-        <ul>
-          <li>html</li>
-          <li>css</li>
-          <li>js</li>
-          <li>react</li>
-          <li>node</li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="size-filter">
-      <li>
-        <label>
-          <input type="checkbox" name="size" value="xs" />
-          Extra Small
-        </label>
+        <button data-action="delete">Delete</button>
+        <span>JS</span>
       </li>
       <li>
-        <label>
-          <input type="checkbox" name="size" value="s" checked />
-          Small
-        </label>
+        <button data-action="delete">Delete</button>
+        <span>React</span>
       </li>
       <li>
-        <label>
-          <input type="checkbox" name="size" value="m" />
-          Medium
-        </label>
+        <button data-action="delete">Delete</button>
+        <span>NodeJS</span>
       </li>
       <li>
-        <label>
-          <input type="checkbox" name="size" value="l" checked />
-          Large
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="checkbox" name="size" value="xl" checked />
-          Extra Large
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="checkbox" name="size" value="xxl" />
-          Extra Extra Large
-        </label>
+        <button data-action="delete">Delete</button>
+        <span>PHP</span>
       </li>
     </ul>
-    <ul class="gallery"></ul>
-    <ul class="list"></ul>
-    <script src="script.js"></script>
+    <ul class="menu js-menu">
+      <li class="menu-item">
+        <a href="#" class="menu-link active">home</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">about</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">contacts</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">team</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">career</a>
+      </li>
+    </ul>
+    <div class="input-list">
+      <input
+        type="text"
+        class="input"
+        data-length="2"
+        placeholder="2 символа"
+      />
+      <input
+        type="text"
+        class="input"
+        data-length="4"
+        placeholder="4 символа"
+      />
+      <input
+        type="text"
+        class="input"
+        data-length="8"
+        placeholder="8 символов"
+      />
+      <input
+        type="text"
+        class="input"
+        data-length="16"
+        placeholder="16 символов"
+      />
+    </div>
+    <script src="script-9_dop.js"></script>
   </body>
 </html>

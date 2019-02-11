@@ -37,16 +37,20 @@ class Notepad {
     }
   }
 
-  saveNote(note) {
+  saveNote(title, text) {
+    const note = {
+      id: Notepad.generateUniqueId(),
+      title: title,
+      body: text,
+      priority: PRIORITY_TYPES.LOW,
+    };
     this._notes.push(note);
+    return note;
   }
 
   deleteNote(id) {
-    for (let i = 0; i < this._notes.length; i += 1) {
-      if (this._notes[i].id === id) {
-        this._notes.splice(i, 1);
-      }
-    }
+    const updatedNotes = this._notes.filter(note => note.id !== id);
+    return updatedNotes;
   }
 
   updateNoteContent(id, updatedContent) {
@@ -93,6 +97,14 @@ class Notepad {
     }
     return filtredNotes;
   }
+
+  static generateUniqueId = () =>
+    Math.random()
+      .toString(36)
+      .substring(2, 15) +
+    Math.random()
+      .toString(36)
+      .substring(2, 15);
 
   static getPriorityName(priorityId) {
     const priorityValues = Object.values(this.PRIORITIES);
@@ -144,6 +156,12 @@ const initialNotes = [
 
 const notepad = new Notepad(initialNotes);
 console.log(notepad.notes);
+
+const refs = {
+  list: document.querySelector('.note-list'),
+  editor: document.querySelector('.note-editor'),
+  searchForm: document.querySelector('.search-form'),
+};
 
 const createNoteContent = ({ title, body }) => {
   const noteContent = document.createElement('div');
@@ -228,12 +246,53 @@ const createListItem = data => {
 
 const renderNoteList = (list, data) => {
   const items = data.map(note => createListItem(note));
+
+  list.innerHTML = '';
   list.append(...items);
 
   return list;
 };
 
-const list = document.querySelector('.note-list');
+renderNoteList(refs.list, notepad.notes);
 
-renderNoteList(list, notepad.notes);
-console.log(list);
+const addListItem = (list, note) => {
+  const listItem = createListItem(note);
+  console.log('newNote: ', listItem);
+  list.appendChild(listItem);
+};
+
+const handleFormSubmit = event => {
+  event.preventDefault();
+
+  const [title, body] = event.target.elements;
+  const titleValue = title.value;
+  const bodyValue = body.value;
+
+  if ((titleValue.trim() && bodyValue.trim()) === '') {
+    alert('Необходимо заполнить все поля!');
+    return;
+  }
+  const newNote = notepad.saveNote(titleValue, bodyValue);
+  addListItem(refs.list, newNote);
+
+  event.currentTarget.reset();
+};
+
+const removeListItem = event => {
+  const buttonDel = event.target;
+  const deletedItem = buttonDel.closest('.note-list__item');
+  const id = deletedItem.dataset.id;
+  notepad.deleteNote(id);
+  deletedItem.remove();
+};
+
+const handleFilterInput = event => {
+  const value = event.target.value;
+  const filteredNotes = notepad.filterNotesByQuery(value);
+
+  renderNoteList(refs.list, filteredNotes);
+};
+
+refs.editor.addEventListener('submit', handleFormSubmit);
+refs.searchForm.addEventListener('input', handleFilterInput);
+refs.list.addEventListener('click', removeListItem);

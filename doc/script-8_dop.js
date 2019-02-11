@@ -16,9 +16,6 @@ console.log(list);
 const enimals = list.firstElementChild;
 console.log(enimals.textContent);
 console.log(enimals.firstElementChild.children.length);
-const tech = list.lastElementChild;
-console.log(tech.textContent);
-console.log(tech.firstElementChild.children.length);
 */
 
 /*
@@ -32,7 +29,7 @@ console.log(teck.lastElementChild);
 teck.firstElementChild.style.color = 'red';
 teck.lastElementChild.style.color = 'blue';
 */
-/*
+
 const mapper = questions =>
   questions.map(({ _id: id, ...props }) => ({ id, ...props }));
 
@@ -42,7 +39,7 @@ const a = [
   { _id: 3, title: 'lion', text: 'oehshgshdj jdjdjk' },
 ];
 console.log(mapper(a));
-*/
+
 /*
   Вставьте элементы этого массива в ul так, чтобы каждый элемент стоял в своем li.
 
@@ -223,19 +220,29 @@ console.log(conteiner);
     - Каждый следующий div после первого, должен быть шире и выше предыдущего
       на 10px
 */
-const count = num => {};
-const createBox = num => {
-  let counter = 0;
-  const boxes = [];
 
-  while (counter < num) {
-    const box = document.createElement('div');
-    box.width = '30px';
-    box.heigth = '30px';
-    box.backgroundColor = 'teal';
-    boxes.push(box);
-    count += 1;
+const getRandColor = () => {
+  let color = Math.floor(Math.random() * Math.pow(256, 3)).toString(16);
+  while (color.length < 6) {
+    color = '0' + color;
   }
+  return '#' + color;
 };
 
-console.log(createBox(3));
+const createBox = (width, heigth, num, edit) => {
+  const boxes = [];
+
+  for (let i = 0; i < num; i += 1) {
+    boxes[i] = document.createElement('div');
+    boxes[i].style.width = width + edit * i + 'px';
+    boxes[i].style.height = heigth + edit * i + 'px';
+    boxes[i].style.backgroundColor = getRandColor();
+    boxes.push(boxes[i]);
+  }
+  return boxes;
+};
+
+const conteiner = document.querySelector('.conteiner');
+const boxes = createBox(30, 30, 5, 10);
+conteiner.append(...boxes);
+console.log(conteiner);
