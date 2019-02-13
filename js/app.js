@@ -75,15 +75,9 @@ class Notepad {
   }
 
   filterNotesByQuery(query) {
-    const filtredNotes = [];
-
-    for (const note of this._notes) {
-      if (
-        (note.title && note.body).toLowerCase().includes(query.toLowerCase())
-      ) {
-        filtredNotes.push(note);
-      }
-    }
+    const filtredNotes = this._notes.filter(note =>
+      (note.title + note.body).toLowerCase().includes(query.toLowerCase())
+    );
     return filtredNotes;
   }
 
@@ -257,7 +251,6 @@ renderNoteList(refs.list, notepad.notes);
 
 const addListItem = (list, note) => {
   const listItem = createListItem(note);
-  console.log('newNote: ', listItem);
   list.appendChild(listItem);
 };
 
@@ -278,9 +271,33 @@ const handleFormSubmit = event => {
   event.currentTarget.reset();
 };
 
-const removeListItem = event => {
-  const buttonDel = event.target;
-  const deletedItem = buttonDel.closest('.note-list__item');
+const handleListClick = event => {
+  const target = event.target;
+  if (target.nodeName !== 'I') {
+    return;
+  }
+  const button = target.closest('.action');
+  const action = button.dataset.action;
+
+  switch (action) {
+    case NOTE_ACTIONS.DELETE:
+      removeListItem(event.target);
+      break;
+
+    case NOTE_ACTIONS.EDIT:
+      break;
+    case NOTE_ACTIONS.DECREASE_PRIORITY:
+      break;
+    case NOTE_ACTIONS.INCREASE_PRIORITY:
+      break;
+    default:
+      console.log('ошибка!');
+      break;
+  }
+};
+
+const removeListItem = button => {
+  const deletedItem = button.closest('.note-list__item');
   const id = deletedItem.dataset.id;
   notepad.deleteNote(id);
   deletedItem.remove();
@@ -295,4 +312,4 @@ const handleFilterInput = event => {
 
 refs.editor.addEventListener('submit', handleFormSubmit);
 refs.searchForm.addEventListener('input', handleFilterInput);
-refs.list.addEventListener('click', removeListItem);
+refs.list.addEventListener('click', handleListClick);

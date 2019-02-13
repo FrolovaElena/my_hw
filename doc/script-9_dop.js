@@ -191,10 +191,13 @@ const closeModal = () => {
   backdrop.classList.add('modal-hidden');
   window.removeEventListener('keydown', closeModalByEsc);
 };
+const onBackdropClick = event => {
+  if (event.currentTarget === event.target) {
+    closeModal();
+  }
+};
 
 const closeModalByEsc = event => {
-  console.log(event.target);
-  console.log(event.code);
   if (event.code !== 'Escape') {
     return;
   }

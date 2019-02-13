@@ -57,15 +57,11 @@ class Notepad {
   }
 
   filterNotesByQuery(query) {
-    const filtredNotes = [];
-
-    for (const note of this._notes) {
-      if (
-        (note.title && note.body).toLowerCase().includes(query.toLowerCase())
-      ) {
-        filtredNotes.push(note);
-      }
-    }
+    const filtredNotes = this._notes.filter(
+      note =>
+        note.title.toLowerCase().includes(query.toLowerCase()) +
+        note.body.toLowerCase().includes(query.toLowerCase()),
+    );
     return filtredNotes;
   }
 
