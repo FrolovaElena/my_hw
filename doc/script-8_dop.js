@@ -141,13 +141,14 @@ console.log(createGallery(gallery, images));
 
 //const sizeFilter = document.querySelector('.size-filter');
 //const inputs = Array.from(sizeFilter.children);
-//const checkedInputs = inputs
+///const checkedInputs = inputs
 //.filter(input => input.firstElementChild.firstElementChild.checked)
 //.map(input => input.firstElementChild.firstElementChild);
 
+//лучший вариант
 const checkedInputs = Array.from(
   document.querySelectorAll('.size-filter [checked]'),
-); // лучший вариант
+);
 console.log(checkedInputs);
 
 const collectInputData = inputs => inputs.map(input => input.value);
@@ -219,7 +220,7 @@ console.log(conteiner);
     - Размеры самого первого div - 30px на 30px.
     - Каждый следующий div после первого, должен быть шире и выше предыдущего
       на 10px
-*/
+
 
 const getRandColor = () => {
   let color = Math.floor(Math.random() * Math.pow(256, 3)).toString(16);
@@ -246,3 +247,4 @@ const conteiner = document.querySelector('.conteiner');
 const boxes = createBox(30, 30, 5, 10);
 conteiner.append(...boxes);
 console.log(conteiner);
+*/

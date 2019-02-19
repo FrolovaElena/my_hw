@@ -16,11 +16,7 @@ class Notepad {
   }
 
   findNoteById(id) {
-    for (const note of this._notes) {
-      if (note.id === id) {
-        return note;
-      }
-    }
+    return this._notes.find(note => note.id === id);
   }
 
   saveNote(note) {
@@ -28,24 +24,55 @@ class Notepad {
   }
 
   deleteNote(id) {
-    for (let i = 0; i < this._notes.length; i += 1) {
-      if (this._notes[i].id === id) {
-        this._notes.splice(i, 1);
-      }
-    }
+    const updatedNotes = this._notes.filter(note => note.id !== id);
+
+    return updatedNotes;
   }
 
   updateNoteContent(id, updatedContent) {
-    const updatedNote = this.findNoteById(id);
-    const { title, body } = updatedContent;
+    const note = this.findNoteById(id);
 
-    if (!updatedNote) return;
+    if (!note) return;
 
-    updatedNote.title = title;
-    updatedNote.body = body;
+    const { title = note.title, body = note.body } = updatedContent;
 
+    note.title = title;
+    note.body = body;
+
+    return note;
+  }
+
+  /*
+лучшие варианты
+
+  updateNoteContent(id, updatedContent) {
+    const note = this.findNoteById(id);
+
+    if (!note) return;
+
+    const updatedEntries = Object.entries(updatedContent);
+    console.log(updatedEntries);
+    updatedEntries.forEach(([key, value]) => {
+      note[key] = value;
+    });
+    return note;
+  }
+
+
+  updateNoteContent(id, updatedContent) {
+    let updatedNote;
+
+    this._notes = this._notes.map(note => {
+      if (note.id === id) {
+        updatedNote = { ...note, ...updatedContent };
+      
+        return updatedNote;
+      }
+      return note;
+    });
     return updatedNote;
   }
+*/
 
   updateNotePriority(id, priority) {
     const note = this.findNoteById(id);
@@ -66,24 +93,16 @@ class Notepad {
   }
 
   filterNotesByPriority(priority) {
-    const filtredNotes = [];
+    const filtredNotes = this._notes.filter(note => note.priority === priority);
 
-    for (const note of this._notes) {
-      if (note.priority === priority) {
-        filtredNotes.push(note);
-      }
-    }
     return filtredNotes;
   }
 
   static getPriorityName(priorityId) {
     const priorityValues = Object.values(this.PRIORITIES);
+    const value = priorityValues.find(value => value.id === priorityId);
 
-    for (const value of priorityValues) {
-      if (value.id === priorityId) {
-        return value.name;
-      }
-    }
+    return value.name;
   }
 }
 
@@ -113,12 +132,17 @@ const initialNotes = [
 /*
  * Посмотрим имя приоритета по id
  */
+
 console.log(Notepad.getPriorityName(PRIORITY_TYPES.LOW)); // "Low"
 console.log(Notepad.getPriorityName(PRIORITY_TYPES.NORMAL)); // "Normal"
 console.log(Notepad.getPriorityName(PRIORITY_TYPES.HIGH)); // "High"
 
 const notepad = new Notepad(initialNotes);
 
+console.log(notepad.updateNoteContent(2, { title: 'css' }));
+console.log(
+  notepad.updateNoteContent(1, { title: 'lorem', body: 'hdh hdkgld ksuhfidl' }),
+);
 /*
   Смотрю что у меня в заметках после инициализации
 */
@@ -195,3 +219,8 @@ console.log(
  */
 notepad.deleteNote(2);
 console.log('Заметки после удаления с id 2: ', notepad.notes);
+
+console.log(notepad.findNoteById(3));
+
+console.log(notepad.updateNoteContent(2, { title: 'html' }));
+console.log(notepad.updateNoteContent(2, { body: 'html' }));

@@ -30,11 +30,7 @@ class Notepad {
   }
 
   findNoteById(id) {
-    for (const note of this._notes) {
-      if (note.id === id) {
-        return note;
-      }
-    }
+    return this._notes.find(note => note.id === id);
   }
 
   saveNote(title, text) {
@@ -54,15 +50,16 @@ class Notepad {
   }
 
   updateNoteContent(id, updatedContent) {
-    const updatedNote = this.findNoteById(id);
-    const { title, body } = updatedContent;
+    const note = this.findNoteById(id);
 
-    if (!updatedNote) return;
+    if (!note) return;
 
-    updatedNote.title = title;
-    updatedNote.body = body;
+    const { title = note.title, body = note.body } = updatedContent;
 
-    return updatedNote;
+    note.title = title;
+    note.body = body;
+
+    return note;
   }
 
   updateNotePriority(id, priority) {
@@ -82,32 +79,27 @@ class Notepad {
   }
 
   filterNotesByPriority(priority) {
-    const filtredNotes = [];
+    const filtredNotes = this._notes.filter(note => note.priority === priority);
 
-    for (const note of this._notes) {
-      if (note.priority === priority) {
-        filtredNotes.push(note);
-      }
-    }
     return filtredNotes;
   }
 
-  static generateUniqueId = () =>
-    Math.random()
-      .toString(36)
-      .substring(2, 15) +
-    Math.random()
-      .toString(36)
-      .substring(2, 15);
+  static generateUniqueId() {
+    return (
+      Math.random()
+        .toString(36)
+        .substring(2, 15) +
+      Math.random()
+        .toString(36)
+        .substring(2, 15)
+    );
+  }
 
   static getPriorityName(priorityId) {
     const priorityValues = Object.values(this.PRIORITIES);
+    const value = priorityValues.find(value => value.id === priorityId);
 
-    for (const value of priorityValues) {
-      if (value.id === priorityId) {
-        return value.name;
-      }
-    }
+    return value.name;
   }
 }
 
