@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = env => ({
@@ -8,14 +9,22 @@ module.exports = env => ({
   module: {
     rules: [
       {
-        test: /.scss$/,
+        test: /\.scss$/,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: './src/index.html', minify: false })
+  ],
   devServer: {
+    contentBase: path.resolve(__dirname, '../src'),
+    watchContentBase: true,
     publicPath: '/',
     hot: false,
     historyApiFallback: true,
