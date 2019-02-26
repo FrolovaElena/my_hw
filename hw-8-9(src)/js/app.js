@@ -246,6 +246,23 @@ const addListItem = (list, note) => {
   list.appendChild(listItem);
 };
 
+const handleFilterInput = event => {
+  const value = event.target.value;
+  const filteredNotes = notepad.filterNotesByQuery(value);
+
+  renderNoteList(refs.list, filteredNotes);
+};
+
+const removeListItem = button => {
+  const deletedItem = button.closest(".note-list__item");
+  const id = deletedItem.dataset.id;
+  console.log(deletedItem);
+  const updatedNotes = notepad.deleteNote(id);
+  console.log(updatedNotes);
+  deletedItem.remove();
+  return renderNoteList(refs.list, updatedNotes);
+};
+
 const handleFormSubmit = event => {
   event.preventDefault();
 
@@ -286,20 +303,6 @@ const handleListClick = event => {
       console.log("ошибка!");
       break;
   }
-};
-
-const removeListItem = button => {
-  const deletedItem = button.closest(".note-list__item");
-  const id = deletedItem.dataset.id;
-  notepad.deleteNote(id);
-  deletedItem.remove();
-};
-
-const handleFilterInput = event => {
-  const value = event.target.value;
-  const filteredNotes = notepad.filterNotesByQuery(value);
-
-  renderNoteList(refs.list, filteredNotes);
 };
 
 refs.editor.addEventListener("submit", handleFormSubmit);

@@ -1,4 +1,4 @@
-import { PRIORITY_TYPES } from './utils/constants';
+import { PRIORITY_TYPES } from "./utils/constants";
 
 export default class Notepad {
   constructor(notes = []) {
@@ -18,15 +18,15 @@ export default class Notepad {
       id: Notepad.generateUniqueId(),
       title: title,
       body: text,
-      priority: PRIORITY_TYPES.LOW,
+      priority: PRIORITY_TYPES.LOW
     };
     this._notes.push(note);
     return note;
   }
 
   deleteNote(id) {
-    const updatedNotes = this._notes.filter(note => note.id !== id);
-    return updatedNotes;
+    this._notes = this.notes.filter(note => note.id !== id);
+    return this._notes;
   }
 
   updateNoteContent(id, updatedContent) {
@@ -83,7 +83,7 @@ export default class Notepad {
   }
 }
 Notepad.PRIORITIES = {
-  0: { id: 0, value: 0, name: 'Low' },
-  1: { id: 1, value: 1, name: 'Normal' },
-  2: { id: 2, value: 2, name: 'High' },
+  0: { id: 0, value: 0, name: "Low" },
+  1: { id: 1, value: 1, name: "Normal" },
+  2: { id: 2, value: 2, name: "High" }
 };

@@ -46,10 +46,11 @@ const handleListClick = event => {
   switch (action) {
     case NOTE_ACTIONS.DELETE:
       const listItem = findListItem(event.target);
-      const listItemId = listItem.dataset.id;
-
-      notepad.deleteNote(listItemId);
       removeListItem(listItem);
+
+      const listItemId = listItem.dataset.id;
+      notepad.deleteNote(listItemId);
+
       notyf.confirm("Заметка успешно удалена!");
       break;
 
@@ -68,6 +69,7 @@ const handleListClick = event => {
 const handleFilterInput = event => {
   const value = event.target.value;
   const filteredNotes = notepad.filterNotesByQuery(value);
+
   refs.list.innerHTML = "";
   return renderNoteList(refs.list, filteredNotes);
 };
