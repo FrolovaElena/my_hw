@@ -6,6 +6,23 @@ const PRIORITY_TYPES = {
   HIGH: 2,
 };
 
+const initialNotes = [
+  {
+    id: 1,
+    title: 'JavaScript essentials',
+    body:
+      'Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc',
+    priority: PRIORITY_TYPES.HIGH,
+  },
+  {
+    id: 2,
+    title: 'Refresh HTML and CSS',
+    body:
+      'Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.',
+    priority: PRIORITY_TYPES.NORMAL,
+  },
+];
+
 class Notepad {
   constructor(notes = []) {
     this._notes = notes;
@@ -98,11 +115,15 @@ class Notepad {
     return filtredNotes;
   }
 
+  /*
   static getPriorityName(priorityId) {
     const priorityValues = Object.values(this.PRIORITIES);
     const value = priorityValues.find(value => value.id === priorityId);
 
     return value.name;
+  }*/
+  static getPriorityName(priorityId) {
+    return Notepad.PRIORITIES[priorityId].name;
   }
 }
 
@@ -112,27 +133,17 @@ Notepad.PRIORITIES = {
   2: { id: 2, value: 2, name: 'High' },
 };
 
-const initialNotes = [
-  {
-    id: 1,
-    title: 'JavaScript essentials',
-    body:
-      'Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc',
-    priority: PRIORITY_TYPES.HIGH,
-  },
-  {
-    id: 2,
-    title: 'Refresh HTML and CSS',
-    body:
-      'Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.',
-    priority: PRIORITY_TYPES.NORMAL,
-  },
-];
-
 /*
  * Посмотрим имя приоритета по id
  */
+const getNotePriorityName = data => {
+  const updatedData = data.map(
+    note => (note.priority = Notepad.getPriorityName(note.priority)),
+  );
+  return updatedData;
+};
 
+console.log('notes', getNotePriorityName(initialNotes));
 console.log(Notepad.getPriorityName(PRIORITY_TYPES.LOW)); // "Low"
 console.log(Notepad.getPriorityName(PRIORITY_TYPES.NORMAL)); // "Normal"
 console.log(Notepad.getPriorityName(PRIORITY_TYPES.HIGH)); // "High"

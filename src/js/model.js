@@ -20,13 +20,23 @@ export default class Notepad {
       body: text,
       priority: PRIORITY_TYPES.LOW
     };
-    this._notes.push(note);
-    return note;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this._notes.push(note);
+        resolve(note);
+        reject("error");
+      }, 300);
+    });
   }
 
   deleteNote(id) {
-    this._notes = this.notes.filter(note => note.id !== id);
-    return this._notes;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this._notes = this.notes.filter(note => note.id !== id);
+        resolve(this._notes);
+        reject("error");
+      }, 300);
+    });
   }
 
   updateNoteContent(id, updatedContent) {
@@ -52,10 +62,15 @@ export default class Notepad {
   }
 
   filterNotesByQuery(query) {
-    const filtredNotes = this._notes.filter(note =>
-      (note.title + note.body).toLowerCase().includes(query.toLowerCase())
-    );
-    return filtredNotes;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const filtredNotes = this._notes.filter(note =>
+          (note.title + note.body).toLowerCase().includes(query.toLowerCase())
+        );
+        resolve(filtredNotes);
+        reject("eror");
+      }, 300);
+    });
   }
 
   filterNotesByPriority(priority) {

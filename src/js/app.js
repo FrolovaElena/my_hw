@@ -11,11 +11,22 @@ import {
   removeListItem
 } from "./view.js";
 import "notyf/dist/notyf.min.css";
+import setItem from "./utils/storage";
 
 export const notepad = new Notepad(initialNotes);
 
 const refs = getRefs();
 const notyf = new Notyf();
+
+const storage = localStorage.getItem("notes");
+
+if (!storage) setItem("notes", notepad._notes);
+
+try {
+  notepad._notes = JSON.parse(storage);
+} catch (error) {
+  console.log(error);
+}
 
 const handleFormSubmit = event => {
   event.preventDefault();
@@ -28,11 +39,18 @@ const handleFormSubmit = event => {
     notyf.alert("Необходимо заполнить все поля!");
     return;
   }
-  const newNote = notepad.saveNote(titleValue, bodyValue);
-  addListItem(refs.list, newNote);
-  notyf.confirm("Заметка успешно добавлена!");
+  notepad
+    .saveNote(titleValue, bodyValue)
+    .then(newNote => {
+      addListItem(refs.list, newNote);
+      setItem("notes", notepad.notes);
+      notyf.confirm("Заметка успешно добавлена!");
+      MicroModal.close("note-editor-modal");
+    })
+    .catch(error => console.log(error));
   event.currentTarget.reset();
-  MicroModal.close("note-editor-modal");
+  localStorage.removeItem("title-note");
+  localStorage.removeItem("body-note");
 };
 
 const handleListClick = event => {
@@ -46,12 +64,16 @@ const handleListClick = event => {
   switch (action) {
     case NOTE_ACTIONS.DELETE:
       const listItem = findListItem(event.target);
-      removeListItem(listItem);
-
       const listItemId = listItem.dataset.id;
-      notepad.deleteNote(listItemId);
 
-      notyf.confirm("Заметка успешно удалена!");
+      notepad
+        .deleteNote(listItemId)
+        .then(notes => {
+          setItem("notes", notes);
+          removeListItem(listItem);
+          notyf.confirm("Заметка успешно удалена!");
+        })
+        .catch(error => console.log(error));
       break;
 
     case NOTE_ACTIONS.EDIT:
@@ -68,19 +90,40 @@ const handleListClick = event => {
 
 const handleFilterInput = event => {
   const value = event.target.value;
-  const filteredNotes = notepad.filterNotesByQuery(value);
-
-  refs.list.innerHTML = "";
-  return renderNoteList(refs.list, filteredNotes);
+  notepad
+    .filterNotesByQuery(value)
+    .then(notes => {
+      setItem("notes", notes);
+      refs.list.innerHTML = "";
+      renderNoteList(refs.list, notes);
+    })
+    .catch(error => console.log(error));
 };
 
 const handleOpenModal = () => {
   MicroModal.show("note-editor-modal");
 };
 
+const handleFormInput = event => {
+  const [title, body] = event.currentTarget.elements;
+
+  localStorage.setItem("title-note", title.value);
+  localStorage.setItem("body-note", body.value);
+};
+
 renderNoteList(refs.list, notepad.notes);
 
+const [title, body] = refs.editor.elements;
+
+try {
+  title.value = localStorage.getItem("title-note");
+  body.value = localStorage.getItem("body-note");
+} catch (error) {
+  console.log(error);
+}
+
 refs.editor.addEventListener("submit", handleFormSubmit);
+refs.editor.addEventListener("input", handleFormInput);
 refs.searchForm.addEventListener("input", handleFilterInput);
 refs.list.addEventListener("click", handleListClick);
 refs.buttonOpenModal.addEventListener("click", handleOpenModal);

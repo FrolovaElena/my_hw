@@ -1,23 +1,23 @@
-'use strict';
+"use strict";
 
 const PRIORITY_TYPES = {
   LOW: 0,
   NORMAL: 1,
-  HIGH: 2,
+  HIGH: 2
 };
 
 const ICON_TYPES = {
-  EDIT: 'edit',
-  DELETE: 'delete',
-  ARROW_DOWN: 'expand_more',
-  ARROW_UP: 'expand_less',
+  EDIT: "edit",
+  DELETE: "delete",
+  ARROW_DOWN: "expand_more",
+  ARROW_UP: "expand_less"
 };
 
 const NOTE_ACTIONS = {
-  DELETE: 'delete-note',
-  EDIT: 'edit-note',
-  INCREASE_PRIORITY: 'increase-priority',
-  DECREASE_PRIORITY: 'decrease-priority',
+  DELETE: "delete-note",
+  EDIT: "edit-note",
+  INCREASE_PRIORITY: "increase-priority",
+  DECREASE_PRIORITY: "decrease-priority"
 };
 
 class Notepad {
@@ -38,7 +38,7 @@ class Notepad {
       id: Notepad.generateUniqueId(),
       title: title,
       body: text,
-      priority: PRIORITY_TYPES.LOW,
+      priority: PRIORITY_TYPES.LOW
     };
     this._notes.push(note);
     return note;
@@ -73,7 +73,7 @@ class Notepad {
 
   filterNotesByQuery(query) {
     const filtredNotes = this._notes.filter(note =>
-      (note.title + note.body).toLowerCase().includes(query.toLowerCase()),
+      (note.title + note.body).toLowerCase().includes(query.toLowerCase())
     );
     return filtredNotes;
   }
@@ -104,57 +104,57 @@ class Notepad {
 }
 
 Notepad.PRIORITIES = {
-  0: { id: 0, value: 0, name: 'Low' },
-  1: { id: 1, value: 1, name: 'Normal' },
-  2: { id: 2, value: 2, name: 'High' },
+  0: { id: 0, value: 0, name: "Low" },
+  1: { id: 1, value: 1, name: "Normal" },
+  2: { id: 2, value: 2, name: "High" }
 };
 
 const initialNotes = [
   {
     id: 1,
-    title: 'JavaScript essentials',
+    title: "JavaScript essentials",
     body:
-      'Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc',
-    priority: PRIORITY_TYPES.HIGH,
+      "Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc",
+    priority: PRIORITY_TYPES.HIGH
   },
   {
     id: 2,
-    title: 'Refresh HTML and CSS',
+    title: "Refresh HTML and CSS",
     body:
-      'Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.',
-    priority: PRIORITY_TYPES.NORMAL,
+      "Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.",
+    priority: PRIORITY_TYPES.NORMAL
   },
   {
     id: 3,
-    title: 'Get comfy with Frontend frameworks',
+    title: "Get comfy with Frontend frameworks",
     body:
-      'First should get some general knowledge about frameworks, then maybe try each one for a week or so. Need to choose between React, Vue and Angular, by reading articles and watching videos.',
-    priority: PRIORITY_TYPES.NORMAL,
+      "First should get some general knowledge about frameworks, then maybe try each one for a week or so. Need to choose between React, Vue and Angular, by reading articles and watching videos.",
+    priority: PRIORITY_TYPES.NORMAL
   },
   {
     id: 4,
-    title: 'Winter clothes',
+    title: "Winter clothes",
     body:
       "Winter is coming! Need some really warm clothes: shoes, sweater, hat, jacket, scarf etc. Maybe should get a set of sportwear as well so I'll be able to do some excercises in the park.",
-    priority: PRIORITY_TYPES.LOW,
-  },
+    priority: PRIORITY_TYPES.LOW
+  }
 ];
 
 const notepad = new Notepad(initialNotes);
 console.log(notepad.notes);
 
-const list = document.querySelector('.note-list');
+const list = document.querySelector(".note-list");
 
 const createNoteContent = ({ title, body }) => {
-  const noteContent = document.createElement('div');
-  noteContent.classList.add('note__content');
+  const noteContent = document.createElement("div");
+  noteContent.classList.add("note__content");
 
-  const noteTitle = document.createElement('h2');
-  noteTitle.classList.add('note__title');
+  const noteTitle = document.createElement("h2");
+  noteTitle.classList.add("note__title");
   noteTitle.textContent = title;
 
-  const noteBody = document.createElement('p');
-  noteBody.classList.add('note__body');
+  const noteBody = document.createElement("p");
+  noteBody.classList.add("note__body");
   noteBody.textContent = body;
 
   noteContent.append(noteTitle, noteBody);
@@ -163,13 +163,13 @@ const createNoteContent = ({ title, body }) => {
 };
 
 const createActionButton = (button, icon) => {
-  const buttonPriority = document.createElement('button');
-  buttonPriority.classList.add('action');
+  const buttonPriority = document.createElement("button");
+  buttonPriority.classList.add("action");
   buttonPriority.dataset.action = button;
 
-  const iconPriority = document.createElement('i');
-  iconPriority.classList.add('material-icons');
-  iconPriority.classList.add('action__icon');
+  const iconPriority = document.createElement("i");
+  iconPriority.classList.add("material-icons");
+  iconPriority.classList.add("action__icon");
   iconPriority.textContent = icon;
   buttonPriority.appendChild(iconPriority);
 
@@ -177,32 +177,32 @@ const createActionButton = (button, icon) => {
 };
 
 const createFooter = ({ priority }) => {
-  const footer = document.createElement('footer');
-  footer.classList.add('note__footer');
+  const footer = document.createElement("footer");
+  footer.classList.add("note__footer");
 
-  const section_1 = document.createElement('section');
-  section_1.classList.add('note__section');
+  const section_1 = document.createElement("section");
+  section_1.classList.add("note__section");
   const buttonPriorityDec = createActionButton(
     NOTE_ACTIONS.DECREASE_PRIORITY,
-    ICON_TYPES.ARROW_DOWN,
+    ICON_TYPES.ARROW_DOWN
   );
   const buttonPriorityInc = createActionButton(
     NOTE_ACTIONS.INCREASE_PRIORITY,
-    ICON_TYPES.ARROW_UP,
+    ICON_TYPES.ARROW_UP
   );
-  const notePriority = document.createElement('span');
-  notePriority.classList.add('note__priority');
-  notePriority.textContent = priority;
+  const notePriority = document.createElement("span");
+  notePriority.classList.add("note__priority");
+  notePriority.textContent = `Priority: ${Notepad.getPriorityName(priority)}`; //показать приоритет словами
 
-  const section_2 = document.createElement('section');
-  section_2.classList.add('note__section');
+  const section_2 = document.createElement("section");
+  section_2.classList.add("note__section");
   const buttonPriorityEdit = createActionButton(
     NOTE_ACTIONS.EDIT,
-    ICON_TYPES.EDIT,
+    ICON_TYPES.EDIT
   );
   const buttonPriorityDel = createActionButton(
     NOTE_ACTIONS.DELETE,
-    ICON_TYPES.DELETE,
+    ICON_TYPES.DELETE
   );
   section_1.append(buttonPriorityDec, buttonPriorityInc, notePriority);
   section_2.append(buttonPriorityEdit, buttonPriorityDel);
@@ -212,11 +212,11 @@ const createFooter = ({ priority }) => {
 };
 
 const createListItem = data => {
-  const item = document.createElement('li');
-  item.classList.add('note-list__item');
+  const item = document.createElement("li");
+  item.classList.add("note-list__item");
   item.dataset.id = data.id;
-  const note = document.createElement('div');
-  note.classList.add('note');
+  const note = document.createElement("div");
+  note.classList.add("note");
   const noteContent = createNoteContent(data);
   const footer = createFooter(data);
   note.append(noteContent, footer);
@@ -229,7 +229,7 @@ const createListItem = data => {
 const renderNoteList = (list, data) => {
   const items = data.map(note => createListItem(note));
 
-  list.innerHTML = '';
+  list.innerHTML = "";
   list.append(...items);
 
   return list;
