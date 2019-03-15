@@ -13,20 +13,29 @@ import {
 import "notyf/dist/notyf.min.css";
 import setItem from "./utils/storage";
 
-export const notepad = new Notepad(initialNotes);
-
 const refs = getRefs();
 const notyf = new Notyf();
 
-const storage = localStorage.getItem("notes");
+const replaceNoteId = arr => {
+  return arr.map(note => {
+    return {
+      ...note,
+      priority: `Priority: ${Notepad.getPriorityName(note.priority)}`
+    };
+  });
+};
 
-if (!storage) setItem("notes", notepad._notes);
+let startedNotes = [];
+const storageNotes = localStorage.getItem("notes");
 
-try {
-  notepad._notes = JSON.parse(storage);
-} catch (error) {
-  console.log(error);
+if (!storageNotes) {
+  startedNotes = replaceNoteId(initialNotes);
+  setItem("notes", startedNotes);
 }
+startedNotes = JSON.parse(localStorage.getItem("notes"));
+setItem("notes", startedNotes);
+
+export const notepad = new Notepad(startedNotes);
 
 const handleFormSubmit = event => {
   event.preventDefault();
@@ -93,7 +102,6 @@ const handleFilterInput = event => {
   notepad
     .filterNotesByQuery(value)
     .then(notes => {
-      setItem("notes", notes);
       refs.list.innerHTML = "";
       renderNoteList(refs.list, notes);
     })

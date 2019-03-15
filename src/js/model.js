@@ -1,4 +1,4 @@
-import { PRIORITY_TYPES } from "./utils/constants";
+import { PRIORITY_TYPES, PRIORITIES } from "./utils/constants";
 
 export default class Notepad {
   constructor(notes = []) {
@@ -10,7 +10,13 @@ export default class Notepad {
   }
 
   findNoteById(id) {
-    return this._notes.find(note => note.id === id);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const note = this._notes.find(note => note.id === id);
+        resolve(note);
+        reject("error");
+      }, 300);
+    });
   }
 
   saveNote(title, text) {
@@ -18,7 +24,7 @@ export default class Notepad {
       id: Notepad.generateUniqueId(),
       title: title,
       body: text,
-      priority: PRIORITY_TYPES.LOW
+      priority: `Priority: ${Notepad.getPriorityName(PRIORITY_TYPES.LOW)}`
     };
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -31,34 +37,38 @@ export default class Notepad {
 
   deleteNote(id) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        this._notes = this.notes.filter(note => note.id !== id);
-        resolve(this._notes);
-        reject("error");
-      }, 300);
+      this._notes = this.notes.filter(note => note.id !== id);
+      resolve(this._notes);
+      reject("error");
     });
   }
 
   updateNoteContent(id, updatedContent) {
     const note = this.findNoteById(id);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (!note) return;
+        const { title = note.title, body = note.body } = updatedContent;
+        note.title = title;
+        note.body = body;
 
-    if (!note) return;
-
-    const { title = note.title, body = note.body } = updatedContent;
-
-    note.title = title;
-    note.body = body;
-
-    return note;
+        resolve(note);
+        reject("error");
+      }, 300);
+    });
   }
 
   updateNotePriority(id, priority) {
     const note = this.findNoteById(id);
-    if (!note) return;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (!note) return;
+        note.priority = priority;
 
-    note.priority = priority;
-
-    return note;
+        resolve(note);
+        reject("error");
+      }, 300);
+    });
   }
 
   filterNotesByQuery(query) {
@@ -74,9 +84,16 @@ export default class Notepad {
   }
 
   filterNotesByPriority(priority) {
-    const filtredNotes = this._notes.filter(note => note.priority === priority);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const filtredNotes = this._notes.filter(
+          note => note.priority === priority
+        );
 
-    return filtredNotes;
+        resolve(filtredNotes);
+        reject("error");
+      }, 300);
+    });
   }
 
   static generateUniqueId() {
@@ -91,14 +108,6 @@ export default class Notepad {
   }
 
   static getPriorityName(priorityId) {
-    const priorityValues = Object.values(this.PRIORITIES);
-    const value = priorityValues.find(value => value.id === priorityId);
-
-    return value.name;
+    return PRIORITIES[priorityId].name;
   }
 }
-Notepad.PRIORITIES = {
-  0: { id: 0, value: 0, name: "Low" },
-  1: { id: 1, value: 1, name: "Normal" },
-  2: { id: 2, value: 2, name: "High" }
-};
