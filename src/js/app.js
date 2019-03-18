@@ -1,7 +1,6 @@
 import Notyf from "notyf";
 import MicroModal from "micromodal";
 import Notepad from "./model.js";
-import initialNotes from "../assets/notes.json";
 import { NOTE_ACTIONS } from "./utils/constants";
 import {
   addListItem,
@@ -11,31 +10,18 @@ import {
   removeListItem
 } from "./view.js";
 import "notyf/dist/notyf.min.css";
-import setItem from "./utils/storage";
 
 const refs = getRefs();
 const notyf = new Notyf();
+export const notepad = new Notepad();
 
-const replaceNoteId = arr => {
-  return arr.map(note => {
-    return {
-      ...note,
-      priority: `Priority: ${Notepad.getPriorityName(note.priority)}`
-    };
+notepad
+  .getNotes()
+  .then(notes => renderNoteList(refs.list, notes))
+  .catch(error => {
+    console.log(error);
+    notyf.alert("Ошибка! Повторите позже.");
   });
-};
-
-let startedNotes = [];
-const storageNotes = localStorage.getItem("notes");
-
-if (!storageNotes) {
-  startedNotes = replaceNoteId(initialNotes);
-  setItem("notes", startedNotes);
-}
-startedNotes = JSON.parse(localStorage.getItem("notes"));
-setItem("notes", startedNotes);
-
-export const notepad = new Notepad(startedNotes);
 
 const handleFormSubmit = event => {
   event.preventDefault();
@@ -52,11 +38,13 @@ const handleFormSubmit = event => {
     .saveNote(titleValue, bodyValue)
     .then(newNote => {
       addListItem(refs.list, newNote);
-      setItem("notes", notepad.notes);
       notyf.confirm("Заметка успешно добавлена!");
       MicroModal.close("note-editor-modal");
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      console.log(error);
+      notyf.alert("Ошибка! Повторите позже.");
+    });
   event.currentTarget.reset();
   localStorage.removeItem("title-note");
   localStorage.removeItem("body-note");
@@ -78,11 +66,14 @@ const handleListClick = event => {
       notepad
         .deleteNote(listItemId)
         .then(notes => {
-          setItem("notes", notes);
+          console.log(notes);
           removeListItem(listItem);
           notyf.confirm("Заметка успешно удалена!");
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+          console.log(error);
+          notyf.alert("Ошибка! Повторите позже.");
+        });
       break;
 
     case NOTE_ACTIONS.EDIT:
@@ -105,7 +96,10 @@ const handleFilterInput = event => {
       refs.list.innerHTML = "";
       renderNoteList(refs.list, notes);
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      console.log(error);
+      notyf.alert("Ошибка! Повторите позже.");
+    });
 };
 
 const handleOpenModal = () => {
@@ -118,8 +112,6 @@ const handleFormInput = event => {
   localStorage.setItem("title-note", title.value);
   localStorage.setItem("body-note", body.value);
 };
-
-renderNoteList(refs.list, notepad.notes);
 
 const [title, body] = refs.editor.elements;
 

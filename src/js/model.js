@@ -1,45 +1,44 @@
 import { PRIORITY_TYPES, PRIORITIES } from "./utils/constants";
+import { get, save, del } from "./api.js";
 
 export default class Notepad {
   constructor(notes = []) {
-    this._notes = notes;
+    this.notes = notes;
   }
 
-  get notes() {
-    return this._notes;
+  getNotes() {
+    return get().then(notes => {
+      this.notes = notes;
+      return this.notes;
+    });
   }
 
   findNoteById(id) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const note = this._notes.find(note => note.id === id);
+        const note = this.notes.find(note => note.id === id);
         resolve(note);
         reject("error");
       }, 300);
     });
   }
 
-  saveNote(title, text) {
+  saveNote(title, body) {
     const note = {
-      id: Notepad.generateUniqueId(),
       title: title,
-      body: text,
-      priority: `Priority: ${Notepad.getPriorityName(PRIORITY_TYPES.LOW)}`
+      body: body,
+      priority: PRIORITY_TYPES.LOW
     };
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        this._notes.push(note);
-        resolve(note);
-        reject("error");
-      }, 300);
+    return save(note).then(addedNote => {
+      this.notes.push(addedNote);
+      return addedNote;
     });
   }
 
   deleteNote(id) {
-    return new Promise((resolve, reject) => {
-      this._notes = this.notes.filter(note => note.id !== id);
-      resolve(this._notes);
-      reject("error");
+    return del(id).then(() => {
+      this.notes = this.notes.filter(note => note.id !== id);
+      return this.notes;
     });
   }
 
@@ -74,7 +73,7 @@ export default class Notepad {
   filterNotesByQuery(query) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const filtredNotes = this._notes.filter(note =>
+        const filtredNotes = this.notes.filter(note =>
           (note.title + note.body).toLowerCase().includes(query.toLowerCase())
         );
         resolve(filtredNotes);
@@ -86,7 +85,7 @@ export default class Notepad {
   filterNotesByPriority(priority) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const filtredNotes = this._notes.filter(
+        const filtredNotes = this.notes.filter(
           note => note.priority === priority
         );
 
@@ -94,17 +93,6 @@ export default class Notepad {
         reject("error");
       }, 300);
     });
-  }
-
-  static generateUniqueId() {
-    return (
-      Math.random()
-        .toString(36)
-        .substring(2, 15) +
-      Math.random()
-        .toString(36)
-        .substring(2, 15)
-    );
   }
 
   static getPriorityName(priorityId) {

@@ -1,4 +1,5 @@
 import listItem from "../tamplate/list-item.hbs";
+import Notepad from "./model.js";
 
 export const getRefs = () => ({
   list: document.querySelector(".note-list"),
@@ -7,7 +8,13 @@ export const getRefs = () => ({
   buttonOpenModal: document.querySelector('[data-action="open-editor"]')
 });
 
-export const createListItem = note => listItem(note);
+export const createListItem = note => {
+  const newNote = {
+    ...note,
+    priority: `Priority: ${Notepad.getPriorityName(note.priority)}`
+  };
+  return listItem(newNote);
+};
 
 export const renderNoteList = (list, data) => {
   const items = data.map(item => createListItem(item)).join("");
