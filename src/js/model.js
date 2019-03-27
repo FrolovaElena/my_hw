@@ -6,93 +6,99 @@ export default class Notepad {
     this.notes = notes;
   }
 
-  getNotes() {
-    return get().then(notes => {
+  async getNotes() {
+    try {
+      const notes = await get();
       this.notes = notes;
       return this.notes;
-    });
+    } catch (error) {
+      throw error;
+    }
   }
 
-  findNoteById(id) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const note = this.notes.find(note => note.id === id);
-        resolve(note);
-        reject("error");
-      }, 300);
-    });
+  async findNoteById(id) {
+    try {
+      const notes = await get();
+      const note = notes.find(note => note.id === id);
+      return note;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  saveNote(title, body) {
+  async saveNote(title, body) {
     const note = {
       title: title,
       body: body,
       priority: PRIORITY_TYPES.LOW
     };
-    return save(note).then(addedNote => {
-      this.notes.push(addedNote);
-      return addedNote;
-    });
+    try {
+      const savedNote = await save(note);
+      this.notes.push(savedNote);
+      return savedNote;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  deleteNote(id) {
-    return del(id).then(() => {
+  async deleteNote(id) {
+    try {
+      del(id);
       this.notes = this.notes.filter(note => note.id !== id);
       return this.notes;
-    });
+    } catch (error) {
+      throw error;
+    }
   }
 
-  updateNoteContent(id, updatedContent) {
-    const note = this.findNoteById(id);
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (!note) return;
-        const { title = note.title, body = note.body } = updatedContent;
-        note.title = title;
-        note.body = body;
+  async updateNoteContent(id, updatedContent) {
+    try {
+      const note = await this.findNoteById(id);
 
-        resolve(note);
-        reject("error");
-      }, 300);
-    });
+      if (!note) return;
+      const { title = note.title, body = note.body } = updatedContent;
+      note.title = title;
+      note.body = body;
+
+      return note;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  updateNotePriority(id, priority) {
-    const note = this.findNoteById(id);
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (!note) return;
-        note.priority = priority;
+  async updateNotePriority(id, priority) {
+    try {
+      const note = await this.findNoteById(id);
 
-        resolve(note);
-        reject("error");
-      }, 300);
-    });
+      if (!note) return;
+      note.priority = priority;
+
+      return note;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  filterNotesByQuery(query) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const filtredNotes = this.notes.filter(note =>
-          (note.title + note.body).toLowerCase().includes(query.toLowerCase())
-        );
-        resolve(filtredNotes);
-        reject("eror");
-      }, 300);
-    });
+  async filterNotesByQuery(query) {
+    try {
+      const notes = await get();
+      const filtredNotes = notes.filter(note =>
+        (note.title + note.body).toLowerCase().includes(query.toLowerCase())
+      );
+      return filtredNotes;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  filterNotesByPriority(priority) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const filtredNotes = this.notes.filter(
-          note => note.priority === priority
-        );
-
-        resolve(filtredNotes);
-        reject("error");
-      }, 300);
-    });
+  async filterNotesByPriority(priority) {
+    try {
+      const notes = await get();
+      const filtredNotes = notes.filter(note => note.priority === priority);
+      return filtredNotes;
+    } catch (error) {
+      throw error;
+    }
   }
 
   static getPriorityName(priorityId) {

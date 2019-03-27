@@ -1,4 +1,4 @@
-import { Notyf } from "notyf";
+import Notyf from "notyf";
 import MicroModal from "micromodal";
 import Notepad from "./model.js";
 import { NOTE_ACTIONS } from "./utils/constants";
@@ -9,7 +9,7 @@ import {
   findListItem,
   removeListItem
 } from "./view.js";
-import "notyf/notyf.min.css";
+import "notyf/dist/notyf.min.css";
 
 const refs = getRefs();
 const notyf = new Notyf();
@@ -20,7 +20,7 @@ notepad
   .then(notes => renderNoteList(refs.list, notes))
   .catch(error => {
     console.log(error);
-    notyf.error("Ошибка! Повторите позже.");
+    notyf.alert("Ошибка! Повторите позже.");
   });
 
 const handleFormSubmit = event => {
@@ -31,19 +31,19 @@ const handleFormSubmit = event => {
   const bodyValue = body.value;
 
   if ((titleValue.trim() && bodyValue.trim()) === "") {
-    notyf.error("Необходимо заполнить все поля!");
+    notyf.alert("Необходимо заполнить все поля!");
     return;
   }
   notepad
     .saveNote(titleValue, bodyValue)
     .then(newNote => {
       addListItem(refs.list, newNote);
-      notyf.success("Заметка успешно добавлена!");
+      notyf.confirm("Заметка успешно добавлена!");
       MicroModal.close("note-editor-modal");
     })
     .catch(error => {
       console.log(error);
-      notyf.error("Ошибка! Повторите позже.");
+      notyf.alert("Ошибка! Повторите позже.");
     });
   event.currentTarget.reset();
   localStorage.removeItem("title-note");
@@ -68,11 +68,11 @@ const handleListClick = event => {
         .then(notes => {
           console.log(notes);
           removeListItem(listItem);
-          notyf.success("Заметка успешно удалена!");
+          notyf.confirm("Заметка успешно удалена!");
         })
         .catch(error => {
           console.log(error);
-          notyf.error("Ошибка! Повторите позже.");
+          notyf.alert("Ошибка! Повторите позже.");
         });
       break;
 
@@ -98,7 +98,7 @@ const handleFilterInput = event => {
     })
     .catch(error => {
       console.log(error);
-      notyf.error("Ошибка! Повторите позже.");
+      notyf.alert("Ошибка! Повторите позже.");
     });
 };
 
