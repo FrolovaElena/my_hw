@@ -28,3 +28,12 @@ export const del = async noteId => {
     throw new Error(`Error while fetching: ${response.statusText}`);
   }
 };
+
+export const update = async (noteId, data) => {
+  try {
+    const response = await axios.patch(`${URL}/${noteId}`, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -1,4 +1,5 @@
-.note-editor {
+.note-editor,
+.note-update {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +11,8 @@
   background-color: #fff;
 }
 
-.note-editor__label {
+.note-editor__label,
+.note-update__label {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -21,13 +23,19 @@
   margin-top: 16px;
 }
 
-.note-editor__field-name {
+.note-update__label + .note-update__label {
+  margin-top: 16px;
+}
+
+.note-editor__field-name,
+.note-update__field-name {
   margin-bottom: 8px;
   font-size: 18px;
   color: currentColor;
 }
 
-.note-editor__input {
+.note-editor__input,
+.note-update__input {
   border-color: rgba(0, 0, 0, 0.23);
   border-style: solid;
   border-width: 1px;
@@ -42,6 +50,7 @@
   outline: none;
 }
 
-.note-editor__input:focus {
+.note-editor__input:focus,
+.note-update__input:focus {
   border-color: #2196f3;
 }

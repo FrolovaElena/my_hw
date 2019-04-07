@@ -1,5 +1,5 @@
 import { PRIORITY_TYPES, PRIORITIES } from "./utils/constants";
-import { get, save, del } from "./api.js";
+import { get, save, del, update } from "./api.js";
 
 export default class Notepad {
   constructor(notes = []) {
@@ -53,27 +53,32 @@ export default class Notepad {
 
   async updateNoteContent(id, updatedContent) {
     try {
-      const note = await this.findNoteById(id);
+      const note = await update(id, updatedContent);
 
       if (!note) return;
       const { title = note.title, body = note.body } = updatedContent;
       note.title = title;
       note.body = body;
-
-      return note;
+      this.notes = this.notes.map(item => {
+        if (item.id !== id) {
+          return item;
+        }
+        return note;
+      });
+      return this.notes;
     } catch (error) {
       throw error;
     }
   }
 
-  async updateNotePriority(id, priority) {
+  async updateNotePriority(id, data) {
     try {
-      const note = await this.findNoteById(id);
-
-      if (!note) return;
-      note.priority = priority;
-
-      return note;
+      const note = await update(id, data);
+      this.notes = this.notes.map(item => {
+        if (item.id !== note.id) return item;
+        return { ...note };
+      });
+      return this.notes;
     } catch (error) {
       throw error;
     }

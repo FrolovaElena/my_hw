@@ -4,6 +4,7 @@ import Notepad from "./model.js";
 export const getRefs = () => ({
   list: document.querySelector(".note-list"),
   editor: document.querySelector(".note-editor"),
+  update: document.querySelector(".note-update"),
   searchForm: document.querySelector(".search-form"),
   buttonOpenModal: document.querySelector('[data-action="open-editor"]')
 });
